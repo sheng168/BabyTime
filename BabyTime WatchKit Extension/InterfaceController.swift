@@ -1,8 +1,8 @@
 //
 //  InterfaceController.swift
-//  BabyTime WatchKit Extension
+//  BabyTimer WatchKit Extension
 //
-//  Created by Jin Yu on 1/16/17.
+//  Created by Jin Yu on 1/14/17.
 //  Copyright © 2017 Kewe. All rights reserved.
 //
 
@@ -11,11 +11,16 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
+    @IBOutlet var timer: WKInterfaceTimer!
+    @IBOutlet var label: WKInterfaceLabel!
+    @IBOutlet var slider: WKInterfaceSlider!
+    var amount = 0
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
+        setLabelText(2)
     }
     
     override func willActivate() {
@@ -28,4 +33,20 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    @IBAction func feedClick() {
+        print("feed")
+//        amount += 1
+//        label.setText("\(amount)")
+        timer.setDate(Date())
+        timer.start()
+    }
+    
+    @IBAction func sliderChange(_ value: Float) {
+        setLabelText(value)
+
+    }
+    
+    func setLabelText(_ value: Float) {
+        label.setText("\(value) oz")
+    }
 }

@@ -1,8 +1,8 @@
 //
 //  NotificationController.swift
-//  BabyTime WatchKit Extension
+//  BabyTimer WatchKit Extension
 //
-//  Created by Jin Yu on 1/16/17.
+//  Created by Jin Yu on 1/14/17.
 //  Copyright © 2017 Kewe. All rights reserved.
 //
 

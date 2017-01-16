@@ -333,6 +333,7 @@
 					5AC2ACE01E2CD765002F660F = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = M5R8LEXDD7;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					5AC2ACF41E2CD765002F660F = {
@@ -350,11 +351,13 @@
 					5AC2AD081E2CD765002F660F = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = M5R8LEXDD7;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					5AC2AD171E2CD765002F660F = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = M5R8LEXDD7;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};

@@ -1,14 +1,42 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BabyTime_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <timer alignment="left" id="LQU-J0-kPC"/>
+                        <button width="1" alignment="left" title="Feed" id="iY0-Kn-Sao">
+                            <connections>
+                                <action selector="feedClick" destination="AgC-eL-Hgc" id="bC7-mx-pGI"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="Amount" id="VWv-zf-60P"/>
+                        <slider width="1" alignment="left" value="2" minimum="1" maximum="5" steps="4" id="rUf-QK-1bG">
+                            <connections>
+                                <action selector="sliderChange:" destination="AgC-eL-Hgc" id="bNN-RV-Ur9"/>
+                            </connections>
+                        </slider>
+                        <dateLabel alignment="left" id="oxT-ki-HER">
+                            <dateFormatterStyle key="dateStyle" short="YES"/>
+                            <dateFormatterStyle key="timeStyle" short="YES"/>
+                        </dateLabel>
+                    </items>
+                    <connections>
+                        <outlet property="label" destination="VWv-zf-60P" id="2Rf-dG-rTa"/>
+                        <outlet property="slider" destination="rUf-QK-1bG" id="ylg-ES-obH"/>
+                        <outlet property="timer" destination="LQU-J0-kPC" id="Kvd-aj-iVz"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
@@ -31,7 +59,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="BabyTime_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
