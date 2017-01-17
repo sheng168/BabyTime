@@ -14,9 +14,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Configuration
     
     func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
-        handler(CLKComplicationTimeTravelDirections())
+//        handler(CLKComplicationTimeTravelDirections())
         print("getSupportedTimeTravelDirectionsForComplication")
-        //        handler([.Forward, .Backward])
+                handler([.forward, .backward])
     }
     
     func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
@@ -94,7 +94,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         DispatchQueue.global(qos: DispatchQoS.QoSClass.utility).async {
             var array = [CLKComplicationTimelineEntry]()
             
-            for i in 1 ... limit {
+            for i in 1 ... min(limit,5) {
                 let t = self.getTemplateForComplication(complication, bill: Double(i))
                 
                 let entry = CLKComplicationTimelineEntry(date: Date(timeIntervalSinceNow: 60.0*Double(i)), complicationTemplate: t)
@@ -156,17 +156,17 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     fileprivate func modularSmall(_ bill: Double) -> CLKComplicationTemplate {
         let t = CLKComplicationTemplateModularSmallStackText()
-        t.line1TextProvider = CLKSimpleTextProvider(text: "Tip \(bill)", shortText: "\(bill)")
-        t.line2TextProvider = CLKSimpleTextProvider(text: "$\(bill*1.15)", shortText: "\(bill*1.15)")
+        t.line1TextProvider = CLKSimpleTextProvider(text: "\(InterfaceController.lastAmount) oz")
+        t.line2TextProvider = CLKRelativeDateTextProvider(date: InterfaceController.lastDate, style: .natural, units: .second)
         return t
         
     }
     
     fileprivate func modularLarge(_ bill: Double) -> CLKComplicationTemplate {
         let t = CLKComplicationTemplateModularLargeStandardBody()
-        t.headerTextProvider = CLKSimpleTextProvider(text: "TipCalc $\(bill)")
-        t.body1TextProvider = CLKSimpleTextProvider(text: "+ 15% = $\(bill*1.15)")
-        t.body2TextProvider = CLKSimpleTextProvider(text: "\(Date())")
+        t.headerTextProvider = CLKSimpleTextProvider(text: "\(InterfaceController.lastAmount) oz")
+        t.body1TextProvider = CLKRelativeDateTextProvider(date: Date(), style: .natural, units: .second)
+        t.body2TextProvider = CLKRelativeDateTextProvider(date: Date(), style: .timer, units: .second)
         return t
     }
     
