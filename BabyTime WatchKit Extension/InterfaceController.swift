@@ -18,13 +18,23 @@ class InterfaceController: WKInterfaceController {
     
     static var lastAmount = 1.0
     static var lastDate = Date()
+    
+    let amountKey = "amount"
+    let dateKey = "date"
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        
+        //To retrieve from the key
+        let userDefaults = Foundation.UserDefaults.standard
+        let value = userDefaults.float(forKey: amountKey)
+        print(value)
+
         // Configure interface objects here.
-        setLabelText(2)
-    }
+        setLabelText(value)
+        slider.setValue(value)
+}
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
@@ -55,6 +65,10 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func sliderChange(_ value: Float) {
+        //To save the string
+        let userDefaults = Foundation.UserDefaults.standard
+        userDefaults.set(value, forKey: amountKey)
+
         setLabelText(value)
         amount = Double(value)
     }

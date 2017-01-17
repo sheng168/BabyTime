@@ -157,7 +157,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     fileprivate func modularSmall(_ bill: Double) -> CLKComplicationTemplate {
         let t = CLKComplicationTemplateModularSmallStackText()
         t.line1TextProvider = CLKSimpleTextProvider(text: "\(InterfaceController.lastAmount) oz")
-        t.line2TextProvider = CLKRelativeDateTextProvider(date: InterfaceController.lastDate, style: .natural, units: .second)
+        t.line2TextProvider = CLKRelativeDateTextProvider(date: InterfaceController.lastDate, style: .timer, units: .minute)
         return t
         
     }
@@ -165,8 +165,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     fileprivate func modularLarge(_ bill: Double) -> CLKComplicationTemplate {
         let t = CLKComplicationTemplateModularLargeStandardBody()
         t.headerTextProvider = CLKSimpleTextProvider(text: "\(InterfaceController.lastAmount) oz")
-        t.body1TextProvider = CLKRelativeDateTextProvider(date: Date(), style: .natural, units: .second)
-        t.body2TextProvider = CLKRelativeDateTextProvider(date: Date(), style: .timer, units: .second)
+        t.body1TextProvider = CLKRelativeDateTextProvider(date: InterfaceController.lastDate, style: .natural, units: .second)
+        t.body2TextProvider = CLKRelativeDateTextProvider(date: InterfaceController.lastDate, style: .timer, units: .second)
         return t
     }
     

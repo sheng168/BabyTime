@@ -14,7 +14,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BabyTime_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <timer alignment="left" id="LQU-J0-kPC"/>
+                        <timer alignment="left" format="abbreviated" id="LQU-J0-kPC"/>
                         <button width="1" alignment="left" title="Feed" id="iY0-Kn-Sao">
                             <connections>
                                 <action selector="feedClick" destination="AgC-eL-Hgc" id="bC7-mx-pGI"/>
@@ -26,10 +26,6 @@
                                 <action selector="sliderChange:" destination="AgC-eL-Hgc" id="bNN-RV-Ur9"/>
                             </connections>
                         </slider>
-                        <dateLabel alignment="left" id="oxT-ki-HER">
-                            <dateFormatterStyle key="dateStyle" short="YES"/>
-                            <dateFormatterStyle key="timeStyle" short="YES"/>
-                        </dateLabel>
                     </items>
                     <connections>
                         <outlet property="label" destination="VWv-zf-60P" id="2Rf-dG-rTa"/>
