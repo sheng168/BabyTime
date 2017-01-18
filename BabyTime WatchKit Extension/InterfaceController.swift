@@ -39,7 +39,10 @@ class InterfaceController: WKInterfaceController {
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
-        debug(1)
+        debug(Feed.list.count)
+        for f in Feed.list {
+            debug(f)
+        }
         super.willActivate()
     }
     

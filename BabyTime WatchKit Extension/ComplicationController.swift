@@ -41,8 +41,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
         debug(complication.family)
 
-        handler(CLKComplicationTimeTravelDirections())
-//                handler([.forward, .backward])
+//        handler(CLKComplicationTimeTravelDirections())
+        handler([.forward, .backward])
     }
     
     func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
@@ -183,7 +183,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTemplateForComplication(_ complication: CLKComplication,_ feed: Feed) -> CLKComplicationTemplate {
         // This method will be called once per supported complication, and the results will be cached
-        debug(complication)
+        debug(complication.family)
         debug(feed)
         
         let template: CLKComplicationTemplate

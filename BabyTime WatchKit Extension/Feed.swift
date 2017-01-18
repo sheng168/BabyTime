@@ -39,6 +39,7 @@ class Feed: CustomStringConvertible {
     
     init(amount: Float, time: Date = Date()) {
         self.amount = amount
+        self.time = time
     }
     
     static var list: [Feed] = [
