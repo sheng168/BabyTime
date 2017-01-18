@@ -52,6 +52,11 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    @IBAction func quitMenu() {
+        let x:Int? = nil
+        print(x!)
+    }
+    
     @IBAction func feedClick() {
         debug("")
 

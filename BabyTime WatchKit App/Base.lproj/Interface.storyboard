@@ -40,7 +40,11 @@
                     </items>
                     <menu key="menu" id="00l-6a-bE5">
                         <items>
-                            <menuItem title="Menu Item" id="qTn-8p-BOr"/>
+                            <menuItem title="Quit" icon="trash" id="OhI-X1-4ws">
+                                <connections>
+                                    <action selector="quitMenu" destination="AgC-eL-Hgc" id="KPs-ds-osi"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                     <connections>
