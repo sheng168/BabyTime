@@ -9,31 +9,57 @@
 import ClockKit
 import os.log
 
+extension CLKComplicationFamily: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .modularSmall:
+            return "modularSmall"
+        case .modularLarge:
+            return "modularLarge"
+            
+            //        case .utilitarianSmall:
+            //            template = utilitarianSmall(bill)
+            //        case .utilitarianLarge:
+            //            template = utilitarianLarge(bill)
+            //        case .circularSmall:
+            //            template = circularSmall(bill)
+            //        case .utilitarianSmallFlat:
+            //            template = utilitarianSmall(bill)
+        //        case.extraLarge:
+        default:
+            return "CLKComplicationFamily \(self.rawValue))"
+            
+        }
+
+    }
+}
+
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // MARK: - Timeline Configuration
     
     func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
-//        handler(CLKComplicationTimeTravelDirections())
-        debug("getSupportedTimeTravelDirectionsForComplication")
-                handler([.forward, .backward])
+        debug(complication.family)
+
+        handler(CLKComplicationTimeTravelDirections())
+//                handler([.forward, .backward])
     }
     
     func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-        debug("getTimelineStartDateForComplication")
+        debug(complication.family)
         let start = Feed.list.first!.time //Date().addingTimeInterval(-100*60)
             
         handler(start)
     }
     
     func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-        debug("getTimelineEndDateForComplication")
+        debug(complication.family)
         let end = Feed.list.last!.time.addingTimeInterval(60*60*3) //Date().addingTimeInterval(100*60)
         handler(end)
     }
     
     func getPrivacyBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationPrivacyBehavior) -> Void) {
-        debug("getPrivacyBehaviorForComplication")
+        debug(complication.family)
         handler(.showOnLockScreen)
     }
     
@@ -41,7 +67,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: (@escaping (CLKComplicationTimelineEntry?) -> Void)) {
         // Call the handler with the current timeline entry
-        debug("getCurrentTimelineEntryForComplication")
+        debug(complication.debugDescription)
         
         
         let templ: CLKComplicationTemplate?
@@ -53,7 +79,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             //        case .ModularSmall:
         //            templ = modularSmall(10.0)
         default:
-            templ = getTemplateForComplication(complication, bill: 10)
+            templ = getTemplateForComplication(complication, Feed.list.last!)
             break
         }
         
@@ -67,43 +93,70 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
     }
     
+    func getTimelineEntry(_ complication: CLKComplication,_ feed: Feed) -> CLKComplicationTimelineEntry {
+        return CLKComplicationTimelineEntry(date: feed.time, complicationTemplate: getTemplateForComplication(complication, feed))
+    }
+
     
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: (@escaping ([CLKComplicationTimelineEntry]?) -> Void)) {
         // Call the handler with the timeline entries prior to the given date
-        debug("\(date) \(limit)")
+        debug("\(complication.family) \(date) \(limit)")
         
-        DispatchQueue.global(qos: DispatchQoS.QoSClass.utility).async {
-            var array = [CLKComplicationTimelineEntry]()
-            
-            for i in 1 ... min(limit,5) {
-                let t = self.getTemplateForComplication(complication, bill: Double(i))
-                
-                let entry = CLKComplicationTimelineEntry(date: Date(timeIntervalSinceNow: -600.0*Double(i)), complicationTemplate: t)
-                array.append(entry)
-            }
-            
-            DispatchQueue.main.async {
-                handler(array)
+        var array = [CLKComplicationTimelineEntry]()
+        
+        for f in Feed.list.reversed() {
+            if date.compare(f.time) == .orderedDescending {
+                array.append(getTimelineEntry(complication, f))
+                if array.count >= limit {
+                    break
+                }
             }
         }
+        handler(array)
+        
+//        DispatchQueue.global(qos: DispatchQoS.QoSClass.utility).async {
+//            var array = [CLKComplicationTimelineEntry]()
+//            
+//            for i in 1 ... min(limit,5) {
+//                let t = self.getTemplateForComplication(complication, bill: Float(i))
+//                
+//                let entry = CLKComplicationTimelineEntry(date: Date(timeIntervalSinceNow: -600.0*Double(i)), complicationTemplate: t)
+//                array.append(entry)
+//            }
+//            
+//            DispatchQueue.main.async {
+//                handler(array)
+//            }
+//        }
     }
     
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: (@escaping ([CLKComplicationTimelineEntry]?) -> Void)) {
         // Call the handler with the timeline entries after to the given date
-        debug("\(date) \(limit)")
+        debug("\(complication.family) \(date) \(limit)")
         
-        DispatchQueue.global(qos: DispatchQoS.QoSClass.utility).async {
-            var array = [CLKComplicationTimelineEntry]()
-            
-            for i in 1 ... min(limit,5) {
-                let t = self.getTemplateForComplication(complication, bill: Double(i))
-                
-                let entry = CLKComplicationTimelineEntry(date: Date(timeIntervalSinceNow: 60.0*Double(i)), complicationTemplate: t)
-                array.append(entry)
+        var array = [CLKComplicationTimelineEntry]()
+        
+        for f in Feed.list {
+            if date.compare(f.time) == .orderedAscending {
+                array.append(getTimelineEntry(complication, f))
+                if array.count >= limit {
+                    break
+                }
             }
-            
-            handler(array)
         }
+        handler(array)
+//        DispatchQueue.global(qos: DispatchQoS.QoSClass.utility).async {
+//            var array = [CLKComplicationTimelineEntry]()
+//            
+//            for i in 1 ... min(limit,5) {
+//                let t = self.getTemplateForComplication(complication, bill: Float(i))
+//                
+//                let entry = CLKComplicationTimelineEntry(date: Date(timeIntervalSinceNow: 60.0*Double(i)), complicationTemplate: t)
+//                array.append(entry)
+//            }
+//            
+//            handler(array)
+//        }
     }
     
     // MARK: - Update Scheduling
@@ -119,59 +172,64 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getPlaceholderTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
-        debug("")
-        
-        let template: CLKComplicationTemplate? = getTemplateForComplication(complication, bill: 10)
+//        debug("family:\(complication.family) \(complication.family.description)")
+        debug(complication.family)
+
+        let template: CLKComplicationTemplate? = getTemplateForComplication(complication, Feed(amount: -2))
         handler(template)
     }
     
     // MARK: - Generate Templates
     
-    func getTemplateForComplication(_ complication: CLKComplication, bill: Double) -> CLKComplicationTemplate {
+    func getTemplateForComplication(_ complication: CLKComplication,_ feed: Feed) -> CLKComplicationTemplate {
         // This method will be called once per supported complication, and the results will be cached
-        debug("getTemplateForComplication \(bill)")
+        debug(complication)
+        debug(feed)
         
         let template: CLKComplicationTemplate
         
         switch complication.family {
         case .modularSmall:
-            template = modularSmall(bill)
+            template = modularSmall(feed)
         case .modularLarge:
-            template = modularLarge(bill)
-        case .utilitarianSmall:
-            template = utilitarianSmall(bill)
-        case .utilitarianLarge:
-            template = utilitarianLarge(bill)
-        case .circularSmall:
-            template = circularSmall(bill)
-        case .utilitarianSmallFlat:
-            template = utilitarianSmall(bill)
-        case.extraLarge:
+            template = modularLarge(feed)
+            
+//        case .utilitarianSmall:
+//            template = utilitarianSmall(bill)
+//        case .utilitarianLarge:
+//            template = utilitarianLarge(bill)
+//        case .circularSmall:
+//            template = circularSmall(bill)
+//        case .utilitarianSmallFlat:
+//            template = utilitarianSmall(bill)
+//        case.extraLarge:
+        default:
             let t = CLKComplicationTemplateExtraLargeSimpleText()
             t.textProvider = CLKSimpleTextProvider(text: "Tip", shortText: "Tip")
             template = t
+            
         }
         
         return (template)
     }
     
-    fileprivate func modularSmall(_ bill: Double) -> CLKComplicationTemplate {
+    fileprivate func modularSmall(_ f: Feed) -> CLKComplicationTemplate {
         let t = CLKComplicationTemplateModularSmallStackText()
-        t.line1TextProvider = CLKSimpleTextProvider(text: "\(Feed.list.last!.amount)oz")
-        t.line2TextProvider = CLKRelativeDateTextProvider(date: (Feed.list.last?.time)!, style: .timer, units: .minute)
+        t.line1TextProvider = CLKSimpleTextProvider(text: "\(f.amount)oz")
+        t.line2TextProvider = CLKRelativeDateTextProvider(date: f.time, style: .timer, units: .minute)
         return t
         
     }
     
-    fileprivate func modularLarge(_ bill: Double) -> CLKComplicationTemplate {
+    fileprivate func modularLarge(_ f: Feed) -> CLKComplicationTemplate {
         let t = CLKComplicationTemplateModularLargeStandardBody()
-        t.headerTextProvider = CLKSimpleTextProvider(text: "\(Feed.list.last!.amount)oz \(Feed.list.last!.amount*30)mL")
-        t.body1TextProvider = CLKRelativeDateTextProvider(date: (Feed.list.last?.time)!, style: .natural, units: .second)
-        t.body2TextProvider = CLKRelativeDateTextProvider(date: (Feed.list.last?.time)!, style: .timer, units: .second)
+        t.headerTextProvider = CLKSimpleTextProvider(text: "\(f.amount)oz \(f.amount*30)mL")
+        t.body1TextProvider = CLKRelativeDateTextProvider(date: f.time, style: .natural, units: .second)
+        t.body2TextProvider = CLKRelativeDateTextProvider(date: f.time, style: .timer, units: .second)
         return t
     }
     
-    fileprivate func utilitarianSmall(_ bill: Double) -> CLKComplicationTemplate {
+    fileprivate func utilitarianSmall(_ bill: Float) -> CLKComplicationTemplate {
         let t = CLKComplicationTemplateUtilitarianSmallFlat()
         t.textProvider = CLKSimpleTextProvider(text: "Tip", shortText: "Tip")
         //        t.imageProvider = CLKSimpleTextProvider(text: "$11.50", shortText: "11.50")
@@ -179,7 +237,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
     }
     
-    fileprivate func utilitarianLarge(_ bill: Double) -> CLKComplicationTemplate {
+    fileprivate func utilitarianLarge(_ bill: Float) -> CLKComplicationTemplate {
         let t = CLKComplicationTemplateUtilitarianLargeFlat()
         t.textProvider = CLKSimpleTextProvider(text: "TipCalc $\(bill)")
         
@@ -188,7 +246,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         return t
     }
     
-    fileprivate func circularSmall(_ bill: Double) -> CLKComplicationTemplate {
+    fileprivate func circularSmall(_ bill: Float) -> CLKComplicationTemplate {
         let t = CLKComplicationTemplateCircularSmallStackText()
         t.line1TextProvider = CLKSimpleTextProvider(text: "$10", shortText: "10")
         t.line2TextProvider = CLKSimpleTextProvider(text: "11.50", shortText: "11.5")

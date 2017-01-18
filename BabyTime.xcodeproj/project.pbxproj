@@ -213,10 +213,10 @@
 		5AC2AD1C1E2CD765002F660F /* BabyTime WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				5AC2AD251E2CD765002F660F /* ComplicationController.swift */,
 				5AC2AD1F1E2CD765002F660F /* InterfaceController.swift */,
 				5AC2AD211E2CD765002F660F /* ExtensionDelegate.swift */,
 				5AC2AD231E2CD765002F660F /* NotificationController.swift */,
-				5AC2AD251E2CD765002F660F /* ComplicationController.swift */,
 				5A4E0ECA1E2E66DA00B88AAE /* Feed.swift */,
 				5AED88721E2E98FB002E6DFB /* logging.swift */,
 				5AC2AD271E2CD765002F660F /* Assets.xcassets */,

@@ -25,7 +25,7 @@ class InterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        debug("")
+        debug(context)
         
         //To retrieve from the key
         let userDefaults = Foundation.UserDefaults.standard
@@ -39,13 +39,13 @@ class InterfaceController: WKInterfaceController {
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
-        debug("")
+        debug(1)
         super.willActivate()
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
-        debug("")
+        debug(1)
         super.didDeactivate()
     }
 
