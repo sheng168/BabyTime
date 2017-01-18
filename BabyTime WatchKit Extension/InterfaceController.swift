@@ -8,6 +8,7 @@
 
 import WatchKit
 import Foundation
+import UserNotifications
 
 class InterfaceController: WKInterfaceController {
     @IBOutlet var timer: WKInterfaceTimer!
@@ -43,6 +44,36 @@ class InterfaceController: WKInterfaceController {
         for f in Feed.list {
             debug(f)
         }
+        
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization
+            debug(granted)
+            debug(error)
+        }
+        
+        let generalCategory = UNNotificationCategory(identifier: "GENERAL",
+                                                     actions: [],
+                                                     intentIdentifiers: [],
+                                                     options: .customDismissAction)
+        
+        // Create the custom actions for the TIMER_EXPIRED category.
+        let snoozeAction = UNNotificationAction(identifier: "SNOOZE_ACTION",
+                                                title: "Snooze",
+                                                options: UNNotificationActionOptions(rawValue: 0))
+        let stopAction = UNNotificationAction(identifier: "STOP_ACTION",
+                                              title: "Stop",
+                                              options: .foreground)
+        
+        let expiredCategory = UNNotificationCategory(identifier: "TIMER_EXPIRED",
+                                                     actions: [snoozeAction, stopAction],
+                                                     intentIdentifiers: [],
+                                                     options: UNNotificationCategoryOptions(rawValue: 0))
+        
+        // Register the notification categories.
+//        let center = UNUserNotificationCenter.current()
+        center.setNotificationCategories([generalCategory, expiredCategory])
+        
         super.willActivate()
     }
     
@@ -72,6 +103,45 @@ class InterfaceController: WKInterfaceController {
         // extend the timeline for all complications
         for complication in server.activeComplications! {
             server.reloadTimeline(for: complication)
+        }
+        
+        let generalCategory = UNNotificationCategory(identifier: "GENERAL",
+                                                     actions: [],
+                                                     intentIdentifiers: [],
+                                                     options: .customDismissAction)
+        
+        // Register the category.
+        let center = UNUserNotificationCenter.current()
+        center.setNotificationCategories([generalCategory])
+        
+        let content = UNMutableNotificationContent()
+        content.title = NSString.localizedUserNotificationString(forKey: "Wake up!", arguments: nil)
+        content.body = NSString.localizedUserNotificationString(forKey: "Rise and shine! It's morning time!",
+                                                                arguments: nil)
+        
+        // Assign the category (and the associated actions).
+        content.categoryIdentifier = "TIMER_EXPIRED"
+        content.sound = UNNotificationSound.default()
+        
+        // Create the request and schedule the notification.
+        // Configure the trigger for a 7am wakeup.
+//        var dateInfo = DateComponents()
+//        dateInfo.hour = 15
+//        dateInfo.minute = 20
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2*60*60, repeats: false)
+        
+        // Create the request object.
+        let request = UNNotificationRequest(identifier: "MorningAlarm", content: content, trigger: trigger)
+        
+        // Schedule the request.
+//        let center = UNUserNotificationCenter.current()
+        center.add(request) { (error : Error?) in
+            if let theError = error {
+                debug(theError.localizedDescription)
+            } else {
+                debug(request)
+            }
         }
     }
     

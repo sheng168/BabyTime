@@ -14,6 +14,7 @@ import UserNotifications
 class NotificationController: WKUserNotificationInterfaceController {
 
     override init() {
+        debug(1)
         // Initialize variables here.
         super.init()
         
@@ -21,17 +22,20 @@ class NotificationController: WKUserNotificationInterfaceController {
     }
 
     override func willActivate() {
+        debug(2)
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
     }
 
     override func didDeactivate() {
+        debug(-2)
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
 
     /*
     override func didReceive(_ notification: UNNotification, withCompletion completionHandler: @escaping (WKUserNotificationInterfaceType) -> Swift.Void) {
+     //debug(0)
         // This method is called when a notification needs to be presented.
         // Implement it if you use a dynamic notification interface.
         // Populate your dynamic notification interface as quickly as possible.
