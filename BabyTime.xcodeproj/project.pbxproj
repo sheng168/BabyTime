@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A4E0ECB1E2E66DA00B88AAE /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E0ECA1E2E66DA00B88AAE /* Feed.swift */; };
 		5AC2ACE51E2CD765002F660F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2ACE41E2CD765002F660F /* AppDelegate.swift */; };
 		5AC2ACE71E2CD765002F660F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2ACE61E2CD765002F660F /* ViewController.swift */; };
 		5AC2ACEA1E2CD765002F660F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2ACE81E2CD765002F660F /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		5AC2AD241E2CD765002F660F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2AD231E2CD765002F660F /* NotificationController.swift */; };
 		5AC2AD261E2CD765002F660F /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2AD251E2CD765002F660F /* ComplicationController.swift */; };
 		5AC2AD281E2CD765002F660F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2AD271E2CD765002F660F /* Assets.xcassets */; };
+		5AED88731E2E98FB002E6DFB /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AED88721E2E98FB002E6DFB /* logging.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5A4E0ECA1E2E66DA00B88AAE /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		5AC2ACE11E2CD765002F660F /* BabyTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC2ACE41E2CD765002F660F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AC2ACE61E2CD765002F660F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +110,7 @@
 		5AC2AD251E2CD765002F660F /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		5AC2AD271E2CD765002F660F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AC2AD291E2CD765002F660F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AED88721E2E98FB002E6DFB /* logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logging.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +217,8 @@
 				5AC2AD211E2CD765002F660F /* ExtensionDelegate.swift */,
 				5AC2AD231E2CD765002F660F /* NotificationController.swift */,
 				5AC2AD251E2CD765002F660F /* ComplicationController.swift */,
+				5A4E0ECA1E2E66DA00B88AAE /* Feed.swift */,
+				5AED88721E2E98FB002E6DFB /* logging.swift */,
 				5AC2AD271E2CD765002F660F /* Assets.xcassets */,
 				5AC2AD291E2CD765002F660F /* Info.plist */,
 				5AC2AD1D1E2CD765002F660F /* Supporting Files */,
@@ -459,9 +465,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AC2AD241E2CD765002F660F /* NotificationController.swift in Sources */,
+				5A4E0ECB1E2E66DA00B88AAE /* Feed.swift in Sources */,
 				5AC2AD261E2CD765002F660F /* ComplicationController.swift in Sources */,
 				5AC2AD221E2CD765002F660F /* ExtensionDelegate.swift in Sources */,
 				5AC2AD201E2CD765002F660F /* InterfaceController.swift in Sources */,
+				5AED88731E2E98FB002E6DFB /* logging.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,7 +632,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -641,7 +649,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -659,7 +667,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -677,7 +685,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -784,6 +792,7 @@
 				5AC2AD2E1E2CD765002F660F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5AC2AD301E2CD765002F660F /* Build configuration list for PBXNativeTarget "BabyTime WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -792,6 +801,7 @@
 				5AC2AD321E2CD765002F660F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5AC2AD341E2CD765002F660F /* Build configuration list for PBXNativeTarget "BabyTime" */ = {
 			isa = XCConfigurationList;
@@ -800,6 +810,7 @@
 				5AC2AD361E2CD765002F660F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5AC2AD371E2CD765002F660F /* Build configuration list for PBXNativeTarget "BabyTimeTests" */ = {
 			isa = XCConfigurationList;
@@ -808,6 +819,7 @@
 				5AC2AD391E2CD765002F660F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5AC2AD3A1E2CD765002F660F /* Build configuration list for PBXNativeTarget "BabyTimeUITests" */ = {
 			isa = XCConfigurationList;
@@ -816,6 +828,7 @@
 				5AC2AD3C1E2CD765002F660F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

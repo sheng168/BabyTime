@@ -9,15 +9,15 @@
 import WatchKit
 import Foundation
 
-
 class InterfaceController: WKInterfaceController {
     @IBOutlet var timer: WKInterfaceTimer!
     @IBOutlet var label: WKInterfaceLabel!
     @IBOutlet var slider: WKInterfaceSlider!
-    var amount = 2.0
     
-    static var lastAmount = 1.0
-    static var lastDate = Date()
+    var amount: Float = 2.0
+    
+//    static var lastAmount = 1.0
+//    static var lastDate = Date()
     
     let amountKey = "amount"
     let dateKey = "date"
@@ -25,36 +25,39 @@ class InterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        debug("")
         
         //To retrieve from the key
         let userDefaults = Foundation.UserDefaults.standard
-        let value = userDefaults.float(forKey: amountKey)
-        print(value)
+        let amount = userDefaults.float(forKey: amountKey)
+        debug(amount)
 
         // Configure interface objects here.
-        setLabelText(value)
-        slider.setValue(value)
+        setLabelText(amount)
+        slider.setValue(amount)
 }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
+        debug("")
         super.willActivate()
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
+        debug("")
         super.didDeactivate()
     }
 
     @IBAction func feedClick() {
-        print("feed")
+        debug("")
+
 //        amount += 1
 //        label.setText("\(amount)")
         timer.setDate(Date())
         timer.start()
         
-        InterfaceController.lastAmount = amount
-        InterfaceController.lastDate = Date()
+        Feed.list.append(Feed(amount: amount))
         
         // get the shared instance
         let server = CLKComplicationServer.sharedInstance()
@@ -65,12 +68,13 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func sliderChange(_ value: Float) {
+        debug(value)
         //To save the string
         let userDefaults = Foundation.UserDefaults.standard
         userDefaults.set(value, forKey: amountKey)
 
         setLabelText(value)
-        amount = Double(value)
+        amount = value
     }
     
     func setLabelText(_ value: Float) {

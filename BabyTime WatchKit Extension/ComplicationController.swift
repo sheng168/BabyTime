@@ -7,7 +7,7 @@
 //
 
 import ClockKit
-
+import os.log
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
@@ -15,24 +15,25 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
 //        handler(CLKComplicationTimeTravelDirections())
-        print("getSupportedTimeTravelDirectionsForComplication")
+        debug("getSupportedTimeTravelDirectionsForComplication")
                 handler([.forward, .backward])
     }
     
     func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-        print("getTimelineStartDateForComplication")
-        let start = Date().addingTimeInterval(-100*60)
+        debug("getTimelineStartDateForComplication")
+        let start = Feed.list.first!.time //Date().addingTimeInterval(-100*60)
+            
         handler(start)
     }
     
     func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-        print("getTimelineEndDateForComplication")
-        let end = Date().addingTimeInterval(100*60)
+        debug("getTimelineEndDateForComplication")
+        let end = Feed.list.last!.time.addingTimeInterval(60*60*3) //Date().addingTimeInterval(100*60)
         handler(end)
     }
     
     func getPrivacyBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationPrivacyBehavior) -> Void) {
-        print("getPrivacyBehaviorForComplication")
+        debug("getPrivacyBehaviorForComplication")
         handler(.showOnLockScreen)
     }
     
@@ -40,7 +41,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: (@escaping (CLKComplicationTimelineEntry?) -> Void)) {
         // Call the handler with the current timeline entry
-        print("getCurrentTimelineEntryForComplication")
+        debug("getCurrentTimelineEntryForComplication")
         
         
         let templ: CLKComplicationTemplate?
@@ -69,7 +70,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: (@escaping ([CLKComplicationTimelineEntry]?) -> Void)) {
         // Call the handler with the timeline entries prior to the given date
-        print("\(date) \(limit)")
+        debug("\(date) \(limit)")
         
         DispatchQueue.global(qos: DispatchQoS.QoSClass.utility).async {
             var array = [CLKComplicationTimelineEntry]()
@@ -89,7 +90,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: (@escaping ([CLKComplicationTimelineEntry]?) -> Void)) {
         // Call the handler with the timeline entries after to the given date
-        print("\(date) \(limit)")
+        debug("\(date) \(limit)")
         
         DispatchQueue.global(qos: DispatchQoS.QoSClass.utility).async {
             var array = [CLKComplicationTimelineEntry]()
@@ -109,7 +110,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getNextRequestedUpdateDate(handler: @escaping (Date?) -> Void) {
         // Call the handler with the date when you would next like to be given the opportunity to update your complication content
-        print("")
+        debug("")
         //        handler(nil)
         handler(Date(timeIntervalSinceNow: 60*60))
     }
@@ -118,7 +119,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getPlaceholderTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
-        print("")
+        debug("")
         
         let template: CLKComplicationTemplate? = getTemplateForComplication(complication, bill: 10)
         handler(template)
@@ -128,7 +129,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTemplateForComplication(_ complication: CLKComplication, bill: Double) -> CLKComplicationTemplate {
         // This method will be called once per supported complication, and the results will be cached
-        print("\(bill)")
+        debug("getTemplateForComplication \(bill)")
         
         let template: CLKComplicationTemplate
         
@@ -156,17 +157,17 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     fileprivate func modularSmall(_ bill: Double) -> CLKComplicationTemplate {
         let t = CLKComplicationTemplateModularSmallStackText()
-        t.line1TextProvider = CLKSimpleTextProvider(text: "\(InterfaceController.lastAmount) oz")
-        t.line2TextProvider = CLKRelativeDateTextProvider(date: InterfaceController.lastDate, style: .timer, units: .minute)
+        t.line1TextProvider = CLKSimpleTextProvider(text: "\(Feed.list.last!.amount)oz")
+        t.line2TextProvider = CLKRelativeDateTextProvider(date: (Feed.list.last?.time)!, style: .timer, units: .minute)
         return t
         
     }
     
     fileprivate func modularLarge(_ bill: Double) -> CLKComplicationTemplate {
         let t = CLKComplicationTemplateModularLargeStandardBody()
-        t.headerTextProvider = CLKSimpleTextProvider(text: "\(InterfaceController.lastAmount) oz")
-        t.body1TextProvider = CLKRelativeDateTextProvider(date: InterfaceController.lastDate, style: .natural, units: .second)
-        t.body2TextProvider = CLKRelativeDateTextProvider(date: InterfaceController.lastDate, style: .timer, units: .second)
+        t.headerTextProvider = CLKSimpleTextProvider(text: "\(Feed.list.last!.amount)oz \(Feed.list.last!.amount*30)mL")
+        t.body1TextProvider = CLKRelativeDateTextProvider(date: (Feed.list.last?.time)!, style: .natural, units: .second)
+        t.body2TextProvider = CLKRelativeDateTextProvider(date: (Feed.list.last?.time)!, style: .timer, units: .second)
         return t
     }
     
