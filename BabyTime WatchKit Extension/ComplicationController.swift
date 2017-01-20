@@ -69,34 +69,15 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         // Call the handler with the current timeline entry
         debug(complication.debugDescription)
         
-        
-        let templ: CLKComplicationTemplate?
-        
-        switch complication.family {
-            //        case .ModularLarge:
-            //            let t = modularLarge(10.0)
-            //            templ = t
-            //        case .ModularSmall:
-        //            templ = modularSmall(10.0)
-        default:
-            templ = getTemplateForComplication(complication, Feed.list.last!)
-            break
-        }
-        
-        if templ == nil {
-            handler(nil)
-        } else {
-            let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: templ!)
+        let templ = getTemplateForComplication(complication, Feed.list.last!)
+        let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: templ)
             
-            handler(entry)
-        }
-        
+        handler(entry)
     }
     
     func getTimelineEntry(_ complication: CLKComplication,_ feed: Feed) -> CLKComplicationTimelineEntry {
         return CLKComplicationTimelineEntry(date: feed.time, complicationTemplate: getTemplateForComplication(complication, feed))
     }
-
     
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: (@escaping ([CLKComplicationTimelineEntry]?) -> Void)) {
         // Call the handler with the timeline entries prior to the given date
@@ -113,21 +94,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             }
         }
         handler(array)
-        
-//        DispatchQueue.global(qos: DispatchQoS.QoSClass.utility).async {
-//            var array = [CLKComplicationTimelineEntry]()
-//            
-//            for i in 1 ... min(limit,5) {
-//                let t = self.getTemplateForComplication(complication, bill: Float(i))
-//                
-//                let entry = CLKComplicationTimelineEntry(date: Date(timeIntervalSinceNow: -600.0*Double(i)), complicationTemplate: t)
-//                array.append(entry)
-//            }
-//            
-//            DispatchQueue.main.async {
-//                handler(array)
-//            }
-//        }
     }
     
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: (@escaping ([CLKComplicationTimelineEntry]?) -> Void)) {
@@ -145,18 +111,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             }
         }
         handler(array)
-//        DispatchQueue.global(qos: DispatchQoS.QoSClass.utility).async {
-//            var array = [CLKComplicationTimelineEntry]()
-//            
-//            for i in 1 ... min(limit,5) {
-//                let t = self.getTemplateForComplication(complication, bill: Float(i))
-//                
-//                let entry = CLKComplicationTimelineEntry(date: Date(timeIntervalSinceNow: 60.0*Double(i)), complicationTemplate: t)
-//                array.append(entry)
-//            }
-//            
-//            handler(array)
-//        }
     }
     
     // MARK: - Update Scheduling
@@ -216,7 +170,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     fileprivate func modularSmall(_ f: Feed) -> CLKComplicationTemplate {
         let t = CLKComplicationTemplateModularSmallStackText()
         t.line1TextProvider = CLKSimpleTextProvider(text: "\(f.amount)oz")
-        t.line2TextProvider = CLKRelativeDateTextProvider(date: f.time, style: .timer, units: .minute)
+        t.line2TextProvider = CLKRelativeDateTextProvider(date: f.time, style: .timer, units: [.hour, .minute])
         return t
         
     }
@@ -229,29 +183,29 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         return t
     }
     
-    fileprivate func utilitarianSmall(_ bill: Float) -> CLKComplicationTemplate {
-        let t = CLKComplicationTemplateUtilitarianSmallFlat()
-        t.textProvider = CLKSimpleTextProvider(text: "Tip", shortText: "Tip")
-        //        t.imageProvider = CLKSimpleTextProvider(text: "$11.50", shortText: "11.50")
-        return t
-        
-    }
-    
-    fileprivate func utilitarianLarge(_ bill: Float) -> CLKComplicationTemplate {
-        let t = CLKComplicationTemplateUtilitarianLargeFlat()
-        t.textProvider = CLKSimpleTextProvider(text: "TipCalc $\(bill)")
-        
-        //        t.body1TextProvider = CLKSimpleTextProvider(text: "+ 15% = $\(bill*1.15)")
-        //        t.body2TextProvider = CLKSimpleTextProvider(text: "\(NSDate())")
-        return t
-    }
-    
-    fileprivate func circularSmall(_ bill: Float) -> CLKComplicationTemplate {
-        let t = CLKComplicationTemplateCircularSmallStackText()
-        t.line1TextProvider = CLKSimpleTextProvider(text: "$10", shortText: "10")
-        t.line2TextProvider = CLKSimpleTextProvider(text: "11.50", shortText: "11.5")
-        
-        return t
-    }
+//    fileprivate func utilitarianSmall(_ bill: Float) -> CLKComplicationTemplate {
+//        let t = CLKComplicationTemplateUtilitarianSmallFlat()
+//        t.textProvider = CLKSimpleTextProvider(text: "Tip", shortText: "Tip")
+//        //        t.imageProvider = CLKSimpleTextProvider(text: "$11.50", shortText: "11.50")
+//        return t
+//        
+//    }
+//    
+//    fileprivate func utilitarianLarge(_ bill: Float) -> CLKComplicationTemplate {
+//        let t = CLKComplicationTemplateUtilitarianLargeFlat()
+//        t.textProvider = CLKSimpleTextProvider(text: "TipCalc $\(bill)")
+//        
+//        //        t.body1TextProvider = CLKSimpleTextProvider(text: "+ 15% = $\(bill*1.15)")
+//        //        t.body2TextProvider = CLKSimpleTextProvider(text: "\(NSDate())")
+//        return t
+//    }
+//    
+//    fileprivate func circularSmall(_ bill: Float) -> CLKComplicationTemplate {
+//        let t = CLKComplicationTemplateCircularSmallStackText()
+//        t.line1TextProvider = CLKSimpleTextProvider(text: "$10", shortText: "10")
+//        t.line2TextProvider = CLKSimpleTextProvider(text: "11.50", shortText: "11.5")
+//        
+//        return t
+//    }
     
 }

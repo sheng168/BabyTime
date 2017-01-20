@@ -26,16 +26,33 @@
                                 <action selector="sliderChange:" destination="AgC-eL-Hgc" id="bNN-RV-Ur9"/>
                             </connections>
                         </slider>
-                        <timer alignment="left" format="short" previewedSeconds="900" id="nLw-pi-h5q">
-                            <calendarUnit key="units" hour="YES" minute="YES"/>
-                        </timer>
+                        <group width="1" height="20" alignment="left" id="Ql9-jh-7jd">
+                            <items>
+                                <timer alignment="left" format="short" previewedSeconds="900" id="nLw-pi-h5q">
+                                    <calendarUnit key="units" hour="YES" minute="YES"/>
+                                </timer>
+                                <label alignment="left" text="ago" id="3Px-rm-otl"/>
+                            </items>
+                        </group>
                         <slider width="1" alignment="left" continuous="YES" maximum="60" steps="5" id="k5D-wC-jmh"/>
-                        <picker height="100" alignment="left" id="hZG-iE-30V"/>
                         <separator alignment="left" id="vfK-gt-xtM"/>
                         <button width="1" alignment="left" title="Alarm" id="DS7-GZ-JXu">
                             <connections>
                                 <segue destination="nVA-Wd-TU6" kind="push" id="DfQ-hJ-bHf"/>
                             </connections>
+                        </button>
+                        <button alignment="left" id="dPt-sH-Bad">
+                            <group key="contentGroup" width="1" alignment="left" layout="vertical" id="diu-9p-IUr">
+                                <items>
+                                    <label alignment="left" text="Label" id="bMl-Wk-QF5">
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
+                                    <label alignment="left" text="Label" id="yyH-Jw-I4W">
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
+                                </items>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </group>
                         </button>
                     </items>
                     <menu key="menu" id="00l-6a-bE5">

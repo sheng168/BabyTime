@@ -70,11 +70,15 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
         
         // Create the request and schedule the notification.
         // Configure the trigger for a 7am wakeup.
-                var dateInfo = DateComponents()
-                dateInfo.hour = 21
-                dateInfo.minute = 05
-                let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
-//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2*6/*0*60*/, repeats: false)
+        #if swift(>=3)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2*6/*0*60*/, repeats: false)
+        #else
+            var dateInfo = DateComponents()
+            dateInfo.hour = 21
+            dateInfo.minute = 05
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
+        #endif
+        
         
         // Create the request object.
         let request = UNNotificationRequest(identifier: "MorningAlarm", content: content, trigger: trigger)
