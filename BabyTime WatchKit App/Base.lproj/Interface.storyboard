@@ -14,7 +14,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BabyTime_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <timer alignment="left" format="abbreviated" id="LQU-J0-kPC"/>
+                        <timer alignment="left" enabled="YES" format="abbreviated" id="LQU-J0-kPC"/>
                         <button width="1" alignment="left" title="Feed" id="iY0-Kn-Sao">
                             <connections>
                                 <action selector="feedClick" destination="AgC-eL-Hgc" id="bC7-mx-pGI"/>
@@ -28,13 +28,15 @@
                         </slider>
                         <group width="1" height="20" alignment="left" id="Ql9-jh-7jd">
                             <items>
-                                <timer alignment="left" format="short" previewedSeconds="900" id="nLw-pi-h5q">
-                                    <calendarUnit key="units" hour="YES" minute="YES"/>
-                                </timer>
+                                <timer alignment="left" format="short" previewedSeconds="1" id="nLw-pi-h5q"/>
                                 <label alignment="left" text="ago" id="3Px-rm-otl"/>
                             </items>
                         </group>
-                        <slider width="1" alignment="left" continuous="YES" maximum="60" steps="5" id="k5D-wC-jmh"/>
+                        <slider width="1" alignment="left" continuous="YES" value="900" maximum="90000" steps="100" id="k5D-wC-jmh">
+                            <connections>
+                                <action selector="timeChange:" destination="AgC-eL-Hgc" id="60B-sW-qBE"/>
+                            </connections>
+                        </slider>
                         <separator alignment="left" id="vfK-gt-xtM"/>
                         <button width="1" alignment="left" title="Alarm" id="DS7-GZ-JXu">
                             <connections>
@@ -65,6 +67,7 @@
                         </items>
                     </menu>
                     <connections>
+                        <outlet property="feedTime" destination="nLw-pi-h5q" id="4b2-lo-qrR"/>
                         <outlet property="label" destination="VWv-zf-60P" id="2Rf-dG-rTa"/>
                         <outlet property="slider" destination="rUf-QK-1bG" id="ylg-ES-obH"/>
                         <outlet property="timer" destination="LQU-J0-kPC" id="Kvd-aj-iVz"/>

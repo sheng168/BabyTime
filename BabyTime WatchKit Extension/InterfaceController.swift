@@ -16,6 +16,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var slider: WKInterfaceSlider!
     
     var amount: Float = 2.0
+    var delta: TimeInterval = 0
     
 //    static var lastAmount = 1.0
 //    static var lastDate = Date()
@@ -64,10 +65,12 @@ class InterfaceController: WKInterfaceController {
 
 //        amount += 1
 //        label.setText("\(amount)")
-        timer.setDate(Date())
+        let time = Date(timeIntervalSinceNow: -delta)
+        
+        timer.setDate(time)
         timer.start()
         
-        Feed.list.append(Feed(amount: amount))
+        Feed.list.append(Feed(amount: amount, time: time))
         
         // get the shared instance
         let server = CLKComplicationServer.sharedInstance()
@@ -87,6 +90,15 @@ class InterfaceController: WKInterfaceController {
 
         setLabelText(value)
         amount = value
+    }
+    
+    @IBOutlet var feedTime: WKInterfaceTimer!
+    @IBAction func timeChange(_ value: Float) {
+        debug(value)
+        
+        delta = TimeInterval(value)
+        feedTime.setDate(Date(timeIntervalSinceNow: -delta))
+//        feedTime.start()
     }
     
     func setLabelText(_ value: Float) {
