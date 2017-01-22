@@ -41,8 +41,8 @@ class InterfaceController: WKInterfaceController {
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
-        debug(Feed.list.count)
-        for f in Feed.list {
+        debug(baby.feedList.count)
+        for f in baby.feedList {
             debug(f)
         }
         
@@ -70,7 +70,7 @@ class InterfaceController: WKInterfaceController {
         timer.setDate(time)
         timer.start()
         
-        Feed.list.append(Feed(amount: amount, time: time))
+        baby.feedList.append(Feed(amount: amount, time: time))
         
         // get the shared instance
         let server = CLKComplicationServer.sharedInstance()

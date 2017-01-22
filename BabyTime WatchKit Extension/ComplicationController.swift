@@ -47,14 +47,14 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
         debug(complication.family)
-        let start = Feed.list.first!.time //Date().addingTimeInterval(-100*60)
+        let start = baby.feedList.first!.time //Date().addingTimeInterval(-100*60)
             
         handler(start)
     }
     
     func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
         debug(complication.family)
-        let end = Feed.list.last!.time.addingTimeInterval(60*60*3) //Date().addingTimeInterval(100*60)
+        let end = baby.feedList.last!.time.addingTimeInterval(60*60*3) //Date().addingTimeInterval(100*60)
         handler(end)
     }
     
@@ -69,7 +69,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         // Call the handler with the current timeline entry
         debug(complication.debugDescription)
         
-        let templ = getTemplateForComplication(complication, Feed.list.last!)
+        let templ = getTemplateForComplication(complication, baby.feedList.last!)
         let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: templ)
             
         handler(entry)
@@ -85,7 +85,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         var array = [CLKComplicationTimelineEntry]()
         
-        for f in Feed.list.reversed() {
+        for f in baby.feedList.reversed() {
             if date.compare(f.time) == .orderedDescending {
                 array.append(getTimelineEntry(complication, f))
                 if array.count >= limit {
@@ -102,7 +102,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         var array = [CLKComplicationTimelineEntry]()
         
-        for f in Feed.list {
+        for f in baby.feedList {
             if date.compare(f.time) == .orderedAscending {
                 array.append(getTimelineEntry(complication, f))
                 if array.count >= limit {
@@ -177,9 +177,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     fileprivate func modularLarge(_ f: Feed) -> CLKComplicationTemplate {
         let t = CLKComplicationTemplateModularLargeStandardBody()
-        t.headerTextProvider = CLKSimpleTextProvider(text: "\(f.amount)oz \(f.amount*30)mL")
-        t.body1TextProvider = CLKRelativeDateTextProvider(date: f.time, style: .natural, units: .second)
-        t.body2TextProvider = CLKRelativeDateTextProvider(date: f.time, style: .timer, units: .second)
+        t.headerTextProvider = CLKSimpleTextProvider(text: "\(f.amount)oz \(Int(f.amount*30))mL")
+        t.body1TextProvider = CLKRelativeDateTextProvider(date: f.time, style: .natural, units: .minute)
+        t.body2TextProvider = CLKRelativeDateTextProvider(date: f.time, style: .timer, units: [.hour, .minute])
         return t
     }
     

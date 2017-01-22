@@ -85,6 +85,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		044B53C91E3441DE00712D26 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		5A09D8141E304CC30098E8FB /* UserNotificationCenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationCenterDelegate.swift; sourceTree = "<group>"; };
 		5A4E0ECA1E2E66DA00B88AAE /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		5AC2ACE11E2CD765002F660F /* BabyTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +151,7 @@
 		5AC2ACD81E2CD765002F660F = {
 			isa = PBXGroup;
 			children = (
+				044B53C91E3441DE00712D26 /* MyPlayground.playground */,
 				5AC2ACE31E2CD765002F660F /* BabyTime */,
 				5AC2ACF81E2CD765002F660F /* BabyTimeTests */,
 				5AC2AD031E2CD765002F660F /* BabyTimeUITests */,
