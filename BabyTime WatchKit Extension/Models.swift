@@ -9,14 +9,18 @@
 import Foundation
 
 struct Baby {
-    var feedList = [Feed(amount: 1.5, time: Date(timeIntervalSinceNow: -6*60*60))]
+    var feedList = [
+        Feed(amount: 1.5, time: Date(timeIntervalSinceNow: -6*60*60)),
+        Feed(amount: 2.0, time: Date(timeIntervalSinceNow: -4*60*60)),
+        Feed(amount: 1.5, time: Date(timeIntervalSinceNow: -2*60*60))
+    ]
     
 //    static var baby = Baby()
 }
 
 struct Feed {
     var amount: Float = 0.0
-    var time = Date()
+    var time = Date() 
     
     init(amount: Float, time: Date = Date()) {
         self.amount = amount
