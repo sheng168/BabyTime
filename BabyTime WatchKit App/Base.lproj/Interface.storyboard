@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -38,6 +38,7 @@
                             </connections>
                         </slider>
                         <separator alignment="left" id="vfK-gt-xtM"/>
+                        <label alignment="left" text="Add the complication for this app by customizing your watch face" numberOfLines="5" id="0YG-VB-knb"/>
                         <button width="1" alignment="left" title="Alarm" id="DS7-GZ-JXu">
                             <connections>
                                 <segue destination="nVA-Wd-TU6" kind="push" id="DfQ-hJ-bHf"/>
