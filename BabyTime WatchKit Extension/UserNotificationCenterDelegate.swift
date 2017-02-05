@@ -10,62 +10,86 @@ import WatchKit
 import UserNotifications
 
 class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate {
+    static let instance = UserNotificationCenterDelegate()
+    static let categoryGeneral = "GENERAL"
+    static let categoryTimer = "TIMER_EXPIRED"
+    static let actionSnooze = "SNOOZE_ACTION"
+    static let actionDone = "STOP_ACTION"
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound])
+        debug(notification)
+        
+        completionHandler([.alert, .sound, .badge])
+//        completionHandler([])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        debug(response)
+        
+        completionHandler()
     }
     
     static func register() {
         
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
             // Enable or disable features based on authorization
             debug(granted)
             debug(error)
-        }
-        
-        let generalCategory = UNNotificationCategory(identifier: "GENERAL",
+            
+            center.getNotificationSettings(completionHandler: { (settings) in
+                debug(settings)
+                debug(settings.alertSetting)
+            })
+            
+            if granted {
+                // Create the custom actions for the TIMER_EXPIRED category.
+                let snoozeAction = UNNotificationAction(identifier: actionSnooze,
+                                                        title: "Snooze",
+                                                        options: UNNotificationActionOptions(rawValue: 0))
+                let stopAction = UNNotificationAction(identifier: actionDone,
+                                                      title: "Stop",
+                                                      options: .foreground)
+                
+                let expiredCategory = UNNotificationCategory(identifier: categoryTimer,
+                                                             actions: [snoozeAction, stopAction],
+                                                             intentIdentifiers: [],
+                                                             options: [.customDismissAction])
+                
+                let generalCategory = UNNotificationCategory(identifier: categoryGeneral,
                                                      actions: [],
                                                      intentIdentifiers: [],
                                                      options: .customDismissAction)
         
-        // Create the custom actions for the TIMER_EXPIRED category.
-        let snoozeAction = UNNotificationAction(identifier: "SNOOZE_ACTION",
-                                                title: "Snooze",
-                                                options: UNNotificationActionOptions(rawValue: 0))
-        let stopAction = UNNotificationAction(identifier: "STOP_ACTION",
-                                              title: "Stop",
-                                              options: .foreground)
+                // Register the notification categories.
+                //        let center = UNUserNotificationCenter.current()
+                center.setNotificationCategories([generalCategory, expiredCategory])
+                center.delegate = instance
+
+            }
+        }
         
-        let expiredCategory = UNNotificationCategory(identifier: "TIMER_EXPIRED",
-                                                     actions: [snoozeAction, stopAction],
-                                                     intentIdentifiers: [],
-                                                     options: UNNotificationCategoryOptions(rawValue: 0))
-        
-        // Register the notification categories.
-        //        let center = UNUserNotificationCenter.current()
-        center.setNotificationCategories([generalCategory, expiredCategory])
-        center.delegate = UserNotificationCenterDelegate()
     }
 
     static func setupReminder() {
-        let generalCategory = UNNotificationCategory(identifier: "GENERAL",
-                                                     actions: [],
-                                                     intentIdentifiers: [],
-                                                     options: .customDismissAction)
+        debug(1)
+//        let generalCategory = UNNotificationCategory(identifier: "GENERAL",
+//                                                     actions: [],
+//                                                     intentIdentifiers: [],
+//                                                     options: .customDismissAction)
         
         // Register the category.
         let center = UNUserNotificationCenter.current()
-        center.setNotificationCategories([generalCategory])
+//        center.setNotificationCategories([generalCategory])
         
         let content = UNMutableNotificationContent()
-        content.title = NSString.localizedUserNotificationString(forKey: "Wake up!", arguments: nil)
-        content.body = NSString.localizedUserNotificationString(forKey: "Rise and shine! It's morning time!",
-                                                                arguments: nil)
+        content.title = "It's time" //NSString.localizedUserNotificationString(forKey: "Wake up!", arguments: nil)
+        content.body = "Ready for feeding" //NSString.localizedUserNotificationString(forKey: "Rise and shine! It's morning time!", arguments: nil)
         
         // Assign the category (and the associated actions).
-        content.categoryIdentifier = "TIMER_EXPIRED"
+//        content.categoryIdentifier = categoryTimer
         content.sound = UNNotificationSound.default()
         
         // Create the request and schedule the notification.
@@ -82,6 +106,7 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
         
         // Create the request object.
         let request = UNNotificationRequest(identifier: "MorningAlarm", content: content, trigger: trigger)
+//        request.
         
         // Schedule the request.
         //        let center = UNUserNotificationCenter.current()
@@ -90,6 +115,7 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
                 debug(theError.localizedDescription)
             } else {
                 debug(request)
+                debug(center.delegate)
             }
         }
 
