@@ -7,36 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A09D8151E304CC30098E8FB /* UserNotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09D8141E304CC30098E8FB /* UserNotificationCenterDelegate.swift */; };
-		5A4E0ECB1E2E66DA00B88AAE /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E0ECA1E2E66DA00B88AAE /* Models.swift */; };
 		5AC2ACE51E2CD765002F660F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2ACE41E2CD765002F660F /* AppDelegate.swift */; };
 		5AC2ACE71E2CD765002F660F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2ACE61E2CD765002F660F /* ViewController.swift */; };
 		5AC2ACEA1E2CD765002F660F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2ACE81E2CD765002F660F /* Main.storyboard */; };
 		5AC2ACEC1E2CD765002F660F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2ACEB1E2CD765002F660F /* Assets.xcassets */; };
 		5AC2ACEF1E2CD765002F660F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2ACED1E2CD765002F660F /* LaunchScreen.storyboard */; };
 		5AC2ACFA1E2CD765002F660F /* BabyTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2ACF91E2CD765002F660F /* BabyTimeTests.swift */; };
-		5AC2AD051E2CD765002F660F /* BabyTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2AD041E2CD765002F660F /* BabyTimeUITests.swift */; };
 		5AC2AD0A1E2CD765002F660F /* BabyTime WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5AC2AD091E2CD765002F660F /* BabyTime WatchKit App.app */; };
 		5AC2AD101E2CD765002F660F /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2AD0E1E2CD765002F660F /* Interface.storyboard */; };
 		5AC2AD121E2CD765002F660F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2AD111E2CD765002F660F /* Assets.xcassets */; };
-		5AC2AD191E2CD765002F660F /* BabyTime WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5AC2AD181E2CD765002F660F /* BabyTime WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5AC2AD201E2CD765002F660F /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2AD1F1E2CD765002F660F /* InterfaceController.swift */; };
 		5AC2AD221E2CD765002F660F /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2AD211E2CD765002F660F /* ExtensionDelegate.swift */; };
 		5AC2AD241E2CD765002F660F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2AD231E2CD765002F660F /* NotificationController.swift */; };
 		5AC2AD261E2CD765002F660F /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2AD251E2CD765002F660F /* ComplicationController.swift */; };
 		5AC2AD281E2CD765002F660F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2AD271E2CD765002F660F /* Assets.xcassets */; };
-		5AED88731E2E98FB002E6DFB /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AED88721E2E98FB002E6DFB /* logging.swift */; };
+		5AF751301E4BFD8500A13458 /* UserNotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7512D1E4BFD8500A13458 /* UserNotificationCenterDelegate.swift */; };
+		5AF751311E4BFD8500A13458 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7512E1E4BFD8500A13458 /* Models.swift */; };
+		5AF751321E4BFD8500A13458 /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7512F1E4BFD8500A13458 /* logging.swift */; };
+		5AF751331E4BFE5900A13458 /* UserNotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7512D1E4BFD8500A13458 /* UserNotificationCenterDelegate.swift */; };
+		5AF751341E4BFE5F00A13458 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7512E1E4BFD8500A13458 /* Models.swift */; };
+		5AF751351E4BFE5F00A13458 /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7512F1E4BFD8500A13458 /* logging.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		5AC2ACF61E2CD765002F660F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5AC2ACD91E2CD765002F660F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5AC2ACE01E2CD765002F660F;
-			remoteInfo = BabyTime;
-		};
-		5AC2AD011E2CD765002F660F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5AC2ACD91E2CD765002F660F /* Project object */;
 			proxyType = 1;
@@ -50,25 +44,17 @@
 			remoteGlobalIDString = 5AC2AD081E2CD765002F660F;
 			remoteInfo = "BabyTime WatchKit App";
 		};
-		5AC2AD1A1E2CD765002F660F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5AC2ACD91E2CD765002F660F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5AC2AD171E2CD765002F660F;
-			remoteInfo = "BabyTime WatchKit Extension";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5AC2AD2F1E2CD765002F660F /* Embed App Extensions */ = {
+		5AB1FCB61E4B2501006D9C3B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 13;
+			dstSubfolderSpec = 10;
 			files = (
-				5AC2AD191E2CD765002F660F /* BabyTime WatchKit Extension.appex in Embed App Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5AC2AD331E2CD765002F660F /* Embed Watch Content */ = {
@@ -86,8 +72,6 @@
 
 /* Begin PBXFileReference section */
 		044B53C91E3441DE00712D26 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
-		5A09D8141E304CC30098E8FB /* UserNotificationCenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationCenterDelegate.swift; sourceTree = "<group>"; };
-		5A4E0ECA1E2E66DA00B88AAE /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		5AC2ACE11E2CD765002F660F /* BabyTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC2ACE41E2CD765002F660F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AC2ACE61E2CD765002F660F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +82,6 @@
 		5AC2ACF51E2CD765002F660F /* BabyTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabyTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC2ACF91E2CD765002F660F /* BabyTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyTimeTests.swift; sourceTree = "<group>"; };
 		5AC2ACFB1E2CD765002F660F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5AC2AD001E2CD765002F660F /* BabyTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabyTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC2AD041E2CD765002F660F /* BabyTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyTimeUITests.swift; sourceTree = "<group>"; };
 		5AC2AD061E2CD765002F660F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AC2AD091E2CD765002F660F /* BabyTime WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BabyTime WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +96,9 @@
 		5AC2AD251E2CD765002F660F /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		5AC2AD271E2CD765002F660F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AC2AD291E2CD765002F660F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5AED88721E2E98FB002E6DFB /* logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logging.swift; sourceTree = "<group>"; };
+		5AF7512D1E4BFD8500A13458 /* UserNotificationCenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserNotificationCenterDelegate.swift; path = Common/UserNotificationCenterDelegate.swift; sourceTree = "<group>"; };
+		5AF7512E1E4BFD8500A13458 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Common/Models.swift; sourceTree = "<group>"; };
+		5AF7512F1E4BFD8500A13458 /* logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = logging.swift; path = Common/logging.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,13 +110,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5AC2ACF21E2CD765002F660F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5AC2ACFD1E2CD765002F660F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -158,6 +136,7 @@
 				5AC2AD0D1E2CD765002F660F /* BabyTime WatchKit App */,
 				5AC2AD1C1E2CD765002F660F /* BabyTime WatchKit Extension */,
 				5AC2ACE21E2CD765002F660F /* Products */,
+				5AF751291E4B5CD400A13458 /* Common */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,7 +145,6 @@
 			children = (
 				5AC2ACE11E2CD765002F660F /* BabyTime.app */,
 				5AC2ACF51E2CD765002F660F /* BabyTimeTests.xctest */,
-				5AC2AD001E2CD765002F660F /* BabyTimeUITests.xctest */,
 				5AC2AD091E2CD765002F660F /* BabyTime WatchKit App.app */,
 				5AC2AD181E2CD765002F660F /* BabyTime WatchKit Extension.appex */,
 			);
@@ -221,12 +199,9 @@
 				5AC2AD1F1E2CD765002F660F /* InterfaceController.swift */,
 				5AC2AD211E2CD765002F660F /* ExtensionDelegate.swift */,
 				5AC2AD231E2CD765002F660F /* NotificationController.swift */,
-				5A4E0ECA1E2E66DA00B88AAE /* Models.swift */,
-				5AED88721E2E98FB002E6DFB /* logging.swift */,
 				5AC2AD271E2CD765002F660F /* Assets.xcassets */,
 				5AC2AD291E2CD765002F660F /* Info.plist */,
 				5AC2AD1D1E2CD765002F660F /* Supporting Files */,
-				5A09D8141E304CC30098E8FB /* UserNotificationCenterDelegate.swift */,
 			);
 			path = "BabyTime WatchKit Extension";
 			sourceTree = "<group>";
@@ -237,6 +212,16 @@
 				5AC2AD1E1E2CD765002F660F /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5AF751291E4B5CD400A13458 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5AF7512D1E4BFD8500A13458 /* UserNotificationCenterDelegate.swift */,
+				5AF7512E1E4BFD8500A13458 /* Models.swift */,
+				5AF7512F1E4BFD8500A13458 /* logging.swift */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,35 +264,15 @@
 			productReference = 5AC2ACF51E2CD765002F660F /* BabyTimeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5AC2ACFF1E2CD765002F660F /* BabyTimeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5AC2AD3A1E2CD765002F660F /* Build configuration list for PBXNativeTarget "BabyTimeUITests" */;
-			buildPhases = (
-				5AC2ACFC1E2CD765002F660F /* Sources */,
-				5AC2ACFD1E2CD765002F660F /* Frameworks */,
-				5AC2ACFE1E2CD765002F660F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5AC2AD021E2CD765002F660F /* PBXTargetDependency */,
-			);
-			name = BabyTimeUITests;
-			productName = BabyTimeUITests;
-			productReference = 5AC2AD001E2CD765002F660F /* BabyTimeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		5AC2AD081E2CD765002F660F /* BabyTime WatchKit App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AC2AD301E2CD765002F660F /* Build configuration list for PBXNativeTarget "BabyTime WatchKit App" */;
 			buildPhases = (
 				5AC2AD071E2CD765002F660F /* Resources */,
-				5AC2AD2F1E2CD765002F660F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5AC2AD1B1E2CD765002F660F /* PBXTargetDependency */,
 			);
 			name = "BabyTime WatchKit App";
 			productName = "BabyTime WatchKit App";
@@ -321,6 +286,7 @@
 				5AC2AD141E2CD765002F660F /* Sources */,
 				5AC2AD151E2CD765002F660F /* Frameworks */,
 				5AC2AD161E2CD765002F660F /* Resources */,
+				5AB1FCB61E4B2501006D9C3B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -343,31 +309,25 @@
 				TargetAttributes = {
 					5AC2ACE01E2CD765002F660F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = M5R8LEXDD7;
+						DevelopmentTeam = 86DHP3ZP92;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					5AC2ACF41E2CD765002F660F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = M5R8LEXDD7;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 5AC2ACE01E2CD765002F660F;
-					};
-					5AC2ACFF1E2CD765002F660F = {
-						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = M5R8LEXDD7;
+						DevelopmentTeam = 86DHP3ZP92;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5AC2ACE01E2CD765002F660F;
 					};
 					5AC2AD081E2CD765002F660F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = M5R8LEXDD7;
+						DevelopmentTeam = 86DHP3ZP92;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					5AC2AD171E2CD765002F660F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = M5R8LEXDD7;
+						DevelopmentTeam = 86DHP3ZP92;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -388,7 +348,6 @@
 			targets = (
 				5AC2ACE01E2CD765002F660F /* BabyTime */,
 				5AC2ACF41E2CD765002F660F /* BabyTimeTests */,
-				5AC2ACFF1E2CD765002F660F /* BabyTimeUITests */,
 				5AC2AD081E2CD765002F660F /* BabyTime WatchKit App */,
 				5AC2AD171E2CD765002F660F /* BabyTime WatchKit Extension */,
 			);
@@ -407,13 +366,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5AC2ACF31E2CD765002F660F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5AC2ACFE1E2CD765002F660F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -446,6 +398,9 @@
 			files = (
 				5AC2ACE71E2CD765002F660F /* ViewController.swift in Sources */,
 				5AC2ACE51E2CD765002F660F /* AppDelegate.swift in Sources */,
+				5AF751301E4BFD8500A13458 /* UserNotificationCenterDelegate.swift in Sources */,
+				5AF751311E4BFD8500A13458 /* Models.swift in Sources */,
+				5AF751321E4BFD8500A13458 /* logging.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,25 +412,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5AC2ACFC1E2CD765002F660F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5AC2AD051E2CD765002F660F /* BabyTimeUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5AC2AD141E2CD765002F660F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5AC2AD241E2CD765002F660F /* NotificationController.swift in Sources */,
-				5A09D8151E304CC30098E8FB /* UserNotificationCenterDelegate.swift in Sources */,
-				5A4E0ECB1E2E66DA00B88AAE /* Models.swift in Sources */,
 				5AC2AD261E2CD765002F660F /* ComplicationController.swift in Sources */,
+				5AF751351E4BFE5F00A13458 /* logging.swift in Sources */,
 				5AC2AD221E2CD765002F660F /* ExtensionDelegate.swift in Sources */,
+				5AF751341E4BFE5F00A13458 /* Models.swift in Sources */,
+				5AF751331E4BFE5900A13458 /* UserNotificationCenterDelegate.swift in Sources */,
 				5AC2AD201E2CD765002F660F /* InterfaceController.swift in Sources */,
-				5AED88731E2E98FB002E6DFB /* logging.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,20 +434,10 @@
 			target = 5AC2ACE01E2CD765002F660F /* BabyTime */;
 			targetProxy = 5AC2ACF61E2CD765002F660F /* PBXContainerItemProxy */;
 		};
-		5AC2AD021E2CD765002F660F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5AC2ACE01E2CD765002F660F /* BabyTime */;
-			targetProxy = 5AC2AD011E2CD765002F660F /* PBXContainerItemProxy */;
-		};
 		5AC2AD0C1E2CD765002F660F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5AC2AD081E2CD765002F660F /* BabyTime WatchKit App */;
 			targetProxy = 5AC2AD0B1E2CD765002F660F /* PBXContainerItemProxy */;
-		};
-		5AC2AD1B1E2CD765002F660F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5AC2AD171E2CD765002F660F /* BabyTime WatchKit Extension */;
-			targetProxy = 5AC2AD1A1E2CD765002F660F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -630,11 +567,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = M5R8LEXDD7;
+				DEVELOPMENT_TEAM = 86DHP3ZP92;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "BabyTime WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.BabyTime.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.Notification.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -648,11 +591,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = M5R8LEXDD7;
+				DEVELOPMENT_TEAM = 86DHP3ZP92;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "BabyTime WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.BabyTime.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.Notification.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -664,13 +613,12 @@
 		5AC2AD311E2CD765002F660F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = M5R8LEXDD7;
+				DEVELOPMENT_TEAM = 86DHP3ZP92;
 				IBSC_MODULE = BabyTime_WatchKit_Extension;
 				INFOPLIST_FILE = "BabyTime WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.BabyTime.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.Notification.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -683,13 +631,12 @@
 		5AC2AD321E2CD765002F660F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = M5R8LEXDD7;
+				DEVELOPMENT_TEAM = 86DHP3ZP92;
 				IBSC_MODULE = BabyTime_WatchKit_Extension;
 				INFOPLIST_FILE = "BabyTime WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.BabyTime.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.Notification.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -704,10 +651,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = M5R8LEXDD7;
+				DEVELOPMENT_TEAM = 86DHP3ZP92;
 				INFOPLIST_FILE = BabyTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.BabyTime;
+				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.Notification;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -718,10 +665,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = M5R8LEXDD7;
+				DEVELOPMENT_TEAM = 86DHP3ZP92;
 				INFOPLIST_FILE = BabyTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.BabyTime;
+				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.Notification;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -733,7 +680,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = M5R8LEXDD7;
+				DEVELOPMENT_TEAM = 86DHP3ZP92;
 				INFOPLIST_FILE = BabyTimeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.BabyTimeTests;
@@ -749,43 +696,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = M5R8LEXDD7;
+				DEVELOPMENT_TEAM = 86DHP3ZP92;
 				INFOPLIST_FILE = BabyTimeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.BabyTimeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BabyTime.app/BabyTime";
-			};
-			name = Release;
-		};
-		5AC2AD3B1E2CD765002F660F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = M5R8LEXDD7;
-				INFOPLIST_FILE = BabyTimeUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.BabyTimeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = BabyTime;
-			};
-			name = Debug;
-		};
-		5AC2AD3C1E2CD765002F660F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = M5R8LEXDD7;
-				INFOPLIST_FILE = BabyTimeUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = us.jsy.BabyTimeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = BabyTime;
 			};
 			name = Release;
 		};
@@ -833,15 +750,6 @@
 			buildConfigurations = (
 				5AC2AD381E2CD765002F660F /* Debug */,
 				5AC2AD391E2CD765002F660F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5AC2AD3A1E2CD765002F660F /* Build configuration list for PBXNativeTarget "BabyTimeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5AC2AD3B1E2CD765002F660F /* Debug */,
-				5AC2AD3C1E2CD765002F660F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

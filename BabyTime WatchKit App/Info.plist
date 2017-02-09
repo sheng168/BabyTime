@@ -26,7 +26,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>us.jsy.BabyTime</string>
+	<string>us.jsy.Notification</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>

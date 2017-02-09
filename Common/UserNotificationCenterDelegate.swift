@@ -86,6 +86,7 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
         
         let content = UNMutableNotificationContent()
         content.title = "It's time" //NSString.localizedUserNotificationString(forKey: "Wake up!", arguments: nil)
+        content.subtitle = "subtitle"
         content.body = "Ready for feeding" //NSString.localizedUserNotificationString(forKey: "Rise and shine! It's morning time!", arguments: nil)
         
         // Assign the category (and the associated actions).

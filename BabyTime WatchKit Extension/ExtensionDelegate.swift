@@ -7,7 +7,7 @@
 //
 
 import WatchKit
-
+//import KeychainSwift
 
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
@@ -16,6 +16,13 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         // Perform any final initialization of your application.
         debug(1)
         debug(baby.feedList.count)
+        
+//        let keychain = KeychainSwift()
+//        keychain.set("hello world", forKey: "my key")
+//        
+//        let key = keychain.get("my key")
+//        debug(key)
+//        keychain.delete("my key")
         
         UserNotificationCenterDelegate.register()
     }
