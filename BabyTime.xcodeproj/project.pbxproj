@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		04BF5C7C1E4CA5CE00F08EC2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF5C7A1E4C9F9300F08EC2 /* Model.swift */; };
-		04BF5C7D1E4CA5DD00F08EC2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7512E1E4BFD8500A13458 /* Models.swift */; };
 		5AC2ACE51E2CD765002F660F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2ACE41E2CD765002F660F /* AppDelegate.swift */; };
 		5AC2ACE71E2CD765002F660F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2ACE61E2CD765002F660F /* ViewController.swift */; };
 		5AC2ACEA1E2CD765002F660F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2ACE81E2CD765002F660F /* Main.storyboard */; };
@@ -117,7 +116,6 @@
 		5AC2AD271E2CD765002F660F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AC2AD291E2CD765002F660F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AF7512D1E4BFD8500A13458 /* UserNotificationCenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserNotificationCenterDelegate.swift; path = Common/UserNotificationCenterDelegate.swift; sourceTree = "<group>"; };
-		5AF7512E1E4BFD8500A13458 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Common/Models.swift; sourceTree = "<group>"; };
 		5AF7512F1E4BFD8500A13458 /* logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = logging.swift; path = Common/logging.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -239,7 +237,6 @@
 			children = (
 				04BF5C7A1E4C9F9300F08EC2 /* Model.swift */,
 				5AF7512D1E4BFD8500A13458 /* UserNotificationCenterDelegate.swift */,
-				5AF7512E1E4BFD8500A13458 /* Models.swift */,
 				5AF7512F1E4BFD8500A13458 /* logging.swift */,
 			);
 			name = Common;
@@ -423,7 +420,6 @@
 				5AC2ACE51E2CD765002F660F /* AppDelegate.swift in Sources */,
 				5AF751301E4BFD8500A13458 /* UserNotificationCenterDelegate.swift in Sources */,
 				5AF751321E4BFD8500A13458 /* logging.swift in Sources */,
-				04BF5C7D1E4CA5DD00F08EC2 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
