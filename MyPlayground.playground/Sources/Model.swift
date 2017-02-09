@@ -1,26 +1,27 @@
 import Foundation
 
-public struct Rec //: CustomStringConvertible
-{
-    //    dynamic
-    let date: Date
-    
-    public init(date: Date = Date()) {
-//        self.amount = amount
-        self.date = date
-    }
-}
+//public struct Rec //: CustomStringConvertible
+//{
+//    //    dynamic
+//    let date: Date
+//    
+//    public init(date: Date = Date()) {
+////        self.amount = amount
+//        self.date = date
+//    }
+//}
+public var baby = Baby()
 
 public struct Feed //: CustomStringConvertible
 {
     //    dynamic
     public let amount: Measurement<UnitVolume>
     //    dynamic
-    public let date: Date
+    public let time: Date
     
-    public init(amount: Measurement<UnitVolume>, date: Date = Date()) {
+    public init(amount: Measurement<UnitVolume>, time: Date = Date()) {
         self.amount = amount
-        self.date = date
+        self.time = time
     }
 }
 
@@ -44,32 +45,32 @@ public struct Baby {
     
     public init(){} // any way to just make default public?
     
-    public var feeds = //[Feed]()
+    public var feedList = //[Feed]()
         [
-            Feed(amount: Measurement(value: 90, unit: UnitVolume.milliliters), date: Date(timeIntervalSinceNow: -6 * TimeInterval.hour)),
-            Feed(amount: Measurement(value: 120, unit: UnitVolume.milliliters), date: Date(timeIntervalSinceNow: -4 * TimeInterval.hour)),
-            Feed(amount: Measurement(value: 180, unit: UnitVolume.milliliters), date: Date(timeIntervalSinceNow: -2 * TimeInterval.hour)),
+            Feed(amount: Measurement(value: 90, unit: UnitVolume.milliliters), time: Date(timeIntervalSinceNow: -6 * TimeInterval.hour)),
+            Feed(amount: Measurement(value: 120, unit: UnitVolume.milliliters), time: Date(timeIntervalSinceNow: -4 * TimeInterval.hour)),
+            Feed(amount: Measurement(value: 180, unit: UnitVolume.milliliters), time: Date(timeIntervalSinceNow: -2 * TimeInterval.hour)),
             ]
     
     public var totalAmount: Measurement<UnitVolume> {
         
         let d = Date(timeIntervalSinceNow: feedInterval.converted(to: UnitDuration.seconds).value)
         //        print(d)
-        return feeds.filter { (feed) -> Bool in
-            print(feed.date, feed.amount)
-            return feed.date < d
+        return feedList.filter { (feed) -> Bool in
+            print(feed.time, feed.amount)
+            return feed.time < d
             }.reduce(Measurement(value: 0, unit: UnitVolume.milliliters), { (r, feed) -> Measurement<UnitVolume> in
                 r + feed.amount
             })
     }
     
     public mutating func feed(_ feed: Feed) {
-        feeds.append(feed)
-        feeds.sort { (a, b) -> Bool in
-            a.date < b.date
+        feedList.append(feed)
+        feedList.sort { (a, b) -> Bool in
+            a.time < b.time
         }
         
-        nextFeed = feeds.last!.date.addingTimeInterval(feedInterval.converted(to: UnitDuration.seconds).value)
+        nextFeed = feedList.last!.time.addingTimeInterval(feedInterval.converted(to: UnitDuration.seconds).value)
         nextFeedUpdated?(nextFeed!)
     }
     

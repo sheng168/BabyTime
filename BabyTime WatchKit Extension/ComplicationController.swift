@@ -129,7 +129,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 //        debug("family:\(complication.family) \(complication.family.description)")
         debug(complication.family)
 
-        let template: CLKComplicationTemplate? = getTemplateForComplication(complication, Feed(amount: -2))
+        let template: CLKComplicationTemplate? = getTemplateForComplication(complication,
+                                                                            Feed(amount: Measurement(value: -2, unit: UnitVolume.fluidOunces)))
         handler(template)
     }
     
@@ -167,9 +168,14 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         return (template)
     }
     
+    func time(_ f: Feed) -> CLKTextProvider {
+        let tp = CLKTimeTextProvider(date: f.time)
+        return tp
+    }
+    
     fileprivate func modularSmall(_ f: Feed) -> CLKComplicationTemplate {
         let t = CLKComplicationTemplateModularSmallStackText()
-        t.line1TextProvider = CLKSimpleTextProvider(text: "\(f.amount)oz")
+        t.line1TextProvider = CLKSimpleTextProvider(text: "\(f.amount)")
         t.line2TextProvider = CLKRelativeDateTextProvider(date: f.time, style: .timer, units: [.hour, .minute])
         return t
         
@@ -177,9 +183,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     fileprivate func modularLarge(_ f: Feed) -> CLKComplicationTemplate {
         let t = CLKComplicationTemplateModularLargeStandardBody()
-        t.headerTextProvider = CLKSimpleTextProvider(text: "\(f.amount)oz \(Int(f.amount*30))mL")
+        t.headerTextProvider = CLKSimpleTextProvider(text: "\(f.amount) \(Int(f.amount.converted(to: UnitVolume.milliliters).value))mL")
         t.body1TextProvider = CLKRelativeDateTextProvider(date: f.time, style: .natural, units: .minute)
-        t.body2TextProvider = CLKRelativeDateTextProvider(date: f.time, style: .timer, units: [.hour, .minute])
+//        t.body2TextProvider = CLKRelativeDateTextProvider(date: f.time, style: .timer, units: [.hour, .minute])
+        t.body2TextProvider = time(f)
         return t
     }
     

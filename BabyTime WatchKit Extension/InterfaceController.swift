@@ -73,7 +73,7 @@ class InterfaceController: WKInterfaceController {
         timer.setDate(time)
         timer.start()
         
-        baby.feedList.append(Feed(amount: amount, time: time))
+        baby.feedList.append(Feed(amount: Measurement(value: Double(amount), unit: UnitVolume.fluidOunces), time: time))
         
         // get the shared instance
         let server = CLKComplicationServer.sharedInstance()

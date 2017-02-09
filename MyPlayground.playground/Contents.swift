@@ -10,7 +10,7 @@
 
 import Foundation
 
-let r = Rec()
+//let r = Rec()
 
 
 extension Measurement where UnitType : UnitDuration {
@@ -55,14 +55,14 @@ alex.feed(Feed(amount: Measurement(value: 180, unit: UnitVolume.milliliters)))
 
 print(alex)
 print()
-print(alex.feeds.sorted(by: {$0.date > $1.date}))
+print(alex.feedList.sorted(by: {$0.time > $1.time}))
 
 alex.nextFeed
 alex.snoozeFeed()
 
 alex.nextFeed
 
-alex.feeds.count
+alex.feedList.count
 
 alex.totalAmount
 
