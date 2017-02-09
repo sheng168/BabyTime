@@ -10,18 +10,8 @@
 
 import Foundation
 
-struct Feed //: CustomStringConvertible
-{
-//    dynamic
-    let amount: Measurement<UnitVolume>
-//    dynamic
-    let date: Date
-    
-    init(amount: Measurement<UnitVolume>, date: Date = Date()) {
-        self.amount = amount
-        self.date = date
-    }
-}
+let r = Rec()
+
 
 extension Measurement where UnitType : UnitDuration {
     var timeInterval: TimeInterval {
@@ -31,72 +21,17 @@ extension Measurement where UnitType : UnitDuration {
 }
 
 
-let hour = Measurement(value: 1, unit: UnitDuration.hours)
-let sec = hour.converted(to: .seconds)
+//let sec = hour.converted(to: .seconds)
 
-hour.timeInterval
+//hour.timeInterval
 Measurement(value: 1, unit: UnitDuration.seconds).timeInterval
 
-extension TimeInterval {
-    init(_ dur: Measurement<UnitDuration>) {
-        self.init(dur.converted(to: UnitDuration.seconds).value)
-    }
-    
-    static let minute: TimeInterval = 60
-    static let hour: TimeInterval = 60 * minute
-    static let hour1 = Measurement(value: 1, unit: UnitDuration.hours)
-}
 
 
 
-TimeInterval(hour)
+//TimeInterval(hour)
 
-struct Baby {
-    var weight = Measurement(value: 15, unit: UnitMass.pounds)
-    var feedInterval = 2.5 * hour
-    
-    var nextFeed: Date? = Date()
-    var nextFeedUpdated: ((_ to: Date) -> Void)? = nil
 
-    var feeds = //[Feed]()
-    [
-        Feed(amount: Measurement(value: 90, unit: UnitVolume.milliliters), date: Date(timeIntervalSinceNow: -6 * TimeInterval.hour)),
-        Feed(amount: Measurement(value: 120, unit: UnitVolume.milliliters), date: Date(timeIntervalSinceNow: -4 * TimeInterval.hour)),
-        Feed(amount: Measurement(value: 180, unit: UnitVolume.milliliters), date: Date(timeIntervalSinceNow: -2 * TimeInterval.hour)),
-    ]
-    
-    var totalAmount: Measurement<UnitVolume> {
-        
-        let d = Date(timeIntervalSinceNow: feedInterval.converted(to: UnitDuration.seconds).value)
-//        print(d)
-        return feeds.filter { (feed) -> Bool in
-            print(feed.date, feed.amount)
-            return feed.date < d
-        }.reduce(Measurement(value: 0, unit: UnitVolume.milliliters), { (r, feed) -> Measurement<UnitVolume> in
-            r + feed.amount
-        })
-    }
-    
-    mutating func feed(_ feed: Feed) {
-        feeds.append(feed)
-        feeds.sort { (a, b) -> Bool in
-            a.date < b.date
-        }
-        
-        nextFeed = feeds.last!.date.addingTimeInterval(feedInterval.converted(to: UnitDuration.seconds).value)
-        nextFeedUpdated?(nextFeed!)
-    }
-    
-    /// track throw ups
-    func puke(_ feed: Feed) {
-        
-    }
-    
-    mutating func snoozeFeed(by: TimeInterval = 10 * TimeInterval.minute) {
-        nextFeed? += by
-    }
-    
-}
 
 let map = [
     2: "ok to feed",
@@ -146,10 +81,6 @@ form.unitOptions = [.providedUnit]
 
 form.string(from: ml)
 form.string(from: oz)
-
-
-hour.value
-sec.value
 
 alex.totalAmount
 
