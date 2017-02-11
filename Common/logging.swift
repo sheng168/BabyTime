@@ -2,7 +2,7 @@
 //  LoggingPrint.swift
 //
 
-import Foundation
+//import Foundation
 
 /**
  Prints the filename, function name, line number and textual representation of `object` and a newline character into
@@ -22,6 +22,9 @@ import Foundation
  :param: line     The line number, defaults to the line number within the file that the call is made.
  */
 func debug<T>(_ object: @autoclosure () -> T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+//    logger.debug("ok")
+    log.debug(object(), file, function, line: line)
+//    log
     #if DEBUG_
         let value = object()
         let fileURL = NSURL(string: file.replacingOccurrences(of: " ", with: "+"))?.lastPathComponent ?? "Unknown file"

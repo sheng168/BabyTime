@@ -8,14 +8,27 @@
 
 import WatchKit
 //import KeychainSwift
+import SwiftyBeaver
 
+let log = SwiftyBeaver.self
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
+        // add log destinations. at least one is needed!
+        let console = ConsoleDestination()  // log to Xcode Console
+        let file = FileDestination()  // log to default swiftybeaver.log file
+        log.addDestination(console)
+        log.addDestination(file)
+        
+        let platform = SBPlatformDestination(appID: "dGP8ok", appSecret: "mhx6e0qsmr4thvy6cnKydbx4cEqzBvdg", encryptionKey: "xMduO5nxgJkkwzsvdnuzrj4jwr0seyb4")
+        log.addDestination(platform)
+
+        log.info("swifty \(file.logFileURL)")
         debug(1)
-        debug(baby.feedList.count)
+        log.debug(baby.feedList.count)
+        
         
 //        let keychain = KeychainSwift()
 //        keychain.set("hello world", forKey: "my key")

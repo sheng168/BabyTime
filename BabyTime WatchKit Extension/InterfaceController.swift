@@ -26,8 +26,7 @@ class InterfaceController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        debug(context)
+        debug(context as Any)
         
         //To retrieve from the key
         let userDefaults = Foundation.UserDefaults.standard

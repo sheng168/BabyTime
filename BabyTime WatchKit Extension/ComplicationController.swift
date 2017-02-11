@@ -7,7 +7,7 @@
 //
 
 import ClockKit
-import os.log
+//import os.log
 
 extension CLKComplicationFamily: CustomStringConvertible {
     public var description: String {
