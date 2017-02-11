@@ -22,7 +22,7 @@ import Foundation
  :param: line     The line number, defaults to the line number within the file that the call is made.
  */
 func debug<T>(_ object: @autoclosure () -> T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
-    #if DEBUG
+    #if DEBUG_
         let value = object()
         let fileURL = NSURL(string: file.replacingOccurrences(of: " ", with: "+"))?.lastPathComponent ?? "Unknown file"
         let queue = Thread.isMainThread ? "UI" : "BG"

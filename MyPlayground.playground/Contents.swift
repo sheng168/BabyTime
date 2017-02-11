@@ -12,6 +12,7 @@ import Foundation
 
 //let r = Rec()
 
+_isDebugAssertConfiguration()
 
 extension Measurement where UnitType : UnitDuration {
     var timeInterval: TimeInterval {

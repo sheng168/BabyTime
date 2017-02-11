@@ -28,6 +28,13 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         debug(response)
         
+        
+        switch response.actionIdentifier {
+        case UserNotificationCenterDelegate.actionSnooze:
+            debug(UserNotificationCenterDelegate.actionSnooze)
+        default:
+            debug("*** missing case ***")
+        }
         completionHandler()
     }
     
@@ -90,13 +97,13 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
         content.body = "Ready for feeding" //NSString.localizedUserNotificationString(forKey: "Rise and shine! It's morning time!", arguments: nil)
         
         // Assign the category (and the associated actions).
-//        content.categoryIdentifier = categoryTimer
+        content.categoryIdentifier = categoryTimer
         content.sound = UNNotificationSound.default()
         
         // Create the request and schedule the notification.
         // Configure the trigger for a 7am wakeup.
         #if swift(>=3)
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2*6/*0*60*/, repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1/*60*60*/, repeats: false)
         #else
             var dateInfo = DateComponents()
             dateInfo.hour = 21
