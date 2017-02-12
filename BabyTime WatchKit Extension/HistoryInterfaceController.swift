@@ -16,10 +16,18 @@ class HistoryInterfaceController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
+        log.debug(0) // not showing because log is not initialized yet
+        print("awake")
+    }
+
+    override func willActivate() {
+        log.debug(1)
+        // This method is called when watch view controller is about to be visible to user
+        super.willActivate()
+
         // Configure interface objects here.
         let x = 1
-
+        
         table.setNumberOfRows(baby.feedList.count * x, withRowType: "Row")
         
         for i in 0..<baby.feedList.count * x {
@@ -29,12 +37,8 @@ class HistoryInterfaceController: WKInterfaceController {
         }
     }
 
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-
     override func didDeactivate() {
+        log.debug(-1)
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
@@ -46,6 +50,7 @@ class RowController: NSObject {
     
     var feed: Feed? {
         didSet {
+            log.verbose(feed)
             if let feed = feed {
                 titleLabel.setText("\(feed.amount)")
                 detailLabel.setText("\(feed.time)")

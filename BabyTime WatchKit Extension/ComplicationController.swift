@@ -39,27 +39,27 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Configuration
     
     func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
-        debug(complication.family)
+        log.verbose(complication.family)
 
 //        handler(CLKComplicationTimeTravelDirections())
         handler([.forward, .backward])
     }
     
     func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-        debug(complication.family)
+        log.verbose(complication.family)
         let start = baby.feedList.first!.time //Date().addingTimeInterval(-100*60)
             
         handler(start)
     }
     
     func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-        debug(complication.family)
+        log.verbose(complication.family)
         let end = baby.feedList.last!.time.addingTimeInterval(60*60*3) //Date().addingTimeInterval(100*60)
         handler(end)
     }
     
     func getPrivacyBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationPrivacyBehavior) -> Void) {
-        debug(complication.family)
+        log.verbose(complication.family)
         handler(.showOnLockScreen)
     }
     
@@ -67,7 +67,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: (@escaping (CLKComplicationTimelineEntry?) -> Void)) {
         // Call the handler with the current timeline entry
-        debug(complication.debugDescription)
+        log.verbose(complication.debugDescription)
         
         let templ = getTemplateForComplication(complication, baby.feedList.last!)
         let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: templ)
@@ -81,7 +81,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: (@escaping ([CLKComplicationTimelineEntry]?) -> Void)) {
         // Call the handler with the timeline entries prior to the given date
-        debug("\(complication.family) \(date) \(limit)")
+        log.verbose("\(complication.family) \(date) \(limit)")
         
         var array = [CLKComplicationTimelineEntry]()
         
@@ -98,7 +98,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: (@escaping ([CLKComplicationTimelineEntry]?) -> Void)) {
         // Call the handler with the timeline entries after to the given date
-        debug("\(complication.family) \(date) \(limit)")
+        log.verbose("\(complication.family) \(date) \(limit)")
         
         var array = [CLKComplicationTimelineEntry]()
         
@@ -117,7 +117,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getNextRequestedUpdateDate(handler: @escaping (Date?) -> Void) {
         // Call the handler with the date when you would next like to be given the opportunity to update your complication content
-        debug("")
+        log.verbose("")
         //        handler(nil)
         handler(Date(timeIntervalSinceNow: 60*60))
     }
@@ -126,8 +126,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getPlaceholderTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
-//        debug("family:\(complication.family) \(complication.family.description)")
-        debug(complication.family)
+//        log.verbose("family:\(complication.family) \(complication.family.description)")
+        log.verbose(complication.family)
 
         let template: CLKComplicationTemplate? = getTemplateForComplication(complication,
                                                                             Feed(amount: Measurement(value: -2, unit: UnitVolume.fluidOunces)))
@@ -138,8 +138,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTemplateForComplication(_ complication: CLKComplication,_ feed: Feed) -> CLKComplicationTemplate {
         // This method will be called once per supported complication, and the results will be cached
-        debug(complication.family)
-        debug(feed)
+        log.verbose(complication.family)
+        log.verbose(feed)
         
         let template: CLKComplicationTemplate
         

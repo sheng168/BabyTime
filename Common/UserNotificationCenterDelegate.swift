@@ -6,7 +6,7 @@
 //  Copyright © 2017 Kewe. All rights reserved.
 //
 
-import WatchKit
+//import WatchKit
 import UserNotifications
 
 class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate {
@@ -59,9 +59,15 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
                 let stopAction = UNNotificationAction(identifier: actionDone,
                                                       title: "Stop",
                                                       options: .foreground)
+                let commentAction = UNTextInputNotificationAction(
+                    identifier: "comment",
+                    title: "Comment",
+                    options: [],
+                    textInputButtonTitle: "Send",
+                    textInputPlaceholder: "Type here...")
                 
                 let expiredCategory = UNNotificationCategory(identifier: categoryTimer,
-                                                             actions: [snoozeAction, stopAction],
+                                                             actions: [snoozeAction, stopAction, commentAction],
                                                              intentIdentifiers: [],
                                                              options: [.customDismissAction])
                 
@@ -122,8 +128,8 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
             if let theError = error {
                 debug(theError.localizedDescription)
             } else {
-                debug(request)
-                debug(center.delegate)
+//                debug(request)
+//                debug(center.delegate)
             }
         }
 

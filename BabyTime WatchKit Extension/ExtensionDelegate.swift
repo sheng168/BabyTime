@@ -25,10 +25,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         let platform = SBPlatformDestination(appID: "dGP8ok", appSecret: "mhx6e0qsmr4thvy6cnKydbx4cEqzBvdg", encryptionKey: "xMduO5nxgJkkwzsvdnuzrj4jwr0seyb4")
         log.addDestination(platform)
 
-        log.info("swifty \(file.logFileURL)")
-        debug(1)
+        log.info("swifty \(String(describing: file.logFileURL))")
+//        debug(1)
         log.debug(baby.feedList.count)
-        
         
 //        let keychain = KeychainSwift()
 //        keychain.set("hello world", forKey: "my key")
