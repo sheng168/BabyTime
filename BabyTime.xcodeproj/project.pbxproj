@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04BF5C7C1E4CA5CE00F08EC2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF5C7A1E4C9F9300F08EC2 /* Model.swift */; };
+		04BF5C7F1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */; };
 		5A74E92C1E4F29540082B856 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A74E92B1E4F29540082B856 /* SwiftyBeaver.framework */; };
 		5A74E92D1E4F29540082B856 /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A74E92B1E4F29540082B856 /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A74E92E1E4F36B10082B856 /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7512F1E4BFD8500A13458 /* logging.swift */; };
@@ -107,6 +108,7 @@
 /* Begin PBXFileReference section */
 		044B53C91E3441DE00712D26 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		04BF5C7A1E4C9F9300F08EC2 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = MyPlayground.playground/Sources/Model.swift; sourceTree = "<group>"; };
+		04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryInterfaceController.swift; sourceTree = "<group>"; };
 		5A74E92A1E4F27760082B856 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		5A74E92B1E4F29540082B856 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/watchOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		5A74E92F1E4F37350082B856 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				5AC2AD271E2CD765002F660F /* Assets.xcassets */,
 				5AC2AD291E2CD765002F660F /* Info.plist */,
 				5AC2AD1D1E2CD765002F660F /* Supporting Files */,
+				04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */,
 			);
 			path = "BabyTime WatchKit Extension";
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				5AC2AD261E2CD765002F660F /* ComplicationController.swift in Sources */,
 				5AF751351E4BFE5F00A13458 /* logging.swift in Sources */,
 				5AC2AD221E2CD765002F660F /* ExtensionDelegate.swift in Sources */,
+				04BF5C7F1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift in Sources */,
 				5AF751331E4BFE5900A13458 /* UserNotificationCenterDelegate.swift in Sources */,
 				5AC2AD201E2CD765002F660F /* InterfaceController.swift in Sources */,
 				04BF5C7C1E4CA5CE00F08EC2 /* Model.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12106.1" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12106.1" systemVersion="16C67" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12027"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--BabyTime-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BabyTime_WatchKit_App" customModuleProvider="target">
+                <controller title="BabyTime" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BabyTime_WatchKit_App" customModuleProvider="target">
                     <items>
                         <timer alignment="left" enabled="YES" format="abbreviated" id="LQU-J0-kPC"/>
                         <button width="1" alignment="left" title="Feed" id="iY0-Kn-Sao">
@@ -47,7 +47,7 @@
                         <button alignment="left" id="dPt-sH-Bad">
                             <group key="contentGroup" width="1" alignment="left" layout="vertical" id="diu-9p-IUr">
                                 <items>
-                                    <label alignment="left" text="Label" id="bMl-Wk-QF5">
+                                    <label alignment="left" text="History" id="bMl-Wk-QF5">
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </label>
                                     <label alignment="left" text="Label" id="yyH-Jw-I4W">
@@ -56,6 +56,9 @@
                                 </items>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </group>
+                            <connections>
+                                <segue destination="N6v-8v-GEt" kind="push" id="3Hw-gM-Vcs"/>
+                            </connections>
                         </button>
                     </items>
                     <menu key="menu" id="00l-6a-bE5">
@@ -76,6 +79,37 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="154" y="241"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="fMj-y7-22F">
+            <objects>
+                <controller title="History" id="N6v-8v-GEt" customClass="HistoryInterfaceController" customModule="BabyTime_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="BwS-L0-Ghp">
+                            <items>
+                                <tableRow identifier="Row" id="lgt-aB-znB" customClass="RowController" customModule="BabyTime_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="7k1-d8-8lf">
+                                        <items>
+                                            <label alignment="left" text="2.5 oz" id="4eV-0D-TQz"/>
+                                            <label alignment="left" text="Label" id="Eos-HY-tIZ">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="detailLabel" destination="Eos-HY-tIZ" id="8eG-3r-hEk"/>
+                                        <outlet property="titleLabel" destination="4eV-0D-TQz" id="HBE-Kd-dZt"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="BwS-L0-Ghp" id="yWw-CT-5Lp"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="479" y="-78"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="ihw-57-mMA">
