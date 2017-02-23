@@ -167,11 +167,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5AC2ACD81E2CD765002F660F = {
+		5AA6E06B1E5B9E0A008A76BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5AA6E06C1E5B9E1D008A76BD /* iOS */,
+				5AA6E06D1E5B9E28008A76BD /* watchOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5AA6E06C1E5B9E1D008A76BD /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				5A74E92F1E4F37350082B856 /* SwiftyBeaver.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5AA6E06D1E5B9E28008A76BD /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
 				5A74E92B1E4F29540082B856 /* SwiftyBeaver.framework */,
+			);
+			name = watchOS;
+			sourceTree = "<group>";
+		};
+		5AC2ACD81E2CD765002F660F = {
+			isa = PBXGroup;
+			children = (
+				5AA6E06B1E5B9E0A008A76BD /* Frameworks */,
 				5A74E92A1E4F27760082B856 /* Cartfile */,
 				044B53C91E3441DE00712D26 /* MyPlayground.playground */,
 				5AC2ACE31E2CD765002F660F /* BabyTime */,
@@ -636,7 +660,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
 			};
 			name = Debug;
 		};
@@ -661,7 +685,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
 			};
 			name = Release;
 		};

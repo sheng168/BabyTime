@@ -18,6 +18,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         // Perform any final initialization of your application.
         // add log destinations. at least one is needed!
         let console = ConsoleDestination()  // log to Xcode Console
+        console.minLevel = .debug
         let file = FileDestination()  // log to default swiftybeaver.log file
         log.addDestination(console)
         log.addDestination(file)

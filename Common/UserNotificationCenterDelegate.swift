@@ -39,6 +39,11 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
     }
     
     static func register() {
+        #if os(iOS)
+            debug("iOS")
+        #else
+            debug("watchOS")
+        #endif
         
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
