@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12106.1" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12113" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N6v-8v-GEt">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12074.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12078"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12027"/>
     </dependencies>
     <scenes>
@@ -80,11 +80,21 @@
             </objects>
             <point key="canvasLocation" x="154" y="241"/>
         </scene>
-        <!--History-->
+        <!--BabyTime-->
         <scene sceneID="fMj-y7-22F">
             <objects>
-                <controller title="History" id="N6v-8v-GEt" customClass="HistoryInterfaceController" customModule="BabyTime_WatchKit_Extension">
+                <controller title="BabyTime" id="N6v-8v-GEt" customClass="HistoryInterfaceController" customModule="BabyTime_WatchKit_Extension">
                     <items>
+                        <group width="1" alignment="left" id="v7G-nR-yJp">
+                            <items>
+                                <button width="0.5" alignment="left" title="Add" id="NsJ-Vr-M8e">
+                                    <connections>
+                                        <segue destination="AgC-eL-Hgc" kind="push" id="eZ2-2D-02d"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="left" title="Repeat" id="wAd-DO-cDs"/>
+                            </items>
+                        </group>
                         <table alignment="left" id="BwS-L0-Ghp">
                             <items>
                                 <tableRow identifier="Row" id="lgt-aB-znB" customClass="RowController" customModule="BabyTime_WatchKit_Extension">
@@ -124,7 +134,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="502" y="241"/>
+            <point key="canvasLocation" x="500" y="297"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -133,7 +143,7 @@
                     <items>
                         <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="TIMER_EXPIRED" id="JfB-70-Muf"/>
+                    <notificationCategory key="notificationCategory" identifier="now" id="JfB-70-Muf"/>
                     <color key="backgroundColor" red="0.27208036152733545" green="0.74711748027046632" blue="0.19905057596517273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
@@ -142,6 +152,22 @@
                 </notificationController>
             </objects>
             <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="Rpg-2Q-o24">
+            <objects>
+                <notificationController id="2hx-Em-hmC">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="ckd-fH-EdW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="late" id="cMS-HK-vkk"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="ckd-fH-EdW" id="OjS-T0-ake"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="910"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
@@ -154,6 +180,22 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="OUs-JP-s9S">
+            <objects>
+                <notificationController id="ggi-UN-xTc">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="7lU-Z0-7RD"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="default" id="gHg-6b-JkS" userLabel="soon"/>
+                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="7lU-Z0-7RD" id="qrR-El-DJU"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="523" y="918"/>
         </scene>
     </scenes>
 </document>

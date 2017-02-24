@@ -36,6 +36,9 @@ class NotificationController: WKUserNotificationInterfaceController {
     /*    */
     override func didReceive(_ notification: UNNotification, withCompletion completionHandler: @escaping (WKUserNotificationInterfaceType) -> Swift.Void) {
         debug(notification)
+        let msg = notification.request.content.body
+        log.info("msg: \(msg)")
+        
         // This method is called when a notification needs to be presented.
         // Implement it if you use a dynamic notification interface.
         // Populate your dynamic notification interface as quickly as possible.

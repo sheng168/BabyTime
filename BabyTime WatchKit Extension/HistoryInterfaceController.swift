@@ -17,7 +17,7 @@ class HistoryInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         log.debug(0) // not showing because log is not initialized yet
-        print("awake")
+        print("HistoryInterfaceController.awake")
     }
 
     override func willActivate() {
@@ -50,7 +50,7 @@ class RowController: NSObject {
     
     var feed: Feed? {
         didSet {
-            log.verbose(feed)
+            log.verbose(feed as Any)
             if let feed = feed {
                 titleLabel.setText("\(feed.amount)")
                 detailLabel.setText("\(feed.time)")

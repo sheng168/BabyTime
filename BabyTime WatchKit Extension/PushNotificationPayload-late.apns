@@ -1,16 +1,20 @@
 {
     "aps": {
         "alert": {
-            "body": "Hey hey",
-            "subtitle": "subtitle",
-            "title": "title"
-        }
+            "body": "Test message",
+            "title": "Optional title"
+        },
+        "category": "late"
     },
     
     "WatchKit Simulator Actions": [
         {
-            "title": "Launch app",
-            "identifier": "action"
+            "title": "Late",
+            "identifier": "late"
+        },
+        {
+            "title": "Snooze",
+            "identifier": "snooze"
         }
     ],
     

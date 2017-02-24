@@ -14,6 +14,8 @@
 		5A74E92E1E4F36B10082B856 /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7512F1E4BFD8500A13458 /* logging.swift */; };
 		5A74E9301E4F37350082B856 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A74E92F1E4F37350082B856 /* SwiftyBeaver.framework */; };
 		5A74E9311E4F37350082B856 /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A74E92F1E4F37350082B856 /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5A848A941E5FA71E00D38CE1 /* PushNotificationPayload-late.apns in Resources */ = {isa = PBXBuildFile; fileRef = 5A848A931E5FA71E00D38CE1 /* PushNotificationPayload-late.apns */; };
+		5A866A8A1E601DF700801165 /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 5A866A891E601DF700801165 /* PushNotificationPayload.apns */; };
 		5AC2ACE51E2CD765002F660F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2ACE41E2CD765002F660F /* AppDelegate.swift */; };
 		5AC2ACE71E2CD765002F660F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2ACE61E2CD765002F660F /* ViewController.swift */; };
 		5AC2ACEA1E2CD765002F660F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2ACE81E2CD765002F660F /* Main.storyboard */; };
@@ -112,6 +114,9 @@
 		5A74E92A1E4F27760082B856 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		5A74E92B1E4F29540082B856 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/watchOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		5A74E92F1E4F37350082B856 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
+		5A848A931E5FA71E00D38CE1 /* PushNotificationPayload-late.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PushNotificationPayload-late.apns"; sourceTree = "<group>"; };
+		5A848A951E5FAE2300D38CE1 /* PushNotificationPayload-soon.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = "PushNotificationPayload-soon.apns"; sourceTree = "<group>"; };
+		5A866A891E601DF700801165 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		5AC2ACE11E2CD765002F660F /* BabyTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC2ACE41E2CD765002F660F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AC2ACE61E2CD765002F660F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,7 +134,7 @@
 		5AC2AD111E2CD765002F660F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AC2AD131E2CD765002F660F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AC2AD181E2CD765002F660F /* BabyTime WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BabyTime WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5AC2AD1E1E2CD765002F660F /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		5AC2AD1E1E2CD765002F660F /* PushNotificationPayload-now.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = "PushNotificationPayload-now.apns"; sourceTree = "<group>"; };
 		5AC2AD1F1E2CD765002F660F /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		5AC2AD211E2CD765002F660F /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		5AC2AD231E2CD765002F660F /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
@@ -267,10 +272,10 @@
 				5AC2AD1F1E2CD765002F660F /* InterfaceController.swift */,
 				5AC2AD211E2CD765002F660F /* ExtensionDelegate.swift */,
 				5AC2AD231E2CD765002F660F /* NotificationController.swift */,
+				04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */,
 				5AC2AD271E2CD765002F660F /* Assets.xcassets */,
 				5AC2AD291E2CD765002F660F /* Info.plist */,
 				5AC2AD1D1E2CD765002F660F /* Supporting Files */,
-				04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */,
 			);
 			path = "BabyTime WatchKit Extension";
 			sourceTree = "<group>";
@@ -278,7 +283,10 @@
 		5AC2AD1D1E2CD765002F660F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5AC2AD1E1E2CD765002F660F /* PushNotificationPayload.apns */,
+				5A866A891E601DF700801165 /* PushNotificationPayload.apns */,
+				5A848A931E5FA71E00D38CE1 /* PushNotificationPayload-late.apns */,
+				5AC2AD1E1E2CD765002F660F /* PushNotificationPayload-now.apns */,
+				5A848A951E5FAE2300D38CE1 /* PushNotificationPayload-soon.apns */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -458,6 +466,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AC2AD281E2CD765002F660F /* Assets.xcassets in Resources */,
+				5A848A941E5FA71E00D38CE1 /* PushNotificationPayload-late.apns in Resources */,
+				5A866A8A1E601DF700801165 /* PushNotificationPayload.apns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,7 +670,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Debug;
 		};
@@ -685,7 +695,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Release;
 		};
@@ -704,7 +714,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Debug;
 		};
@@ -723,7 +733,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Release;
 		};

@@ -98,7 +98,7 @@
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES"
       launchAutomaticallySubstyle = "8"
-      notificationPayloadFile = "BabyTime WatchKit Extension/PushNotificationPayload.apns">
+      notificationPayloadFile = "BabyTime WatchKit Extension/PushNotificationPayload-now.apns">
       <RemoteRunnable
          runnableDebuggingMode = "2"
          BundleIdentifier = "com.apple.carousel"

@@ -11,8 +11,8 @@ import UserNotifications
 
 class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate {
     static let instance = UserNotificationCenterDelegate()
-    static let categoryGeneral = "GENERAL"
-    static let categoryTimer = "TIMER_EXPIRED"
+    static let categoryGeneral = "general"
+    static let categoryTimer = "now"
     static let actionSnooze = "SNOOZE_ACTION"
     static let actionDone = "STOP_ACTION"
     
@@ -26,14 +26,14 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        debug(response)
+        log.info(response)
         
         
         switch response.actionIdentifier {
         case UserNotificationCenterDelegate.actionSnooze:
-            debug(UserNotificationCenterDelegate.actionSnooze)
+            log.info(UserNotificationCenterDelegate.actionSnooze)
         default:
-            debug("*** missing case ***")
+            log.error("*** missing case *** \(response.actionIdentifier)")
         }
         completionHandler()
     }
