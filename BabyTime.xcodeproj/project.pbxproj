@@ -9,11 +9,7 @@
 /* Begin PBXBuildFile section */
 		04BF5C7C1E4CA5CE00F08EC2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF5C7A1E4C9F9300F08EC2 /* Model.swift */; };
 		04BF5C7F1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */; };
-		5A74E92C1E4F29540082B856 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A74E92B1E4F29540082B856 /* SwiftyBeaver.framework */; };
-		5A74E92D1E4F29540082B856 /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A74E92B1E4F29540082B856 /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A74E92E1E4F36B10082B856 /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7512F1E4BFD8500A13458 /* logging.swift */; };
-		5A74E9301E4F37350082B856 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A74E92F1E4F37350082B856 /* SwiftyBeaver.framework */; };
-		5A74E9311E4F37350082B856 /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A74E92F1E4F37350082B856 /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A848A941E5FA71E00D38CE1 /* PushNotificationPayload-late.apns in Resources */ = {isa = PBXBuildFile; fileRef = 5A848A931E5FA71E00D38CE1 /* PushNotificationPayload-late.apns */; };
 		5A866A8A1E601DF700801165 /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 5A866A891E601DF700801165 /* PushNotificationPayload.apns */; };
 		5AC2ACE51E2CD765002F660F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2ACE41E2CD765002F660F /* AppDelegate.swift */; };
@@ -61,28 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5A74E9321E4F37350082B856 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5A74E9311E4F37350082B856 /* SwiftyBeaver.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5AB1FCB61E4B2501006D9C3B /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5A74E92D1E4F29540082B856 /* SwiftyBeaver.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5AC2AD331E2CD765002F660F /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -112,8 +86,6 @@
 		04BF5C7A1E4C9F9300F08EC2 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = MyPlayground.playground/Sources/Model.swift; sourceTree = "<group>"; };
 		04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryInterfaceController.swift; sourceTree = "<group>"; };
 		5A74E92A1E4F27760082B856 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
-		5A74E92B1E4F29540082B856 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/watchOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
-		5A74E92F1E4F37350082B856 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		5A848A931E5FA71E00D38CE1 /* PushNotificationPayload-late.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PushNotificationPayload-late.apns"; sourceTree = "<group>"; };
 		5A848A951E5FAE2300D38CE1 /* PushNotificationPayload-soon.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = "PushNotificationPayload-soon.apns"; sourceTree = "<group>"; };
 		5A866A891E601DF700801165 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
@@ -150,7 +122,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A74E9301E4F37350082B856 /* SwiftyBeaver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +136,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A74E92C1E4F29540082B856 /* SwiftyBeaver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,7 +154,6 @@
 		5AA6E06C1E5B9E1D008A76BD /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				5A74E92F1E4F37350082B856 /* SwiftyBeaver.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -192,7 +161,6 @@
 		5AA6E06D1E5B9E28008A76BD /* watchOS */ = {
 			isa = PBXGroup;
 			children = (
-				5A74E92B1E4F29540082B856 /* SwiftyBeaver.framework */,
 			);
 			name = watchOS;
 			sourceTree = "<group>";
@@ -312,7 +280,6 @@
 				5AC2ACDE1E2CD765002F660F /* Frameworks */,
 				5AC2ACDF1E2CD765002F660F /* Resources */,
 				5AC2AD331E2CD765002F660F /* Embed Watch Content */,
-				5A74E9321E4F37350082B856 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -366,7 +333,6 @@
 				5AC2AD141E2CD765002F660F /* Sources */,
 				5AC2AD151E2CD765002F660F /* Frameworks */,
 				5AC2AD161E2CD765002F660F /* Resources */,
-				5AB1FCB61E4B2501006D9C3B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

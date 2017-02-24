@@ -12,25 +12,6 @@ import SwiftyBeaver
 
 let log = logger()
 
-func logger() -> SwiftyBeaver.Type {
-    let log = SwiftyBeaver.self
-    // add log destinations. at least one is needed!
-    let console = ConsoleDestination()  // log to Xcode Console
-    console.minLevel = .debug
-    console.asynchronously = false
-    
-    let file = FileDestination()  // log to default swiftybeaver.log file
-    log.addDestination(console)
-    log.addDestination(file)
-    
-    let platform = SBPlatformDestination(appID: "dGP8ok", appSecret: "mhx6e0qsmr4thvy6cnKydbx4cEqzBvdg", encryptionKey: "xMduO5nxgJkkwzsvdnuzrj4jwr0seyb4")
-    platform.minLevel = .info
-    log.addDestination(platform)
-    log.info("swifty \(String(describing: file.logFileURL))")
-
-    return log
-}
-
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {

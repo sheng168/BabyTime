@@ -1,0 +1,3 @@
+[submodule "Carthage/Checkouts/SwiftyBeaver"]
+	path = Carthage/Checkouts/SwiftyBeaver
+	url = https://github.com/SwiftyBeaver/SwiftyBeaver.git
