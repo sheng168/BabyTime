@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "B63633C520A5CF495527EA8257A353A56324906C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B63633C520A5CF495527EA8257A353A56324906C" : 9223372036854775807,
+    "FFB214913663FC65687CDA521C83AA55F91EA1AD" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "34DFB977-ADA4-45B6-9EF1-7634772E96FB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B63633C520A5CF495527EA8257A353A56324906C" : "BabyTime\/",
+    "FFB214913663FC65687CDA521C83AA55F91EA1AD" : "BabyTime\/Carthage\/Checkouts\/SwiftyBeaver\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BabyTime",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BabyTime.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sheng168\/BabyTime.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B63633C520A5CF495527EA8257A353A56324906C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SwiftyBeaver\/SwiftyBeaver.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FFB214913663FC65687CDA521C83AA55F91EA1AD"
+    }
+  ]
+}
