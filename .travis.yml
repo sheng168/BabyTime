@@ -4,3 +4,4 @@ osx_image: xcode8.2
 xcode_workspace: BabyTime.xcworkspace # path to your xcodeproj folder
 #xcode_scheme: BabyTime
 #xcode_sdk: iphonesimulator10.2 #5
+install: echo HelloTravis
