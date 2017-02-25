@@ -2,4 +2,4 @@ language: objective-c
 osx_image: xcode8.2
 #xcode_project: BabyTime.xcodeproj # path to your xcodeproj folder
 xcode_workspace: BabyTime.xcworkspace # path to your xcodeproj folder
-# xcode_scheme: MyNewProjectTests
+xcode_scheme: BabyTime
