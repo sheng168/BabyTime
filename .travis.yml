@@ -1,7 +1,8 @@
 language: objective-c
 osx_image: xcode8.2
 #xcode_project: BabyTime.xcodeproj # path to your xcodeproj folder
-xcode_workspace: BabyTime.xcworkspace # path to your xcodeproj folder
+#xcode_workspace: BabyTime.xcworkspace # path to your xcodeproj folder
 #xcode_scheme: BabyTime
 #xcode_sdk: iphonesimulator10.2 #5
 install: echo HelloTravis
+script: xcodebuild -workspace BabyTime.xcworkspace -configuration Debug ONLY_ACTIVE_ARCH=NO build -scheme BabyTime
