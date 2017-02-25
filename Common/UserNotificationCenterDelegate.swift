@@ -19,7 +19,7 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        debug(notification)
+        log.info(notification)
         
         completionHandler([.alert, .sound, .badge])
 //        completionHandler([])

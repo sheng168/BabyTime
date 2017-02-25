@@ -26,6 +26,14 @@
 		5AC2AD241E2CD765002F660F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2AD231E2CD765002F660F /* NotificationController.swift */; };
 		5AC2AD261E2CD765002F660F /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2AD251E2CD765002F660F /* ComplicationController.swift */; };
 		5AC2AD281E2CD765002F660F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2AD271E2CD765002F660F /* Assets.xcassets */; };
+		5AF304DF1E60719C001B4D7B /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF304DE1E60719C001B4D7B /* SwiftyBeaver.framework */; };
+		5AF304E01E60719C001B4D7B /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF304DE1E60719C001B4D7B /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5AF304E21E6071B3001B4D7B /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF304DE1E60719C001B4D7B /* SwiftyBeaver.framework */; };
+		5AF304E31E6071B3001B4D7B /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF304DE1E60719C001B4D7B /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5AF304E61E60C6E1001B4D7B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF304E51E60C6E1001B4D7B /* Realm.framework */; };
+		5AF304E71E60C6E1001B4D7B /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF304E51E60C6E1001B4D7B /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5AF304E91E60C8A5001B4D7B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF304E81E60C8A5001B4D7B /* RealmSwift.framework */; };
+		5AF304EA1E60C8A5001B4D7B /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF304E81E60C8A5001B4D7B /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5AF751301E4BFD8500A13458 /* UserNotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7512D1E4BFD8500A13458 /* UserNotificationCenterDelegate.swift */; };
 		5AF751331E4BFE5900A13458 /* UserNotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7512D1E4BFD8500A13458 /* UserNotificationCenterDelegate.swift */; };
 		5AF751351E4BFE5F00A13458 /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7512F1E4BFD8500A13458 /* logging.swift */; };
@@ -66,6 +74,30 @@
 				5AC2AD0A1E2CD765002F660F /* BabyTime WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AF304E11E60719C001B4D7B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5AF304E71E60C6E1001B4D7B /* Realm.framework in Embed Frameworks */,
+				5AF304E01E60719C001B4D7B /* SwiftyBeaver.framework in Embed Frameworks */,
+				5AF304EA1E60C8A5001B4D7B /* RealmSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AF304E41E6071B3001B4D7B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5AF304E31E6071B3001B4D7B /* SwiftyBeaver.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5AF751391E4C000900A13458 /* Embed App Extensions */ = {
@@ -113,6 +145,9 @@
 		5AC2AD251E2CD765002F660F /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		5AC2AD271E2CD765002F660F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AC2AD291E2CD765002F660F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AF304DE1E60719C001B4D7B /* SwiftyBeaver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyBeaver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AF304E51E60C6E1001B4D7B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/watchOS/Realm.framework; sourceTree = "<group>"; };
+		5AF304E81E60C8A5001B4D7B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/watchOS/RealmSwift.framework; sourceTree = "<group>"; };
 		5AF7512D1E4BFD8500A13458 /* UserNotificationCenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserNotificationCenterDelegate.swift; path = Common/UserNotificationCenterDelegate.swift; sourceTree = "<group>"; };
 		5AF7512F1E4BFD8500A13458 /* logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = logging.swift; path = Common/logging.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AF304E21E6071B3001B4D7B /* SwiftyBeaver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +172,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AF304E61E60C6E1001B4D7B /* Realm.framework in Frameworks */,
+				5AF304DF1E60719C001B4D7B /* SwiftyBeaver.framework in Frameworks */,
+				5AF304E91E60C8A5001B4D7B /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +184,7 @@
 		5AA6E06B1E5B9E0A008A76BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5AF304DE1E60719C001B4D7B /* SwiftyBeaver.framework */,
 				5AA6E06C1E5B9E1D008A76BD /* iOS */,
 				5AA6E06D1E5B9E28008A76BD /* watchOS */,
 			);
@@ -168,6 +208,8 @@
 		5AC2ACD81E2CD765002F660F = {
 			isa = PBXGroup;
 			children = (
+				5AF304E81E60C8A5001B4D7B /* RealmSwift.framework */,
+				5AF304E51E60C6E1001B4D7B /* Realm.framework */,
 				5AA6E06B1E5B9E0A008A76BD /* Frameworks */,
 				5A74E92A1E4F27760082B856 /* Cartfile */,
 				044B53C91E3441DE00712D26 /* MyPlayground.playground */,
@@ -280,6 +322,7 @@
 				5AC2ACDE1E2CD765002F660F /* Frameworks */,
 				5AC2ACDF1E2CD765002F660F /* Resources */,
 				5AC2AD331E2CD765002F660F /* Embed Watch Content */,
+				5AF304E41E6071B3001B4D7B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -333,6 +376,7 @@
 				5AC2AD141E2CD765002F660F /* Sources */,
 				5AC2AD151E2CD765002F660F /* Frameworks */,
 				5AC2AD161E2CD765002F660F /* Resources */,
+				5AF304E11E60719C001B4D7B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -562,7 +606,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -606,7 +650,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -625,6 +669,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/SwiftyBeaver/build/Debug-watchos",
 				);
 				INFOPLIST_FILE = "BabyTime WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -636,7 +681,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Debug;
 		};
@@ -650,6 +695,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/SwiftyBeaver/build/Debug-watchos",
 				);
 				INFOPLIST_FILE = "BabyTime WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -661,7 +707,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};
@@ -680,7 +726,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
 			};
 			name = Debug;
 		};
@@ -699,7 +745,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
 			};
 			name = Release;
 		};
@@ -712,6 +758,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/SwiftyBeaver/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = BabyTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -730,6 +777,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/SwiftyBeaver/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = BabyTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -45,6 +45,7 @@ class NotificationController: WKUserNotificationInterfaceController {
         //
         // After populating your dynamic notification interface call the completion block.
         completionHandler(.custom)
+        log.info("don't print breakpoint before completion")
     }
 
 }
