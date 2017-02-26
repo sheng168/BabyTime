@@ -11,6 +11,10 @@
 		04BF5C7F1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */; };
 		5A648A431E633C3D00234718 /* FeedDetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A648A421E633C3D00234718 /* FeedDetailInterfaceController.swift */; };
 		5A648A451E63507400234718 /* cart.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5A648A441E63507400234718 /* cart.sh */; };
+		5A648A471E63972C00234718 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A648A461E63972C00234718 /* SwiftyBeaver.framework */; };
+		5A648A481E63972C00234718 /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A648A461E63972C00234718 /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5A648A4A1E63977C00234718 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A648A491E63977C00234718 /* SwiftyBeaver.framework */; };
+		5A648A4B1E63977C00234718 /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A648A491E63977C00234718 /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A74E92E1E4F36B10082B856 /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7512F1E4BFD8500A13458 /* logging.swift */; };
 		5A848A941E5FA71E00D38CE1 /* PushNotificationPayload-late.apns in Resources */ = {isa = PBXBuildFile; fileRef = 5A848A931E5FA71E00D38CE1 /* PushNotificationPayload-late.apns */; };
 		5A866A8A1E601DF700801165 /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 5A866A891E601DF700801165 /* PushNotificationPayload.apns */; };
@@ -28,10 +32,6 @@
 		5AC2AD241E2CD765002F660F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2AD231E2CD765002F660F /* NotificationController.swift */; };
 		5AC2AD261E2CD765002F660F /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2AD251E2CD765002F660F /* ComplicationController.swift */; };
 		5AC2AD281E2CD765002F660F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2AD271E2CD765002F660F /* Assets.xcassets */; };
-		5AF304DF1E60719C001B4D7B /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF304DE1E60719C001B4D7B /* SwiftyBeaver.framework */; };
-		5AF304E01E60719C001B4D7B /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF304DE1E60719C001B4D7B /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5AF304E21E6071B3001B4D7B /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF304DE1E60719C001B4D7B /* SwiftyBeaver.framework */; };
-		5AF304E31E6071B3001B4D7B /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF304DE1E60719C001B4D7B /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5AF304E61E60C6E1001B4D7B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF304E51E60C6E1001B4D7B /* Realm.framework */; };
 		5AF304E71E60C6E1001B4D7B /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF304E51E60C6E1001B4D7B /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5AF304E91E60C8A5001B4D7B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF304E81E60C8A5001B4D7B /* RealmSwift.framework */; };
@@ -85,7 +85,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5AF304E71E60C6E1001B4D7B /* Realm.framework in Embed Frameworks */,
-				5AF304E01E60719C001B4D7B /* SwiftyBeaver.framework in Embed Frameworks */,
+				5A648A4B1E63977C00234718 /* SwiftyBeaver.framework in Embed Frameworks */,
 				5AF304EA1E60C8A5001B4D7B /* RealmSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -97,7 +97,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5AF304E31E6071B3001B4D7B /* SwiftyBeaver.framework in Embed Frameworks */,
+				5A648A481E63972C00234718 /* SwiftyBeaver.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +121,8 @@
 		04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryInterfaceController.swift; sourceTree = "<group>"; };
 		5A648A421E633C3D00234718 /* FeedDetailInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDetailInterfaceController.swift; sourceTree = "<group>"; };
 		5A648A441E63507400234718 /* cart.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = cart.sh; sourceTree = "<group>"; };
+		5A648A461E63972C00234718 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
+		5A648A491E63977C00234718 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/watchOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		5A74E92A1E4F27760082B856 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		5A848A931E5FA71E00D38CE1 /* PushNotificationPayload-late.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PushNotificationPayload-late.apns"; sourceTree = "<group>"; };
 		5A848A951E5FAE2300D38CE1 /* PushNotificationPayload-soon.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = "PushNotificationPayload-soon.apns"; sourceTree = "<group>"; };
@@ -149,7 +151,6 @@
 		5AC2AD251E2CD765002F660F /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		5AC2AD271E2CD765002F660F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AC2AD291E2CD765002F660F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5AF304DE1E60719C001B4D7B /* SwiftyBeaver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyBeaver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF304E51E60C6E1001B4D7B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/watchOS/Realm.framework; sourceTree = "<group>"; };
 		5AF304E81E60C8A5001B4D7B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/watchOS/RealmSwift.framework; sourceTree = "<group>"; };
 		5AF7512D1E4BFD8500A13458 /* UserNotificationCenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserNotificationCenterDelegate.swift; path = Common/UserNotificationCenterDelegate.swift; sourceTree = "<group>"; };
@@ -161,7 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AF304E21E6071B3001B4D7B /* SwiftyBeaver.framework in Frameworks */,
+				5A648A471E63972C00234718 /* SwiftyBeaver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AF304E61E60C6E1001B4D7B /* Realm.framework in Frameworks */,
-				5AF304DF1E60719C001B4D7B /* SwiftyBeaver.framework in Frameworks */,
+				5A648A4A1E63977C00234718 /* SwiftyBeaver.framework in Frameworks */,
 				5AF304E91E60C8A5001B4D7B /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,7 +189,6 @@
 		5AA6E06B1E5B9E0A008A76BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5AF304DE1E60719C001B4D7B /* SwiftyBeaver.framework */,
 				5AA6E06C1E5B9E1D008A76BD /* iOS */,
 				5AA6E06D1E5B9E28008A76BD /* watchOS */,
 			);
@@ -212,6 +212,8 @@
 		5AC2ACD81E2CD765002F660F = {
 			isa = PBXGroup;
 			children = (
+				5A648A491E63977C00234718 /* SwiftyBeaver.framework */,
+				5A648A461E63972C00234718 /* SwiftyBeaver.framework */,
 				5AF304E81E60C8A5001B4D7B /* RealmSwift.framework */,
 				5AF304E51E60C6E1001B4D7B /* Realm.framework */,
 				5AA6E06B1E5B9E0A008A76BD /* Frameworks */,
