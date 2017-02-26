@@ -1,6 +1,6 @@
 [submodule "Carthage/Checkouts/SwiftyBeaver"]
 	path = Carthage/Checkouts/SwiftyBeaver
-	url = https://github.com/SwiftyBeaver/SwiftyBeaver.git
+	url = https://github.com/sheng168/SwiftyBeaver.git
 [submodule "Carthage/Checkouts/realm-cocoa"]
 	path = Carthage/Checkouts/realm-cocoa
 	url = https://github.com/realm/realm-cocoa.git
