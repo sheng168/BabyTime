@@ -12,6 +12,7 @@ import SwiftyBeaver
 import RealmSwift
 
 let log = logger()
+let realm = try! Realm()
 
 class Dog: Object {
     dynamic var name = ""
@@ -45,7 +46,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         print("name of dog: \(myDog.name)")
         
         // Get the default Realm
-        let realm = try! Realm()
         
         // Query Realm for all dogs less than 2 years old
         let puppies = realm.objects(Dog.self) //.filter("age < 2")

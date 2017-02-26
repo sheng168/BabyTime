@@ -14,11 +14,17 @@ class HistoryInterfaceController: WKInterfaceController {
     
     @IBOutlet var table: WKInterfaceTable!
 
-    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+//    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+//        log.debug(rowIndex)
+//        let f = (table.rowController(at: rowIndex) as? RowController)?.feed
+////        presentController(withName: "detail", context: f)
+//        pushController(withName: "detail", context: f)
+//    }
+    
+    override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
         log.debug(rowIndex)
         let f = (table.rowController(at: rowIndex) as? RowController)?.feed
-//        presentController(withName: "detail", context: f)
-        pushController(withName: "detail", context: f)
+        return f
     }
     
     override func awake(withContext context: Any?) {

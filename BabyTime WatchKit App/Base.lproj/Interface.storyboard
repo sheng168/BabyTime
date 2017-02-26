@@ -12,7 +12,7 @@
         <!--BabyTime-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="detail" title="BabyTime" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BabyTime_WatchKit_App" customModuleProvider="target">
+                <controller title="BabyTime" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BabyTime_WatchKit_App" customModuleProvider="target">
                     <items>
                         <timer alignment="left" enabled="YES" format="abbreviated" id="LQU-J0-kPC"/>
                         <button width="1" alignment="left" title="Feed" id="iY0-Kn-Sao">
@@ -95,7 +95,7 @@
                                 <button width="0.5" alignment="left" title="Repeat" id="wAd-DO-cDs"/>
                             </items>
                         </group>
-                        <table alignment="left" id="BwS-L0-Ghp">
+                        <table alignment="left" pagingScroll="YES" id="BwS-L0-Ghp">
                             <items>
                                 <tableRow identifier="Row" id="lgt-aB-znB" customClass="RowController" customModule="BabyTime_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" layout="vertical" id="7k1-d8-8lf">
@@ -105,6 +105,9 @@
                                                 <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                             </label>
                                         </items>
+                                        <connections>
+                                            <segue destination="l6G-wm-oCV" kind="push" identifier="detail" id="NkY-36-u2D"/>
+                                        </connections>
                                     </group>
                                     <connections>
                                         <outlet property="detailLabel" destination="Eos-HY-tIZ" id="8eG-3r-hEk"/>
@@ -120,6 +123,30 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="479" y="-78"/>
+        </scene>
+        <!--Feed Detail-->
+        <scene sceneID="qj5-xs-VWH">
+            <objects>
+                <controller identifier="detail" title="Feed Detail" id="l6G-wm-oCV" customClass="FeedDetailInterfaceController" customModule="BabyTime_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Label" id="2vg-R6-dvR"/>
+                        <dateLabel alignment="left" id="abp-fg-Ahd">
+                            <dateFormatterStyle key="dateStyle" short="YES"/>
+                            <dateFormatterStyle key="timeStyle" short="YES"/>
+                        </dateLabel>
+                        <timer alignment="left" id="QVy-pu-ddP"/>
+                        <button width="1" alignment="left" title="Delete" id="pRk-p8-Y8m">
+                            <connections>
+                                <action selector="deleteClick" destination="l6G-wm-oCV" id="mdC-5h-Jwd"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="amountLabel" destination="2vg-R6-dvR" id="xn6-ah-O2T"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="803" y="-78"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="ihw-57-mMA">
