@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		04BF5C7C1E4CA5CE00F08EC2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF5C7A1E4C9F9300F08EC2 /* Model.swift */; };
 		04BF5C7F1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */; };
+		5A648A431E633C3D00234718 /* FeedDetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A648A421E633C3D00234718 /* FeedDetailInterfaceController.swift */; };
+		5A648A451E63507400234718 /* cart.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5A648A441E63507400234718 /* cart.sh */; };
 		5A74E92E1E4F36B10082B856 /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7512F1E4BFD8500A13458 /* logging.swift */; };
 		5A848A941E5FA71E00D38CE1 /* PushNotificationPayload-late.apns in Resources */ = {isa = PBXBuildFile; fileRef = 5A848A931E5FA71E00D38CE1 /* PushNotificationPayload-late.apns */; };
 		5A866A8A1E601DF700801165 /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 5A866A891E601DF700801165 /* PushNotificationPayload.apns */; };
@@ -117,6 +119,8 @@
 		044B53C91E3441DE00712D26 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		04BF5C7A1E4C9F9300F08EC2 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = MyPlayground.playground/Sources/Model.swift; sourceTree = "<group>"; };
 		04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryInterfaceController.swift; sourceTree = "<group>"; };
+		5A648A421E633C3D00234718 /* FeedDetailInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDetailInterfaceController.swift; sourceTree = "<group>"; };
+		5A648A441E63507400234718 /* cart.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = cart.sh; sourceTree = "<group>"; };
 		5A74E92A1E4F27760082B856 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		5A848A931E5FA71E00D38CE1 /* PushNotificationPayload-late.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PushNotificationPayload-late.apns"; sourceTree = "<group>"; };
 		5A848A951E5FAE2300D38CE1 /* PushNotificationPayload-soon.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = "PushNotificationPayload-soon.apns"; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 				5AF304E51E60C6E1001B4D7B /* Realm.framework */,
 				5AA6E06B1E5B9E0A008A76BD /* Frameworks */,
 				5A74E92A1E4F27760082B856 /* Cartfile */,
+				5A648A441E63507400234718 /* cart.sh */,
 				044B53C91E3441DE00712D26 /* MyPlayground.playground */,
 				5AC2ACE31E2CD765002F660F /* BabyTime */,
 				5AC2ACF81E2CD765002F660F /* BabyTimeTests */,
@@ -280,6 +285,7 @@
 			children = (
 				5AC2AD251E2CD765002F660F /* ComplicationController.swift */,
 				5AC2AD1F1E2CD765002F660F /* InterfaceController.swift */,
+				5A648A421E633C3D00234718 /* FeedDetailInterfaceController.swift */,
 				5AC2AD211E2CD765002F660F /* ExtensionDelegate.swift */,
 				5AC2AD231E2CD765002F660F /* NotificationController.swift */,
 				04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */,
@@ -477,6 +483,7 @@
 			files = (
 				5AC2AD281E2CD765002F660F /* Assets.xcassets in Resources */,
 				5A848A941E5FA71E00D38CE1 /* PushNotificationPayload-late.apns in Resources */,
+				5A648A451E63507400234718 /* cart.sh in Resources */,
 				5A866A8A1E601DF700801165 /* PushNotificationPayload.apns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,6 +517,7 @@
 				5AC2AD241E2CD765002F660F /* NotificationController.swift in Sources */,
 				5AC2AD261E2CD765002F660F /* ComplicationController.swift in Sources */,
 				5AF751351E4BFE5F00A13458 /* logging.swift in Sources */,
+				5A648A431E633C3D00234718 /* FeedDetailInterfaceController.swift in Sources */,
 				5AC2AD221E2CD765002F660F /* ExtensionDelegate.swift in Sources */,
 				04BF5C7F1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift in Sources */,
 				5AF751331E4BFE5900A13458 /* UserNotificationCenterDelegate.swift in Sources */,
