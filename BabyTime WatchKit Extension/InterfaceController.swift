@@ -9,6 +9,7 @@
 import WatchKit
 import Foundation
 import UserNotifications
+import RealmSwift
 
 class InterfaceController: WKInterfaceController {
     @IBOutlet var timer: WKInterfaceTimer!
@@ -73,6 +74,15 @@ class InterfaceController: WKInterfaceController {
         timer.start()
         
         baby.feedList.append(Feed(amount: Measurement(value: Double(amount), unit: UnitVolume.fluidOunces), time: time))
+//        baby.feed(<#T##feed: Feed##Feed#>)
+        let f = RealmFeed()
+        f.amount = Double(amount)
+        f.time = time
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(f)
+        }
         
         // get the shared instance
         let server = CLKComplicationServer.sharedInstance()

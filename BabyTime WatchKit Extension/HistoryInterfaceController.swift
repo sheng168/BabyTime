@@ -8,7 +8,7 @@
 
 import WatchKit
 import Foundation
-
+import RealmSwift
 
 class HistoryInterfaceController: WKInterfaceController {
     
@@ -27,12 +27,22 @@ class HistoryInterfaceController: WKInterfaceController {
 
         // Configure interface objects here.
         let x = 1
+
+        let realm = try! Realm()
         
-        table.setNumberOfRows(baby.feedList.count * x, withRowType: "Row")
+        let feeds = realm.objects(RealmFeed.self)
+            .sorted(by: { (a, b) -> Bool in
+                a.time >= b.time
+            })
+//            .sorted(byKeyPath: "time", ascending: false)
         
-        for i in 0..<baby.feedList.count * x {
+        //.filter("age < 2")
+
+        table.setNumberOfRows(feeds.count * x, withRowType: "Row")
+        
+        for i in 0..<feeds.count * x {
             if let controller = table.rowController(at: i) as? RowController {
-                controller.feed = baby.feedList[i/x]
+                controller.feed = feeds[i/x]
             }
         }
     }
@@ -48,7 +58,7 @@ class RowController: NSObject {
     @IBOutlet var titleLabel: WKInterfaceLabel!
     @IBOutlet var detailLabel: WKInterfaceLabel!
     
-    var feed: Feed? {
+    var feed: RealmFeed? {
         didSet {
             log.verbose(feed as Any)
             if let feed = feed {

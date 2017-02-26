@@ -23,7 +23,7 @@ class Person: Object {
     let dogs = List<Dog>()
 }
 
-class Record: Object {
+public class RealmFeed: Object {
     dynamic var note = ""
     dynamic var amount = 0.0
     dynamic var time = Date()
@@ -58,6 +58,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         
         // Queries are updated in realtime
         log.debug(puppies.count) // => 1
+        for (i, d) in puppies.enumerated() {
+            log.debug("\(i) \(d)")
+        }
         
         // Query and update from any thread
         DispatchQueue(label: "background").async {
