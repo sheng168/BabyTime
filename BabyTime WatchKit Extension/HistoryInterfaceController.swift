@@ -14,6 +14,13 @@ class HistoryInterfaceController: WKInterfaceController {
     
     @IBOutlet var table: WKInterfaceTable!
 
+    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+        log.debug(rowIndex)
+        let f = (table.rowController(at: rowIndex) as? RowController)?.feed
+//        presentController(withName: "detail", context: f)
+        pushController(withName: "detail", context: f)
+    }
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         log.debug(0) // not showing because log is not initialized yet

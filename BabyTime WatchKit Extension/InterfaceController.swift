@@ -29,9 +29,13 @@ class InterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         debug(context as Any)
         
-        //To retrieve from the key
-        let userDefaults = Foundation.UserDefaults.standard
-        let amount = userDefaults.float(forKey: amountKey)
+        if let feed = context as? RealmFeed {
+            amount = Float(feed.amount)
+        } else {
+            //To retrieve from the key
+            let userDefaults = Foundation.UserDefaults.standard
+            amount = userDefaults.float(forKey: amountKey)
+        }
         debug(amount)
 
         // Configure interface objects here.

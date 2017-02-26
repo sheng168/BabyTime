@@ -12,7 +12,7 @@
         <!--BabyTime-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller title="BabyTime" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BabyTime_WatchKit_App" customModuleProvider="target">
+                <controller identifier="detail" title="BabyTime" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BabyTime_WatchKit_App" customModuleProvider="target">
                     <items>
                         <timer alignment="left" enabled="YES" format="abbreviated" id="LQU-J0-kPC"/>
                         <button width="1" alignment="left" title="Feed" id="iY0-Kn-Sao">
