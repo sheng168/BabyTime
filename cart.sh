@@ -1,2 +1,2 @@
-carthage update --use-submodules --platform iOS,watchOS --no-build
-
+carthage update --use-submodules --platform iOS,watchOS 
+#--no-build
