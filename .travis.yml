@@ -4,5 +4,5 @@ osx_image: xcode8.2
 #xcode_workspace: BabyTime.xcworkspace # path to your xcodeproj folder
 #xcode_scheme: BabyTime
 #xcode_sdk: iphonesimulator10.2 #5
-install: echo HelloTravis
+install: ./cart.sh
 script: xcodebuild -workspace BabyTime.xcworkspace -configuration Debug ONLY_ACTIVE_ARCH=NO build -scheme BabyTime
