@@ -130,7 +130,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         log.verbose(complication.family)
 
         let template: CLKComplicationTemplate? = getTemplateForComplication(complication,
-                                                                            Feed(amount: Measurement(value: -2, unit: UnitVolume.fluidOunces)))
+                                                                            FeedStruct(amount: Measurement(value: -2, unit: UnitVolume.fluidOunces)))
         handler(template)
     }
     

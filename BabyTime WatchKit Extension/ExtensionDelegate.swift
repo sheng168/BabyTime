@@ -24,11 +24,16 @@ class Person: Object {
     let dogs = List<Dog>()
 }
 
-public class RealmFeed: Object {
-    dynamic var note = ""
-    dynamic var amount = 0.0
-    dynamic var time = Date()
+public class RealmFeed_: Object, Feed {
+    public var amount: Measurement<UnitVolume> {
+        return Measurement<UnitVolume>(value: liter, unit: UnitVolume.liters)
+    }
+//    dynamic var note = ""
+    dynamic var liter = 0.1
+    dynamic public var time = Date()
 }
+
+typealias Fluid = RealmFeed_
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
@@ -37,7 +42,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
 //        debug(1)
         log.debug(baby.feedList.count)
-        
+        baby.feed(RealmFeed_())
         
         // Use them like regular Swift objects
         let myDog = Dog()

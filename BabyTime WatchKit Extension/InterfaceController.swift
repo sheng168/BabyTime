@@ -29,8 +29,8 @@ class InterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         debug(context as Any)
         
-        if let feed = context as? RealmFeed {
-            amount = Float(feed.amount)
+        if let feed = context as? Fluid {
+            amount = Float(feed.liter)
         } else {
             //To retrieve from the key
             let userDefaults = Foundation.UserDefaults.standard
@@ -77,10 +77,10 @@ class InterfaceController: WKInterfaceController {
         timer.setDate(time)
         timer.start()
         
-        baby.feedList.append(Feed(amount: Measurement(value: Double(amount), unit: UnitVolume.fluidOunces), time: time))
+        baby.feedList.append(FeedStruct(amount: Measurement(value: Double(amount), unit: UnitVolume.fluidOunces), time: time))
 //        baby.feed(<#T##feed: Feed##Feed#>)
-        let f = RealmFeed()
-        f.amount = Double(amount)
+        let f = Fluid()
+        f.liter = Double(amount)
         f.time = time
         
         let realm = try! Realm()

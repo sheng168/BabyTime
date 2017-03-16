@@ -12,7 +12,12 @@ import Foundation
 //}
 public var baby = Baby()
 
-public struct Feed //: CustomStringConvertible
+public protocol Feed {
+    var amount: Measurement<UnitVolume> {get}
+    var time: Date {get}
+}
+
+public struct FeedStruct: Feed //: CustomStringConvertible
 {
     //    dynamic
     public let amount: Measurement<UnitVolume>
@@ -45,11 +50,11 @@ public struct Baby {
     
     public init(){} // any way to just make default public?
     
-    public var feedList = //[Feed]()
+    public var feedList: [Feed] = //[Feed]()
         [
-            Feed(amount: Measurement(value: 90, unit: UnitVolume.milliliters), time: Date(timeIntervalSinceNow: -6 * TimeInterval.hour)),
-            Feed(amount: Measurement(value: 120, unit: UnitVolume.milliliters), time: Date(timeIntervalSinceNow: -4 * TimeInterval.hour)),
-            Feed(amount: Measurement(value: 180, unit: UnitVolume.milliliters), time: Date(timeIntervalSinceNow: -2 * TimeInterval.hour)),
+            FeedStruct(amount: Measurement(value: 90, unit: UnitVolume.milliliters), time: Date(timeIntervalSinceNow: -6 * TimeInterval.hour)),
+            FeedStruct(amount: Measurement(value: 120, unit: UnitVolume.milliliters), time: Date(timeIntervalSinceNow: -4 * TimeInterval.hour)),
+            FeedStruct(amount: Measurement(value: 180, unit: UnitVolume.milliliters), time: Date(timeIntervalSinceNow: -2 * TimeInterval.hour)),
             ]
     
     public var totalAmount: Measurement<UnitVolume> {

@@ -11,7 +11,7 @@ import Foundation
 //import RealmSwift
 
 class FeedDetailInterfaceController: WKInterfaceController {
-    var feed: RealmFeed?
+    var feed: Fluid?
     
     @IBOutlet var amountLabel: WKInterfaceLabel!
     
@@ -27,7 +27,7 @@ class FeedDetailInterfaceController: WKInterfaceController {
         
         log.debug(context)
         
-        if let feed = context as? RealmFeed {
+        if let feed = context as? Fluid {
             self.feed = feed
             amountLabel.setText("\(feed.amount)")
         }

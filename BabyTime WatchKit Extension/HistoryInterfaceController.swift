@@ -43,7 +43,7 @@ class HistoryInterfaceController: WKInterfaceController {
 
         let realm = try! Realm()
         
-        let feeds = realm.objects(RealmFeed.self)
+        let feeds = realm.objects(Fluid.self)
             .sorted(by: { (a, b) -> Bool in
                 a.time >= b.time
             })
@@ -71,7 +71,7 @@ class RowController: NSObject {
     @IBOutlet var titleLabel: WKInterfaceLabel!
     @IBOutlet var detailLabel: WKInterfaceLabel!
     
-    var feed: RealmFeed? {
+    var feed: Fluid? {
         didSet {
             log.verbose(feed as Any)
             if let feed = feed {
