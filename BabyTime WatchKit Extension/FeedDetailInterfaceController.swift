@@ -25,7 +25,7 @@ class FeedDetailInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        log.debug(context)
+        log.debug(context as Any)
         
         if let feed = context as? Fluid {
             self.feed = feed

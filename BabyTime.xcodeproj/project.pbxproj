@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		04BF5C7C1E4CA5CE00F08EC2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF5C7A1E4C9F9300F08EC2 /* Model.swift */; };
 		04BF5C7F1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */; };
+		5A021EAF1E7B33DE00BE11DF /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A021EAE1E7B33DE00BE11DF /* SwiftyBeaver.framework */; };
+		5A021EB01E7B33DE00BE11DF /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A021EAE1E7B33DE00BE11DF /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A648A431E633C3D00234718 /* FeedDetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A648A421E633C3D00234718 /* FeedDetailInterfaceController.swift */; };
 		5A648A451E63507400234718 /* cart.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5A648A441E63507400234718 /* cart.sh */; };
 		5A848A941E5FA71E00D38CE1 /* PushNotificationPayload-late.apns in Resources */ = {isa = PBXBuildFile; fileRef = 5A848A931E5FA71E00D38CE1 /* PushNotificationPayload-late.apns */; };
@@ -24,7 +26,6 @@
 		5A9DC31B1E7A3AEB001D499E /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9DC3181E7A3AEB001D499E /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A9DC31C1E7A3AEB001D499E /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9DC3191E7A3AEB001D499E /* RealmSwift.framework */; };
 		5A9DC31D1E7A3AEB001D499E /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9DC3191E7A3AEB001D499E /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5A9DC3201E7A461E001D499E /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5A9DC31E1E7A461E001D499E /* README.md */; };
 		5A9DC3211E7A461E001D499E /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 5A9DC31F1E7A461E001D499E /* Cartfile.resolved */; };
 		5AC2ACE51E2CD765002F660F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2ACE41E2CD765002F660F /* AppDelegate.swift */; };
 		5AC2ACE71E2CD765002F660F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2ACE61E2CD765002F660F /* ViewController.swift */; };
@@ -91,6 +92,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5A9DC31D1E7A3AEB001D499E /* RealmSwift.framework in Embed Frameworks */,
+				5A021EB01E7B33DE00BE11DF /* SwiftyBeaver.framework in Embed Frameworks */,
 				5A9DC31B1E7A3AEB001D499E /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -124,6 +126,7 @@
 		044B53C91E3441DE00712D26 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		04BF5C7A1E4C9F9300F08EC2 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = MyPlayground.playground/Sources/Model.swift; sourceTree = "<group>"; };
 		04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryInterfaceController.swift; sourceTree = "<group>"; };
+		5A021EAE1E7B33DE00BE11DF /* SwiftyBeaver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyBeaver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A648A421E633C3D00234718 /* FeedDetailInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDetailInterfaceController.swift; sourceTree = "<group>"; };
 		5A648A441E63507400234718 /* cart.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = cart.sh; sourceTree = "<group>"; };
 		5A74E92A1E4F27760082B856 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A9DC31C1E7A3AEB001D499E /* RealmSwift.framework in Frameworks */,
+				5A021EAF1E7B33DE00BE11DF /* SwiftyBeaver.framework in Frameworks */,
 				5A9DC31A1E7A3AEB001D499E /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +211,7 @@
 		5AA6E06C1E5B9E1D008A76BD /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				5A021EAE1E7B33DE00BE11DF /* SwiftyBeaver.framework */,
 				5A9DC3181E7A3AEB001D499E /* Realm.framework */,
 				5A9DC3191E7A3AEB001D499E /* RealmSwift.framework */,
 			);
@@ -512,7 +517,6 @@
 			files = (
 				5AC2ACE71E2CD765002F660F /* ViewController.swift in Sources */,
 				5AC2ACE51E2CD765002F660F /* AppDelegate.swift in Sources */,
-				5A9DC3201E7A461E001D499E /* README.md in Sources */,
 				5AF751301E4BFD8500A13458 /* UserNotificationCenterDelegate.swift in Sources */,
 				5A98C3291E7A327500C9C446 /* logging.swift in Sources */,
 			);
@@ -692,7 +696,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Carthage/Build/watchOS",
 					"$(PROJECT_DIR)/Frameworks/watchOS",
 				);
 				INFOPLIST_FILE = "BabyTime WatchKit Extension/Info.plist";
@@ -718,7 +721,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Carthage/Build/watchOS",
 					"$(PROJECT_DIR)/Frameworks/watchOS",
 				);
 				INFOPLIST_FILE = "BabyTime WatchKit Extension/Info.plist";

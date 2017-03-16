@@ -14,17 +14,17 @@ import RealmSwift
 let log = logger()
 let realm = try! Realm()
 
-class Dog: Object {
-    dynamic var name = ""
-    dynamic var age = 0
-}
-class Person: Object {
-    dynamic var name = ""
-    dynamic var picture: NSData? = nil // optionals supported
-    let dogs = List<Dog>()
-}
+//class Dog: Object {
+//    dynamic var name = ""
+//    dynamic var age = 0
+//}
+//class Person: Object {
+//    dynamic var name = ""
+//    dynamic var picture: NSData? = nil // optionals supported
+//    let dogs = List<Dog>()
+//}
 
-public class RealmFeed_: Object, Feed {
+class Fluid: Object, Feed {
     public var amount: Measurement<UnitVolume> {
         return Measurement<UnitVolume>(value: liter, unit: UnitVolume.liters)
     }
@@ -33,7 +33,7 @@ public class RealmFeed_: Object, Feed {
     dynamic public var time = Date()
 }
 
-typealias Fluid = RealmFeed_
+//typealias Fluid = RealmFeed_
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
@@ -42,39 +42,39 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
 //        debug(1)
         log.debug(baby.feedList.count)
-        baby.feed(RealmFeed_())
+//        baby.feed(Fluid())
         
         // Use them like regular Swift objects
-        let myDog = Dog()
-        myDog.name = "Rex"
-        myDog.age = 1
-        print("name of dog: \(myDog.name)")
+//        let myDog = Dog()
+//        myDog.name = "Rex"
+//        myDog.age = 1
+//        print("name of dog: \(myDog.name)")
         
         // Get the default Realm
         
         // Query Realm for all dogs less than 2 years old
-        let puppies = realm.objects(Dog.self) //.filter("age < 2")
-        log.debug(puppies.count) // => 0 because no dogs have been added to the Realm yet
-        
-        // Persist your data easily
-        try! realm.write {
-            realm.add(myDog)
-        }
-        
-        // Queries are updated in realtime
-        log.debug(puppies.count) // => 1
-        for (i, d) in puppies.enumerated() {
-//            log.debug("\(i) \(d)")
-        }
+//        let puppies = realm.objects(Dog.self) //.filter("age < 2")
+//        log.debug(puppies.count) // => 0 because no dogs have been added to the Realm yet
+//        
+//        // Persist your data easily
+//        try! realm.write {
+//            realm.add(myDog)
+//        }
+//        
+//        // Queries are updated in realtime
+//        log.debug(puppies.count) // => 1
+//        for (i, d) in puppies.enumerated() {
+////            log.debug("\(i) \(d)")
+//        }
         
         // Query and update from any thread
-        DispatchQueue(label: "background").async {
-            let realm = try! Realm()
-            let theDog = realm.objects(Dog.self).filter("age == 1").first
-            try! realm.write {
-                theDog!.age = 3
-            }
-        }
+//        DispatchQueue(label: "background").async {
+//            let realm = try! Realm()
+//            let theDog = realm.objects(Dog.self).filter("age == 1").first
+//            try! realm.write {
+//                theDog!.age = 3
+//            }
+//        }
 //        let keychain = KeychainSwift()
 //        keychain.set("hello world", forKey: "my key")
 //        
