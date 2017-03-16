@@ -33,8 +33,6 @@ class Fluid: Object, Feed {
     dynamic public var time = Date()
 }
 
-//typealias Fluid = RealmFeed_
-
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
@@ -96,7 +94,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         debug(-2)
     }
 
-    @available(watchOSApplicationExtension 3.0, *)
+//    @available(watchOSApplicationExtension 3.0, *)
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
         // Sent when the system needs to launch the application in the background to process tasks. Tasks arrive in a set, so loop through and process each one.
         debug(backgroundTasks.count)
