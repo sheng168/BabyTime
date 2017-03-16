@@ -59,7 +59,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         // Queries are updated in realtime
         log.debug(puppies.count) // => 1
         for (i, d) in puppies.enumerated() {
-            log.debug("\(i) \(d)")
+//            log.debug("\(i) \(d)")
         }
         
         // Query and update from any thread
