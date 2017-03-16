@@ -15,9 +15,12 @@
 		5A648A481E63972C00234718 /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A648A461E63972C00234718 /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A648A4A1E63977C00234718 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A648A491E63977C00234718 /* SwiftyBeaver.framework */; };
 		5A648A4B1E63977C00234718 /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A648A491E63977C00234718 /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5A648A4E1E64950400234718 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A648A4D1E64950400234718 /* CloudKit.framework */; };
 		5A74E92E1E4F36B10082B856 /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7512F1E4BFD8500A13458 /* logging.swift */; };
 		5A848A941E5FA71E00D38CE1 /* PushNotificationPayload-late.apns in Resources */ = {isa = PBXBuildFile; fileRef = 5A848A931E5FA71E00D38CE1 /* PushNotificationPayload-late.apns */; };
 		5A866A8A1E601DF700801165 /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 5A866A891E601DF700801165 /* PushNotificationPayload.apns */; };
+		5AA149AF1E64E50600E4529C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA149AE1E64E50600E4529C /* CloudKit.framework */; };
+		5AA149B11E64E8B800E4529C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA149B01E64E8B800E4529C /* MapKit.framework */; };
 		5AC2ACE51E2CD765002F660F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2ACE41E2CD765002F660F /* AppDelegate.swift */; };
 		5AC2ACE71E2CD765002F660F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2ACE61E2CD765002F660F /* ViewController.swift */; };
 		5AC2ACEA1E2CD765002F660F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AC2ACE81E2CD765002F660F /* Main.storyboard */; };
@@ -123,10 +126,15 @@
 		5A648A441E63507400234718 /* cart.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = cart.sh; sourceTree = "<group>"; };
 		5A648A461E63972C00234718 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		5A648A491E63977C00234718 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/watchOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
+		5A648A4C1E6494F900234718 /* BabyTime WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BabyTime WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		5A648A4D1E64950400234718 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		5A74E92A1E4F27760082B856 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		5A848A931E5FA71E00D38CE1 /* PushNotificationPayload-late.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PushNotificationPayload-late.apns"; sourceTree = "<group>"; };
 		5A848A951E5FAE2300D38CE1 /* PushNotificationPayload-soon.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = "PushNotificationPayload-soon.apns"; sourceTree = "<group>"; };
 		5A866A891E601DF700801165 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		5AA149AD1E64E50300E4529C /* BabyTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BabyTime.entitlements; sourceTree = "<group>"; };
+		5AA149AE1E64E50600E4529C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		5AA149B01E64E8B800E4529C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5AC2ACE11E2CD765002F660F /* BabyTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC2ACE41E2CD765002F660F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AC2ACE61E2CD765002F660F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +171,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A648A471E63972C00234718 /* SwiftyBeaver.framework in Frameworks */,
+				5AA149B11E64E8B800E4529C /* MapKit.framework in Frameworks */,
+				5AA149AF1E64E50600E4529C /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AF304E61E60C6E1001B4D7B /* Realm.framework in Frameworks */,
+				5A648A4E1E64950400234718 /* CloudKit.framework in Frameworks */,
 				5A648A4A1E63977C00234718 /* SwiftyBeaver.framework in Frameworks */,
 				5AF304E91E60C8A5001B4D7B /* RealmSwift.framework in Frameworks */,
 			);
@@ -189,6 +200,9 @@
 		5AA6E06B1E5B9E0A008A76BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5AA149B01E64E8B800E4529C /* MapKit.framework */,
+				5AA149AE1E64E50600E4529C /* CloudKit.framework */,
+				5A648A4D1E64950400234718 /* CloudKit.framework */,
 				5AA6E06C1E5B9E1D008A76BD /* iOS */,
 				5AA6E06D1E5B9E28008A76BD /* watchOS */,
 			);
@@ -244,6 +258,7 @@
 		5AC2ACE31E2CD765002F660F /* BabyTime */ = {
 			isa = PBXGroup;
 			children = (
+				5AA149AD1E64E50300E4529C /* BabyTime.entitlements */,
 				5AC2ACE41E2CD765002F660F /* AppDelegate.swift */,
 				5AC2ACE61E2CD765002F660F /* ViewController.swift */,
 				5AC2ACE81E2CD765002F660F /* Main.storyboard */,
@@ -285,6 +300,7 @@
 		5AC2AD1C1E2CD765002F660F /* BabyTime WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				5A648A4C1E6494F900234718 /* BabyTime WatchKit Extension.entitlements */,
 				5AC2AD251E2CD765002F660F /* ComplicationController.swift */,
 				5AC2AD1F1E2CD765002F660F /* InterfaceController.swift */,
 				5A648A421E633C3D00234718 /* FeedDetailInterfaceController.swift */,
@@ -410,6 +426,20 @@
 						DevelopmentTeam = 86DHP3ZP92;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.Siri = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					5AC2ACF41E2CD765002F660F = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -428,6 +458,14 @@
 						DevelopmentTeam = 86DHP3ZP92;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -673,6 +711,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "BabyTime WatchKit Extension/BabyTime WatchKit Extension.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 86DHP3ZP92;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -690,7 +729,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
 			};
 			name = Debug;
 		};
@@ -698,6 +737,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "BabyTime WatchKit Extension/BabyTime WatchKit Extension.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 86DHP3ZP92;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -715,7 +755,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
 			};
 			name = Release;
 		};
@@ -761,6 +801,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BabyTime/BabyTime.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 86DHP3ZP92;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -779,6 +820,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BabyTime/BabyTime.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 86DHP3ZP92;
 				FRAMEWORK_SEARCH_PATHS = (

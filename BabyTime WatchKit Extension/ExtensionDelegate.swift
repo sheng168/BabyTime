@@ -12,7 +12,29 @@ import SwiftyBeaver
 import RealmSwift
 
 let log = logger()
-let realm = try! Realm()
+
+let config = Realm.Configuration(objectTypes: [RealmFeed.self, Dog.self, Person.self])
+var realm: Realm! = try! Realm(configuration: config)
+
+//func realmInit() -> Realm? {
+//    log.info("login")
+//    let cred = SyncCredentials.usernamePassword(username: "user", password: "password")
+//    
+//    SyncUser.logIn(with: cred, server: URL(string: "realm://localhost:9080/~/userRealm")!) { (user, error) in
+//        if let user = user {
+//            // Create the configuration
+//            let syncServerURL = URL(string: "realm://localhost:9080/~/userRealm")!
+//            let config = Realm.Configuration(syncConfiguration: SyncConfiguration(user: user, realmURL: syncServerURL))
+//            
+//            // Open the remote Realm
+//            realm = try! Realm(configuration: config)
+//        } else if let error = error {
+//            log.error(error)
+//        }
+//    }
+//    
+//    return nil
+//}
 
 class Dog: Object {
     dynamic var name = ""
@@ -31,7 +53,8 @@ public class RealmFeed: Object {
 }
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
-
+    var token: NotificationToken?
+    
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
 
@@ -62,6 +85,37 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             log.debug("\(i) \(d)")
         }
         
+        let feeds = realm.objects(RealmFeed.self)
+        log.debug(feeds.count)
+        token = feeds.addNotificationBlock { (changes: RealmCollectionChange<Results<RealmFeed>>) in
+            log.info("RealmFeed updated")
+            switch changes {
+            case .initial:
+                // Results are now populated and can be accessed without blocking the UI
+                log.info("RealmFeed initial")
+                break
+            case .update(let t, let deletions, let insertions, let modifications):
+                log.info("RealmFeed update: \(t.count) d\(deletions) i\(insertions) m\(modifications)")
+                // Query results have changed, so apply them to the UITableView
+//                tableView.beginUpdates()
+//                tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }),
+//                                     with: .automatic)
+//                tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}),
+//                                     with: .automatic)
+//                tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }),
+//                                     with: .automatic)
+//                tableView.endUpdates()
+                break
+            case .error(let error):
+                // An error occurred while opening the Realm file on the background worker thread
+                log.error("RealmFeed error: \(error)")
+                break
+            }
+            
+        }
+        
+        SyncSession.
+
         // Query and update from any thread
         DispatchQueue(label: "background").async {
             let realm = try! Realm()
@@ -78,6 +132,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 //        keychain.delete("my key")
         
         UserNotificationCenterDelegate.register()
+//        _ = realmInit()
     }
 
     func applicationDidBecomeActive() {
