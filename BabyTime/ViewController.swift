@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class ViewController: UIViewController {
 
@@ -26,5 +27,22 @@ class ViewController: UIViewController {
         UserNotificationCenterDelegate.setupReminder()
     }
 
+    @IBAction func cloudKitButton(_ sender: Any) {
+        let record = CKRecord(recordType: "Feed")
+        record["amount"] = 1.5 as CKRecordValue
+        record["time"] = Date() as CKRecordValue
+        
+        CKContainer.default().publicCloudDatabase.save(record) { [unowned self] record, error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    log.error(error)
+                } else {
+                    log.debug("CloudKit")
+                }
+                
+                //                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneTapped))
+            }
+        }
+    }
 }
 

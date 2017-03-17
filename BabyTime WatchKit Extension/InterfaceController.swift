@@ -10,6 +10,7 @@ import WatchKit
 import Foundation
 import UserNotifications
 import RealmSwift
+import CloudKit
 
 class InterfaceController: WKInterfaceController {
     @IBOutlet var timer: WKInterfaceTimer!
@@ -87,6 +88,26 @@ class InterfaceController: WKInterfaceController {
         try! realm.write {
             realm.add(f)
         }
+        
+        let record = CKRecord(recordType: "Feed")
+        record["amount"] = amount as CKRecordValue
+        record["time"] = time as CKRecordValue
+        
+        CKContainer.default().publicCloudDatabase.save(record) { [unowned self] record, error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    log.error(error)
+                } else {
+                    log.debug("CloudKit")
+                }
+                
+//                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneTapped))
+            }
+        }
+        
+//        let audioURL = RecordWhistleViewController.getWhistleURL()
+//        let whistleAsset = CKAsset(fileURL: audioURL)
+//        record["audio"] = whistleAsset
         
         // get the shared instance
         let server = CLKComplicationServer.sharedInstance()
