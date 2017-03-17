@@ -11,6 +11,7 @@
 		04BF5C7F1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */; };
 		5A021EAF1E7B33DE00BE11DF /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A021EAE1E7B33DE00BE11DF /* SwiftyBeaver.framework */; };
 		5A021EB01E7B33DE00BE11DF /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A021EAE1E7B33DE00BE11DF /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5A58D53D1E7C1004005534FC /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58D53C1E7C1004005534FC /* RealmModel.swift */; };
 		5A648A431E633C3D00234718 /* FeedDetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A648A421E633C3D00234718 /* FeedDetailInterfaceController.swift */; };
 		5A648A451E63507400234718 /* cart.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5A648A441E63507400234718 /* cart.sh */; };
 		5A848A941E5FA71E00D38CE1 /* PushNotificationPayload-late.apns in Resources */ = {isa = PBXBuildFile; fileRef = 5A848A931E5FA71E00D38CE1 /* PushNotificationPayload-late.apns */; };
@@ -127,6 +128,7 @@
 		04BF5C7A1E4C9F9300F08EC2 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = MyPlayground.playground/Sources/Model.swift; sourceTree = "<group>"; };
 		04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryInterfaceController.swift; sourceTree = "<group>"; };
 		5A021EAE1E7B33DE00BE11DF /* SwiftyBeaver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyBeaver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A58D53C1E7C1004005534FC /* RealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmModel.swift; path = Common/RealmModel.swift; sourceTree = "<group>"; };
 		5A648A421E633C3D00234718 /* FeedDetailInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDetailInterfaceController.swift; sourceTree = "<group>"; };
 		5A648A441E63507400234718 /* cart.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = cart.sh; sourceTree = "<group>"; };
 		5A74E92A1E4F27760082B856 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -329,9 +331,10 @@
 		5AF751291E4B5CD400A13458 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				04BF5C7A1E4C9F9300F08EC2 /* Model.swift */,
-				5AF7512D1E4BFD8500A13458 /* UserNotificationCenterDelegate.swift */,
 				5AF7512F1E4BFD8500A13458 /* logging.swift */,
+				04BF5C7A1E4C9F9300F08EC2 /* Model.swift */,
+				5A58D53C1E7C1004005534FC /* RealmModel.swift */,
+				5AF7512D1E4BFD8500A13458 /* UserNotificationCenterDelegate.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				5AC2AD241E2CD765002F660F /* NotificationController.swift in Sources */,
 				5AC2AD261E2CD765002F660F /* ComplicationController.swift in Sources */,
 				5AF751351E4BFE5F00A13458 /* logging.swift in Sources */,
+				5A58D53D1E7C1004005534FC /* RealmModel.swift in Sources */,
 				5A648A431E633C3D00234718 /* FeedDetailInterfaceController.swift in Sources */,
 				5AC2AD221E2CD765002F660F /* ExtensionDelegate.swift in Sources */,
 				04BF5C7F1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift in Sources */,
