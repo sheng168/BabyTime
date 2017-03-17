@@ -23,7 +23,7 @@ class InterfaceController: WKInterfaceController {
 //    static var lastDate = Date()
     
     let amountKey = "amount"
-    let dateKey = "date"
+//    let dateKey = "date"
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -77,7 +77,7 @@ class InterfaceController: WKInterfaceController {
         timer.setDate(time)
         timer.start()
         
-        baby.feedList.append(FeedStruct(amount: Measurement(value: Double(amount), unit: UnitVolume.fluidOunces), time: time))
+//        baby.feedList.append(FeedStruct(amount: Measurement(value: Double(amount), unit: UnitVolume.fluidOunces), time: time))
 //        baby.feed(<#T##feed: Feed##Feed#>)
         let f = Fluid()
         f.liter = Double(amount)

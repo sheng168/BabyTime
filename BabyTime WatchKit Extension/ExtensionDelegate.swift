@@ -24,13 +24,16 @@ let realm = try! Realm()
 //    let dogs = List<Dog>()
 //}
 
-class Fluid: Object, Feed {
-    public var amount: Measurement<UnitVolume> {
-        return Measurement<UnitVolume>(value: liter, unit: UnitVolume.liters)
-    }
+class Fluid: Object {
 //    dynamic var note = ""
     dynamic var liter = 0.1
     dynamic public var time = Date()
+}
+
+extension Fluid: Feed {
+    public var amount: Measurement<UnitVolume> {
+        return Measurement<UnitVolume>(value: liter, unit: UnitVolume.liters)
+    }
 }
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
