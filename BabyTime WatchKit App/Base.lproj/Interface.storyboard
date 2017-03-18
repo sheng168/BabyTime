@@ -75,7 +75,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="803" y="420"/>
+            <point key="canvasLocation" x="512" y="475"/>
         </scene>
         <!--BabyTime-->
         <scene sceneID="fMj-y7-22F">
@@ -89,7 +89,11 @@
                                         <segue destination="AgC-eL-Hgc" kind="push" id="eZ2-2D-02d"/>
                                     </connections>
                                 </button>
-                                <button width="0.5" alignment="left" title="Repeat" id="wAd-DO-cDs"/>
+                                <button width="0.5" alignment="left" title="Alarm" id="eM2-cs-4pj">
+                                    <connections>
+                                        <segue destination="nVA-Wd-TU6" kind="modal" id="mLo-gD-27C"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
                         <table alignment="left" pagingScroll="YES" id="BwS-L0-Ghp">
@@ -145,16 +149,21 @@
             </objects>
             <point key="canvasLocation" x="803" y="-78"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Alarm Interface Controller-->
         <scene sceneID="ihw-57-mMA">
             <objects>
-                <controller id="nVA-Wd-TU6">
+                <controller id="nVA-Wd-TU6" customClass="AlarmInterfaceController" customModule="BabyTime_WatchKit_Extension">
                     <items>
                         <switch width="1" alignment="left" value="YES" title="Alarm" id="PWc-9W-3uG"/>
                         <timer alignment="left" format="short" previewedSeconds="9000" id="QXw-5C-asz">
                             <calendarUnit key="units" hour="YES" minute="YES"/>
                         </timer>
                         <slider width="1" alignment="left" maximum="9000" steps="5" id="ik1-ac-6up"/>
+                        <button width="1" alignment="left" title="Test" id="tok-Bx-i7R">
+                            <connections>
+                                <action selector="testAction" destination="nVA-Wd-TU6" id="j2M-eQ-c1n"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
@@ -222,4 +231,7 @@
             <point key="canvasLocation" x="523" y="918"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="DfQ-hJ-bHf"/>
+    </inferredMetricsTieBreakers>
 </document>

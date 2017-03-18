@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        UserNotificationCenterDelegate.setupReminder()
+        UserNotificationCenterDelegate.setupReminder(minutes: 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func reminder(_ sender: Any) {
-        UserNotificationCenterDelegate.setupReminder()
+        UserNotificationCenterDelegate.setupReminder(minutes: 0.1)
     }
 
     @IBAction func cloudKitButton(_ sender: Any) {

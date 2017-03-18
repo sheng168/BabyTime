@@ -19,6 +19,7 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        log.info("willPresent")
         log.info(notification)
         
         completionHandler([.alert, .sound, .badge])
@@ -26,8 +27,8 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        log.info("didReceive")
         log.info(response)
-        
         
         switch response.actionIdentifier {
         case UserNotificationCenterDelegate.actionSnooze:
@@ -91,8 +92,8 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
         
     }
 
-    static func setupReminder() {
-        debug(1)
+    static func setupReminder(minutes: Double) {
+        debug(minutes)
 //        let generalCategory = UNNotificationCategory(identifier: "GENERAL",
 //                                                     actions: [],
 //                                                     intentIdentifiers: [],
@@ -114,8 +115,9 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
         // Create the request and schedule the notification.
         // Configure the trigger for a 7am wakeup.
         #if swift(>=3)
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1/*60*60*/, repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: minutes*60, repeats: false)
         #else
+            *
             var dateInfo = DateComponents()
             dateInfo.hour = 21
             dateInfo.minute = 05
