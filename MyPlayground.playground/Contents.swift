@@ -52,7 +52,7 @@ alex.nextFeedUpdated = {(to: Date) -> Void in
     print("nextFeedUpdated \(to)")
 }
 
-alex.feed(Feed(amount: Measurement(value: 180, unit: UnitVolume.milliliters)))
+alex.feed(FeedStruct(amount: Measurement(value: 180, unit: UnitVolume.milliliters)))
 
 print(alex)
 print()

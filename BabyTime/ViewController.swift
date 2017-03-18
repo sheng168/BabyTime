@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         record["amount"] = 1.5 as CKRecordValue
         record["time"] = Date() as CKRecordValue
         
-        CKContainer.default().publicCloudDatabase.save(record) { [unowned self] record, error in
+        CKContainer.default().publicCloudDatabase.save(record) { /*[unowned self]*/ record, error in
             DispatchQueue.main.async {
                 if let error = error {
                     log.error(error)

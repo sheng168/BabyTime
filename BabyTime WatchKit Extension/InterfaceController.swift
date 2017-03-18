@@ -13,6 +13,8 @@ import RealmSwift
 import CloudKit
 
 class InterfaceController: WKInterfaceController {
+    let cloudKit = false
+    
     @IBOutlet var timer: WKInterfaceTimer!
     @IBOutlet var label: WKInterfaceLabel!
     @IBOutlet var slider: WKInterfaceSlider!
@@ -89,20 +91,23 @@ class InterfaceController: WKInterfaceController {
             realm.add(f)
         }
         
-        let record = CKRecord(recordType: "Feed")
-        record["amount"] = amount as CKRecordValue
-        record["time"] = time as CKRecordValue
-        
-        CKContainer.default().publicCloudDatabase.save(record) { [unowned self] record, error in
-            DispatchQueue.main.async {
-                if let error = error {
-                    log.error(error)
-                } else {
-                    log.debug("CloudKit")
+        if cloudKit {
+            let record = CKRecord(recordType: "Feed")
+            record["amount"] = amount as CKRecordValue
+            record["time"] = time as CKRecordValue
+            
+            CKContainer.default().publicCloudDatabase.save(record) { /*[unowned self]*/ record, error in
+                DispatchQueue.main.async {
+                    if let error = error {
+                        log.error(error)
+                    } else {
+                        log.debug("CloudKit")
+                    }
+                    
+                    //                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneTapped))
                 }
-                
-//                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneTapped))
             }
+            
         }
         
 //        let audioURL = RecordWhistleViewController.getWhistleURL()

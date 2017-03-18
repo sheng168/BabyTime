@@ -10,8 +10,10 @@ import Foundation
 
 import RealmSwift
 
-let config = Realm.Configuration(objectTypes: [Fluid.self])
-var realm: Realm! = try! Realm(configuration: config)
+let config = Realm.Configuration(objectTypes: [Fluid.self, FluidList.self, Baby_.self])
+//Realm.Configuration.defaultConfiguration = config
+
+let realm: Realm! = try! Realm(configuration: config)
 
 //func realmInit() -> Realm? {
 //    log.info("login")
@@ -55,10 +57,21 @@ extension Fluid: Feed {
     }
 }
 
-final class BabyFluidList: Object {
-    dynamic var name = ""
+final class FluidList: Object {
+    dynamic var type = "milk"
+    dynamic var dailyLiters = 1.0
+    
+    dynamic var interval = 2 * Measurement(value: 1, unit: UnitDuration.hours).converted(to: .seconds).value
+    dynamic var perInterval = 0.15
+    
+    let items = List<Fluid>()
+}
+
+final class Baby_: Object {
     dynamic var id = ""
-    dynamic var weightGrams = 0.0
+    
+    dynamic var name = ""
+    dynamic var weight = 0.0 // grams
     
     let items = List<Fluid>()
     
