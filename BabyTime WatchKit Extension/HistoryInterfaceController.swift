@@ -41,14 +41,6 @@ class HistoryInterfaceController: WKInterfaceController {
         // Configure interface objects here.
         let x = 1
 
-        let realm = try! Realm()
-        
-        let feeds = realm.objects(Fluid.self)
-            .sorted(by: { (a, b) -> Bool in
-                a.time >= b.time
-            })
-//            .sorted(byKeyPath: "time", ascending: false)
-        
         //.filter("age < 2")
 
         table.setNumberOfRows(feeds.count * x, withRowType: "Row")

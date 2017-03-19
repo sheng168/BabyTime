@@ -14,6 +14,10 @@ let config = Realm.Configuration(objectTypes: [Fluid.self, FluidList.self, Baby_
 //Realm.Configuration.defaultConfiguration = config
 
 let realm: Realm! = try! Realm(configuration: config)
+let feeds = realm.objects(Fluid.self).sorted(byKeyPath: "time", ascending: false)
+//    .sorted(by: { (a, b) -> Bool in
+//        a.time >= b.time
+//    })
 
 //func realmInit() -> Realm? {
 //    log.info("login")

@@ -22,33 +22,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         // Perform any final initialization of your application.
 
 //        debug(1)
-        log.debug(baby.feedList.count)
-//        baby.feed(Fluid())
+        log.debug(feeds.count)
         
-        // Use them like regular Swift objects
-//        let myDog = Dog()
-//        myDog.name = "Rex"
-//        myDog.age = 1
-//        print("name of dog: \(myDog.name)")
-        
-        // Get the default Realm
-        
-        // Query Realm for all dogs less than 2 years old
-//        let puppies = realm.objects(Dog.self) //.filter("age < 2")
-//        log.debug(puppies.count) // => 0 because no dogs have been added to the Realm yet
-//        
-//        // Persist your data easily
-//        try! realm.write {
-//            realm.add(myDog)
-//        }
-//        
-//        // Queries are updated in realtime
-//        log.debug(puppies.count) // => 1
-//        for (i, d) in puppies.enumerated() {
-////            log.debug("\(i) \(d)")
-//        }
-        
-        let feeds = realm.objects(Fluid.self)
         log.debug(feeds.count)
         token = feeds.addNotificationBlock { (changes: RealmCollectionChange<Results<Fluid>>) in
             log.info("RealmFeed updated")
@@ -59,6 +34,12 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 break
             case .update(let t, let deletions, let insertions, let modifications):
                 log.info("RealmFeed update: \(t.count) d\(deletions) i\(insertions) m\(modifications)")
+                
+                if insertions.count > 0 && insertions[0] == 0 {
+                    // data appended
+                    let interval = t[0].time.addingTimeInterval(120*60).timeIntervalSinceNow
+                    UserNotificationCenterDelegate.setupReminder(minutes: interval/60.0)
+                }
                 // Query results have changed, so apply them to the UITableView
 //                tableView.beginUpdates()
 //                tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }),
@@ -79,21 +60,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         
 //        SyncSession.
 
-        // Query and update from any thread
-//        DispatchQueue(label: "background").async {
-//            let realm = try! Realm()
-//            let theDog = realm.objects(Dog.self).filter("age == 1").first
-//            try! realm.write {
-//                theDog!.age = 3
-//            }
-//        }
-//        let keychain = KeychainSwift()
-//        keychain.set("hello world", forKey: "my key")
-//        
-//        let key = keychain.get("my key")
-//        debug(key)
-//        keychain.delete("my key")
-        
         UserNotificationCenterDelegate.register()
 //        _ = realmInit()
     }
