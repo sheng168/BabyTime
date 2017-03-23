@@ -11,10 +11,21 @@ import UserNotifications
 
 class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate {
     static let instance = UserNotificationCenterDelegate()
-    static let categoryGeneral = "general"
-    static let categoryTimer = "now"
-    static let actionSnooze = "SNOOZE_ACTION"
-    static let actionDone = "STOP_ACTION"
+//    static let categoryGeneral = "general"
+//    static let categoryTimer = "now"
+//    static let actionSnooze = "SNOOZE_ACTION"
+//    static let actionDone = "STOP_ACTION"
+    
+    enum Category: String {
+        case general
+        case timer
+    }
+    
+    enum Action: String {
+        case snooze
+        case stop
+        case now
+    }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
@@ -30,9 +41,10 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
         log.info("didReceive")
         log.info(response)
         
+        
         switch response.actionIdentifier {
-        case UserNotificationCenterDelegate.actionSnooze:
-            log.info(UserNotificationCenterDelegate.actionSnooze)
+        case Action.snooze.rawValue:
+            log.info(Action.snooze)
         default:
             log.error("*** missing case *** \(response.actionIdentifier)")
         }
@@ -59,10 +71,10 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
             
             if granted {
                 // Create the custom actions for the TIMER_EXPIRED category.
-                let snoozeAction = UNNotificationAction(identifier: actionSnooze,
+                let snoozeAction = UNNotificationAction(identifier: Action.snooze.rawValue,
                                                         title: "Snooze",
                                                         options: UNNotificationActionOptions(rawValue: 0))
-                let stopAction = UNNotificationAction(identifier: actionDone,
+                let stopAction = UNNotificationAction(identifier: Action.stop.rawValue,
                                                       title: "Stop",
                                                       options: .foreground)
                 let commentAction = UNTextInputNotificationAction(
@@ -72,12 +84,12 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
                     textInputButtonTitle: "Send",
                     textInputPlaceholder: "Type here...")
                 
-                let expiredCategory = UNNotificationCategory(identifier: categoryTimer,
+                let expiredCategory = UNNotificationCategory(identifier: Category.timer.rawValue,
                                                              actions: [snoozeAction, stopAction, commentAction],
                                                              intentIdentifiers: [],
                                                              options: [.customDismissAction])
                 
-                let generalCategory = UNNotificationCategory(identifier: categoryGeneral,
+                let generalCategory = UNNotificationCategory(identifier: Category.general.rawValue,
                                                      actions: [],
                                                      intentIdentifiers: [],
                                                      options: .customDismissAction)
@@ -109,7 +121,7 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
         content.body = "Ready for feeding" //NSString.localizedUserNotificationString(forKey: "Rise and shine! It's morning time!", arguments: nil)
         
         // Assign the category (and the associated actions).
-        content.categoryIdentifier = categoryTimer
+        content.categoryIdentifier = Category.timer.rawValue
         content.sound = UNNotificationSound.default()
         
         // Create the request and schedule the notification.
