@@ -48,6 +48,18 @@ let feeds = realm.objects(Fluid.self).sorted(byKeyPath: "time", ascending: false
 //    dynamic var picture: NSData? = nil // optionals supported
 //    let dogs = List<Dog>()
 //}
+final class Setting: Object {
+    dynamic var id = "1"
+    
+    dynamic var name = ""
+    dynamic var weight = 0.0 // grams
+    
+    let items = List<Fluid>()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+}
 
 class Fluid: Object {
     //    dynamic var note = ""

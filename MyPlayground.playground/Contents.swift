@@ -93,3 +93,9 @@ extension Double {
 
 1.hour.customMirror
 
+enum Action: String {
+    case a
+}
+
+Action.a
+
