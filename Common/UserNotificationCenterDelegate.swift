@@ -6,8 +6,10 @@
 //  Copyright © 2017 Kewe. All rights reserved.
 //
 
-//import WatchKit
+import WatchKit
 import UserNotifications
+
+var current: WKInterfaceController?
 
 class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate {
     static let instance = UserNotificationCenterDelegate()
@@ -32,6 +34,12 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         log.info("willPresent")
         log.info(notification)
+        
+//        current?.presentAlert(withTitle: "",
+//                              message: "",
+//                              preferredStyle: .actionSheet,
+//                              actions: [])
+         
         
         completionHandler([.alert, .sound, .badge])
 //        completionHandler([])

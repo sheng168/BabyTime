@@ -14,12 +14,18 @@ class FeedDetailInterfaceController: WKInterfaceController {
     var feed: Fluid?
     
     @IBOutlet var amountLabel: WKInterfaceLabel!
+    @IBOutlet var date: WKInterfaceDate!
+    @IBOutlet var timer: WKInterfaceTimer!
     
     @IBAction func deleteClick() {
-        try! realm.write {
-            realm.delete(feed!)
+        let action = WKAlertAction(title: "Delete", style: .destructive) { 
+            try! realm.write {
+                realm.delete(self.feed!)
+            }
+            self.pop()
         }
-        pop()
+        presentAlert(withTitle: "Delete?", message: nil, preferredStyle: .actionSheet, actions: [action])
+        
     }
     
     override func awake(withContext context: Any?) {
@@ -30,6 +36,9 @@ class FeedDetailInterfaceController: WKInterfaceController {
         if let feed = context as? Fluid {
             self.feed = feed
             amountLabel.setText("\(feed.amount)")
+//            date.setCalendar()
+            timer.setDate(feed.time)
+            timer.start()
         }
     }
 

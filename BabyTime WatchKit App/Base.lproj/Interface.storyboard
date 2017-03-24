@@ -21,7 +21,7 @@
                             </connections>
                         </button>
                         <label alignment="left" text="2.0 oz" id="VWv-zf-60P"/>
-                        <slider width="1" alignment="left" value="2" maximum="5" steps="10" id="rUf-QK-1bG">
+                        <slider width="1" alignment="left" value="30" maximum="300" steps="20" id="rUf-QK-1bG">
                             <connections>
                                 <action selector="sliderChange:" destination="AgC-eL-Hgc" id="bNN-RV-Ur9"/>
                             </connections>
@@ -37,15 +37,10 @@
                                 <action selector="timeChange:" destination="AgC-eL-Hgc" id="60B-sW-qBE"/>
                             </connections>
                         </slider>
-                        <separator alignment="left" id="vfK-gt-xtM"/>
-                        <label alignment="left" text="Add the complication for this app by customizing your watch face" numberOfLines="5" id="0YG-VB-knb"/>
-                        <button width="1" alignment="left" title="Alarm" id="DS7-GZ-JXu">
-                            <connections>
-                                <segue destination="nVA-Wd-TU6" kind="push" id="DfQ-hJ-bHf"/>
-                            </connections>
-                        </button>
+                        <separator alignment="left" hidden="YES" id="vfK-gt-xtM"/>
+                        <label alignment="left" hidden="YES" text="Add the complication for this app by customizing your watch face" numberOfLines="5" id="0YG-VB-knb"/>
                         <button alignment="left" id="dPt-sH-Bad">
-                            <group key="contentGroup" width="1" alignment="left" layout="vertical" id="diu-9p-IUr">
+                            <group key="contentGroup" width="1" alignment="left" hidden="YES" layout="vertical" id="diu-9p-IUr">
                                 <items>
                                     <label alignment="left" text="History" id="bMl-Wk-QF5">
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -75,7 +70,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="512" y="475"/>
+            <point key="canvasLocation" x="803" y="452"/>
         </scene>
         <!--BabyTime-->
         <scene sceneID="fMj-y7-22F">
@@ -133,10 +128,13 @@
                         <label alignment="left" text="Label" id="2vg-R6-dvR"/>
                         <dateLabel alignment="left" id="abp-fg-Ahd">
                             <dateFormatterStyle key="dateStyle" short="YES"/>
-                            <dateFormatterStyle key="timeStyle" short="YES"/>
+                            <dateFormatterStyle key="timeStyle" medium="YES"/>
                         </dateLabel>
-                        <timer alignment="left" id="QVy-pu-ddP"/>
-                        <button width="1" alignment="left" title="Delete" id="pRk-p8-Y8m">
+                        <timer alignment="left" format="abbreviated" id="QVy-pu-ddP">
+                            <calendarUnit key="units" day="YES" hour="YES" minute="YES" second="YES"/>
+                        </timer>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Delete" id="pRk-p8-Y8m">
+                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="deleteClick" destination="l6G-wm-oCV" id="mdC-5h-Jwd"/>
                             </connections>
@@ -144,6 +142,8 @@
                     </items>
                     <connections>
                         <outlet property="amountLabel" destination="2vg-R6-dvR" id="xn6-ah-O2T"/>
+                        <outlet property="date" destination="abp-fg-Ahd" id="v1m-ym-ggb"/>
+                        <outlet property="timer" destination="QVy-pu-ddP" id="ulq-i9-G0b"/>
                     </connections>
                 </controller>
             </objects>
@@ -231,7 +231,4 @@
             <point key="canvasLocation" x="523" y="918"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="DfQ-hJ-bHf"/>
-    </inferredMetricsTieBreakers>
 </document>

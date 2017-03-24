@@ -42,12 +42,13 @@ class HistoryInterfaceController: WKInterfaceController {
         let x = 1
 
         //.filter("age < 2")
+        let f:[Fluid] = feeds.reversed()
 
-        table.setNumberOfRows(feeds.count * x, withRowType: "Row")
+        table.setNumberOfRows(f.count * x, withRowType: "Row")
         
-        for i in 0..<feeds.count * x {
+        for i in 0..<f.count * x {
             if let controller = table.rowController(at: i) as? RowController {
-                controller.feed = feeds[i/x]
+                controller.feed = f[i/x]
             }
         }
     }

@@ -48,13 +48,7 @@ class InterfaceController: WKInterfaceController {
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
-        debug(baby.feedList.count)
-        for f in baby.feedList {
-            debug(f)
-        }
-        
         super.willActivate()
-        
     }
     
     override func didDeactivate() {
@@ -83,7 +77,7 @@ class InterfaceController: WKInterfaceController {
 //        baby.feedList.append(FeedStruct(amount: Measurement(value: Double(amount), unit: UnitVolume.fluidOunces), time: time))
 //        baby.feed(<#T##feed: Feed##Feed#>)
         let f = Fluid()
-        f.liter = Double(amount)
+        f.liter = Double(amount)/1000
         f.time = time
         
         let realm = try! Realm()
@@ -120,8 +114,6 @@ class InterfaceController: WKInterfaceController {
         for complication in server.activeComplications! {
             server.reloadTimeline(for: complication)
         }
-        
-        
     }
     
     @IBAction func sliderChange(_ value: Float) {
@@ -144,6 +136,8 @@ class InterfaceController: WKInterfaceController {
     }
     
     func setLabelText(_ value: Float) {
-        label.setText("\(value) oz")
+        let ml = Measurement(value: Double(value), unit: UnitVolume.milliliters)
+        let oz = ml.converted(to: UnitVolume.fluidOunces)
+        label.setText("\(ml), \(Double(Int(oz.value*10))/10.0) oz")
     }
 }

@@ -50,7 +50,7 @@ public struct Baby {
     
     public init(){} // any way to just make default public?
     
-    public var feedList: [Feed] = //[Feed]()
+    /*public var feedList: [Feed] = //[Feed]()
         [
             FeedStruct(amount: Measurement(value: 90, unit: UnitVolume.milliliters), time: Date(timeIntervalSinceNow: -6 * TimeInterval.hour)),
             FeedStruct(amount: Measurement(value: 120, unit: UnitVolume.milliliters), time: Date(timeIntervalSinceNow: -4 * TimeInterval.hour)),
@@ -77,7 +77,7 @@ public struct Baby {
         
         nextFeed = feedList.last!.time.addingTimeInterval(feedInterval.converted(to: UnitDuration.seconds).value)
         nextFeedUpdated?(nextFeed!)
-    }
+    }*/
     
     /// track throw ups
     public func puke(_ feed: Feed) {

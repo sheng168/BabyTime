@@ -14,7 +14,7 @@ let config = Realm.Configuration(objectTypes: [Fluid.self, FluidList.self, Baby_
 //Realm.Configuration.defaultConfiguration = config
 
 let realm: Realm! = try! Realm(configuration: config)
-let feeds = realm.objects(Fluid.self).sorted(byKeyPath: "time", ascending: false)
+let feeds = realm.objects(Fluid.self).sorted(byKeyPath: "time", ascending: true)
 //    .sorted(by: { (a, b) -> Bool in
 //        a.time >= b.time
 //    })
@@ -69,7 +69,7 @@ class Fluid: Object {
 
 extension Fluid: Feed {
     public var amount: Measurement<UnitVolume> {
-        return Measurement<UnitVolume>(value: liter, unit: UnitVolume.liters)
+        return Measurement<UnitVolume>(value: liter, unit: UnitVolume.liters).converted(to: .milliliters)
     }
 }
 
