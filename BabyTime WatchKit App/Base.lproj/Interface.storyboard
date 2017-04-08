@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N6v-8v-GEt">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N6v-8v-GEt">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
         <!--BabyTime-->
@@ -14,7 +14,7 @@
             <objects>
                 <controller title="BabyTime" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BabyTime_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <timer alignment="left" enabled="YES" format="abbreviated" id="LQU-J0-kPC"/>
+                        <timer alignment="left" hidden="YES" enabled="YES" format="abbreviated" id="LQU-J0-kPC"/>
                         <button width="1" alignment="left" title="Feed" id="iY0-Kn-Sao">
                             <connections>
                                 <action selector="feedClick" destination="AgC-eL-Hgc" id="bC7-mx-pGI"/>
@@ -84,7 +84,7 @@
                                         <segue destination="AgC-eL-Hgc" kind="push" id="eZ2-2D-02d"/>
                                     </connections>
                                 </button>
-                                <button width="0.5" alignment="left" title="Alarm" id="eM2-cs-4pj">
+                                <button width="0.5" alignment="left" hidden="YES" title="Alarm" id="eM2-cs-4pj">
                                     <connections>
                                         <segue destination="nVA-Wd-TU6" kind="modal" id="mLo-gD-27C"/>
                                     </connections>
@@ -97,7 +97,7 @@
                                     <group key="rootItem" width="1" alignment="left" layout="vertical" id="7k1-d8-8lf">
                                         <items>
                                             <label alignment="left" text="2.5 oz" id="4eV-0D-TQz"/>
-                                            <label alignment="left" text="Label" id="Eos-HY-tIZ">
+                                            <label alignment="left" text="Label" numberOfLines="0" id="Eos-HY-tIZ">
                                                 <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                             </label>
                                         </items>
@@ -126,7 +126,7 @@
                 <controller identifier="detail" title="Feed Detail" id="l6G-wm-oCV" customClass="FeedDetailInterfaceController" customModule="BabyTime_WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Label" id="2vg-R6-dvR"/>
-                        <dateLabel alignment="left" id="abp-fg-Ahd">
+                        <dateLabel alignment="left" numberOfLines="0" id="abp-fg-Ahd">
                             <dateFormatterStyle key="dateStyle" short="YES"/>
                             <dateFormatterStyle key="timeStyle" medium="YES"/>
                         </dateLabel>
@@ -221,7 +221,7 @@
                     <items>
                         <label alignment="left" text="Alert Label" id="7lU-Z0-7RD"/>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="default" id="gHg-6b-JkS" userLabel="soon"/>
+                    <notificationCategory key="notificationCategory" identifier="_default" id="gHg-6b-JkS" userLabel="soon"/>
                     <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="7lU-Z0-7RD" id="qrR-El-DJU"/>

@@ -35,9 +35,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             case .update(let t, let deletions, let insertions, let modifications):
                 log.info("RealmFeed update: \(t.count) d\(deletions) i\(insertions) m\(modifications)")
                 
-                if insertions.count > 0 && insertions[0] == 0 {
+                if insertions.count > 0 && insertions[0] == t.count-1 {
                     // data appended
-                    let interval = t[0].time.addingTimeInterval(120*60).timeIntervalSinceNow
+                    let interval = t[insertions[0]].time.addingTimeInterval(121*60).timeIntervalSinceNow
                     UserNotificationCenterDelegate.setupReminder(minutes: interval/60.0)
                 }
                 // Query results have changed, so apply them to the UITableView

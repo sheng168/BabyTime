@@ -114,6 +114,8 @@ class InterfaceController: WKInterfaceController {
         for complication in server.activeComplications! {
             server.reloadTimeline(for: complication)
         }
+        
+        self.pop()
     }
     
     @IBAction func sliderChange(_ value: Float) {
