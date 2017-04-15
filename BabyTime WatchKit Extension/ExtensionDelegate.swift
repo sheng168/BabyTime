@@ -37,8 +37,13 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 
                 if insertions.count > 0 && insertions[0] == t.count-1 {
                     // data appended
-                    let interval = t[insertions[0]].time.addingTimeInterval(121*60).timeIntervalSinceNow
-                    UserNotificationCenterDelegate.setupReminder(minutes: interval/60.0)
+                    let f = t[insertions[0]]
+                    
+                    for i in stride(from:1.0, to:120, by:10) {
+                        let interval = f.time.addingTimeInterval(i*60).timeIntervalSinceNow
+                        let body = "Last feeding was \(i) min ago"
+                        UserNotificationCenterDelegate.setupReminder(minutes: interval/60.0, body: body, id: body)
+                    }
                 }
                 // Query results have changed, so apply them to the UITableView
 //                tableView.beginUpdates()

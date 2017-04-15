@@ -37,6 +37,8 @@ func debug<T>(_ object: @autoclosure () -> T, _ file: String = #file, _ function
 
 func logger() -> SwiftyBeaver.Type {
     let log = SwiftyBeaver.self
+    //return log
+    
     // add log destinations. at least one is needed!
     let console = ConsoleDestination()  // log to Xcode Console
     console.minLevel = .debug

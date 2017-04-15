@@ -13,10 +13,23 @@ import RealmSwift
 let config = Realm.Configuration(objectTypes: [Fluid.self, FluidList.self, Baby_.self])
 //Realm.Configuration.defaultConfiguration = config
 
-let realm: Realm! = try! Realm(configuration: config)
+let realm: Realm! = try! realmInit() //try! Realm(configuration: config)
 let feeds = realm.objects(Fluid.self).sorted(byKeyPath: "time", ascending: true)
 
 let setting = realm.object(ofType: Setting.self, forPrimaryKey: "1")
+
+func realmInit() throws -> Realm {
+    log.info(config)
+    let r = try Realm(configuration: config)
+
+    if r.isEmpty {
+        try r.write {
+            r.add(Fluid())
+        }
+    }
+
+    return r
+}
 
 //    .sorted(by: { (a, b) -> Bool in
 //        a.time >= b.time

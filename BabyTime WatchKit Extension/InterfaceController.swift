@@ -54,7 +54,7 @@ class InterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         debug(1)
-        UserNotificationCenterDelegate.setupReminder(minutes: 0.5)
+//        UserNotificationCenterDelegate.setupReminder(minutes: 0.5, body: "Testing didDeactivate 30s ago")
 
         super.didDeactivate()
     }

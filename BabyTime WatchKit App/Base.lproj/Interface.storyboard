@@ -75,11 +75,12 @@
         <!--BabyTime-->
         <scene sceneID="fMj-y7-22F">
             <objects>
-                <controller title="BabyTime" id="N6v-8v-GEt" customClass="HistoryInterfaceController" customModule="BabyTime_WatchKit_Extension">
+                <controller identifier="list" title="BabyTime" id="N6v-8v-GEt" customClass="HistoryInterfaceController" customModule="BabyTime_WatchKit_Extension">
                     <items>
                         <group width="1" alignment="left" id="v7G-nR-yJp">
                             <items>
                                 <button width="0.5" alignment="left" title="Add" id="NsJ-Vr-M8e">
+                                    <color key="titleColor" red="0.27208036149999998" green="0.74711748030000003" blue="0.19905057600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <segue destination="AgC-eL-Hgc" kind="push" id="eZ2-2D-02d"/>
                                     </connections>
@@ -96,8 +97,18 @@
                                 <tableRow identifier="Row" id="lgt-aB-znB" customClass="RowController" customModule="BabyTime_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" layout="vertical" id="7k1-d8-8lf">
                                         <items>
-                                            <label alignment="left" text="2.5 oz" id="4eV-0D-TQz"/>
+                                            <group width="1" alignment="left" id="jTr-cZ-i8g">
+                                                <items>
+                                                    <label alignment="left" text="2.5 oz" id="4eV-0D-TQz"/>
+                                                    <timer alignment="right" verticalAlignment="bottom" format="abbreviated" previewedSeconds="35990" id="OQ2-yO-K4J">
+                                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                                        <calendarUnit key="units" day="YES" hour="YES" minute="YES"/>
+                                                    </timer>
+                                                </items>
+                                            </group>
                                             <label alignment="left" text="Label" numberOfLines="0" id="Eos-HY-tIZ">
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                 <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                             </label>
                                         </items>
@@ -107,6 +118,7 @@
                                     </group>
                                     <connections>
                                         <outlet property="detailLabel" destination="Eos-HY-tIZ" id="8eG-3r-hEk"/>
+                                        <outlet property="timer" destination="OQ2-yO-K4J" id="OG4-ay-e7B"/>
                                         <outlet property="titleLabel" destination="4eV-0D-TQz" id="HBE-Kd-dZt"/>
                                     </connections>
                                 </tableRow>
@@ -119,6 +131,13 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="479" y="-78"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="Wd8-vC-Vig">
+            <objects>
+                <controllerPlaceholder id="kTL-aN-dQW"/>
+            </objects>
+            <point key="canvasLocation" x="464" y="252"/>
         </scene>
         <!--Feed Detail-->
         <scene sceneID="qj5-xs-VWH">

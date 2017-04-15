@@ -112,8 +112,12 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
         
     }
 
-    static func setupReminder(minutes: Double) {
+    static func setupReminder(minutes: Double, body: String, id: String = UUID().uuidString) {
         debug(minutes)
+        if minutes <= 0 {
+            log.warning("no")
+            return
+        }
 //        let generalCategory = UNNotificationCategory(identifier: "GENERAL",
 //                                                     actions: [],
 //                                                     intentIdentifiers: [],
@@ -126,7 +130,7 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
         let content = UNMutableNotificationContent()
         content.title = "It's time" //NSString.localizedUserNotificationString(forKey: "Wake up!", arguments: nil)
         content.subtitle = "subtitle"
-        content.body = "Ready for feeding" //NSString.localizedUserNotificationString(forKey: "Rise and shine! It's morning time!", arguments: nil)
+        content.body = body //NSString.localizedUserNotificationString(forKey: "Rise and shine! It's morning time!", arguments: nil)
         
         // Assign the category (and the associated actions).
         content.categoryIdentifier = Category.timer.rawValue
@@ -146,7 +150,7 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
         
         
         // Create the request object.
-        let request = UNNotificationRequest(identifier: "MorningAlarm", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
 //        request.
         
         // Schedule the request.

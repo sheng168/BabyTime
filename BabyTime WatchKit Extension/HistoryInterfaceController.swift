@@ -63,6 +63,7 @@ class HistoryInterfaceController: WKInterfaceController {
 class RowController: NSObject {
     @IBOutlet var titleLabel: WKInterfaceLabel!
     @IBOutlet var detailLabel: WKInterfaceLabel!
+    @IBOutlet var timer: WKInterfaceTimer!
     
     var feed: Fluid? {
         didSet {
@@ -70,6 +71,8 @@ class RowController: NSObject {
             if let feed = feed {
                 titleLabel.setText("\(feed.amount)")
                 detailLabel.setText("\(feed.time)")
+                timer.setDate(feed.time)
+                timer.start()
             }
         }
     }

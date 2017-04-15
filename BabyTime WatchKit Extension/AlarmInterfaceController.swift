@@ -14,6 +14,6 @@ import RealmSwift
 class AlarmInterfaceController: WKInterfaceController {
     
     @IBAction func testAction() {
-        UserNotificationCenterDelegate.setupReminder(minutes: 0.1)
+        UserNotificationCenterDelegate.setupReminder(minutes: 0.1, body: "Testing")
     }
 }
