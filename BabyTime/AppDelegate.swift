@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftyBeaver
+//import SwiftyBeaver
 
 let log = logger()
 
