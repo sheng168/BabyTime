@@ -8,7 +8,7 @@
 
 import WatchKit
 //import KeychainSwift
-import SwiftyBeaver
+//import SwiftyBeaver
 import RealmSwift
 
 let log = logger()
