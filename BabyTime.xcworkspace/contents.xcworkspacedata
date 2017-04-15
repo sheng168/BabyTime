@@ -7,9 +7,6 @@
    <Group
       location = "container:"
       name = "libs">
-      <FileRef
-         location = "group:Carthage/Checkouts/SwiftyBeaver/SwiftyBeaver.xcodeproj">
-      </FileRef>
    </Group>
    <FileRef
       location = "container:BabyTime.xcodeproj">
