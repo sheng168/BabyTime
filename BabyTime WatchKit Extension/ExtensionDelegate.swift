@@ -39,10 +39,22 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                     // data appended
                     let f = t[insertions[0]]
                     
-                    for i in stride(from:1.0, to:120, by:10) {
-                        let interval = f.time.addingTimeInterval(i*60).timeIntervalSinceNow
+                    func genReminder(_ i: Int) {
+                        let interval = f.time.addingTimeInterval(Double(i)*60.0).timeIntervalSinceNow
                         let body = "Last feeding was \(i) min ago"
                         UserNotificationCenterDelegate.setupReminder(minutes: interval/60.0, body: body, id: body)
+                    }
+                    
+                    genReminder(1)
+                    
+                    for i in stride(from:60, to:120, by:60) {
+                        genReminder(i)
+                    }
+                    for i in stride(from:120, to:360, by:15) {
+                        genReminder(i)
+                    }
+                    for i in stride(from:360, through:720, by:30) {
+                        genReminder(i)
                     }
                 }
                 // Query results have changed, so apply them to the UITableView
