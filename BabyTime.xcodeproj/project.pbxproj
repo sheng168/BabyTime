@@ -20,6 +20,20 @@
 		5A648A451E63507400234718 /* cart.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5A648A441E63507400234718 /* cart.sh */; };
 		5A848A941E5FA71E00D38CE1 /* PushNotificationPayload-late.apns in Resources */ = {isa = PBXBuildFile; fileRef = 5A848A931E5FA71E00D38CE1 /* PushNotificationPayload-late.apns */; };
 		5A866A8A1E601DF700801165 /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 5A866A891E601DF700801165 /* PushNotificationPayload.apns */; };
+		5A944C171EA25F5A000F5E48 /* SwiftyBeaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A944C101EA25F5A000F5E48 /* SwiftyBeaver.swift */; };
+		5A944C181EA25F5A000F5E48 /* SBPlatformDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A944C111EA25F5A000F5E48 /* SBPlatformDestination.swift */; };
+		5A944C191EA25F5A000F5E48 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A944C121EA25F5A000F5E48 /* Filter.swift */; };
+		5A944C1A1EA25F5A000F5E48 /* FileDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A944C131EA25F5A000F5E48 /* FileDestination.swift */; };
+		5A944C1B1EA25F5A000F5E48 /* ConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A944C141EA25F5A000F5E48 /* ConsoleDestination.swift */; };
+		5A944C1C1EA25F5A000F5E48 /* BaseDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A944C151EA25F5A000F5E48 /* BaseDestination.swift */; };
+		5A944C1D1EA25F5A000F5E48 /* AES256CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A944C161EA25F5A000F5E48 /* AES256CBC.swift */; };
+		5A944C1E1EA25F8C000F5E48 /* SwiftyBeaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A944C101EA25F5A000F5E48 /* SwiftyBeaver.swift */; };
+		5A944C1F1EA25F8C000F5E48 /* SBPlatformDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A944C111EA25F5A000F5E48 /* SBPlatformDestination.swift */; };
+		5A944C201EA25F8C000F5E48 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A944C121EA25F5A000F5E48 /* Filter.swift */; };
+		5A944C211EA25F8C000F5E48 /* FileDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A944C131EA25F5A000F5E48 /* FileDestination.swift */; };
+		5A944C221EA25F8C000F5E48 /* ConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A944C141EA25F5A000F5E48 /* ConsoleDestination.swift */; };
+		5A944C231EA25F8C000F5E48 /* BaseDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A944C151EA25F5A000F5E48 /* BaseDestination.swift */; };
+		5A944C241EA25F8C000F5E48 /* AES256CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A944C161EA25F5A000F5E48 /* AES256CBC.swift */; };
 		5A98C3291E7A327500C9C446 /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF7512F1E4BFD8500A13458 /* logging.swift */; };
 		5A9DC3121E7A382C001D499E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9DC30F1E7A382C001D499E /* Realm.framework */; };
 		5A9DC3131E7A382C001D499E /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9DC30F1E7A382C001D499E /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -139,6 +153,13 @@
 		5A848A931E5FA71E00D38CE1 /* PushNotificationPayload-late.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PushNotificationPayload-late.apns"; sourceTree = "<group>"; };
 		5A848A951E5FAE2300D38CE1 /* PushNotificationPayload-soon.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = "PushNotificationPayload-soon.apns"; sourceTree = "<group>"; };
 		5A866A891E601DF700801165 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		5A944C101EA25F5A000F5E48 /* SwiftyBeaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyBeaver.swift; path = Carthage/Checkouts/SwiftyBeaver/Sources/SwiftyBeaver.swift; sourceTree = "<group>"; };
+		5A944C111EA25F5A000F5E48 /* SBPlatformDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SBPlatformDestination.swift; path = Carthage/Checkouts/SwiftyBeaver/Sources/SBPlatformDestination.swift; sourceTree = "<group>"; };
+		5A944C121EA25F5A000F5E48 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Carthage/Checkouts/SwiftyBeaver/Sources/Filter.swift; sourceTree = "<group>"; };
+		5A944C131EA25F5A000F5E48 /* FileDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileDestination.swift; path = Carthage/Checkouts/SwiftyBeaver/Sources/FileDestination.swift; sourceTree = "<group>"; };
+		5A944C141EA25F5A000F5E48 /* ConsoleDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsoleDestination.swift; path = Carthage/Checkouts/SwiftyBeaver/Sources/ConsoleDestination.swift; sourceTree = "<group>"; };
+		5A944C151EA25F5A000F5E48 /* BaseDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseDestination.swift; path = Carthage/Checkouts/SwiftyBeaver/Sources/BaseDestination.swift; sourceTree = "<group>"; };
+		5A944C161EA25F5A000F5E48 /* AES256CBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AES256CBC.swift; path = Carthage/Checkouts/SwiftyBeaver/Sources/AES256CBC.swift; sourceTree = "<group>"; };
 		5A9DC30F1E7A382C001D499E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Frameworks/watchOS/Realm.framework; sourceTree = "<group>"; };
 		5A9DC3101E7A382C001D499E /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Frameworks/watchOS/RealmSwift.framework; sourceTree = "<group>"; };
 		5A9DC3111E7A382C001D499E /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Frameworks/watchOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
@@ -204,6 +225,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A944C0F1EA25F01000F5E48 /* SwiftyBeaver */ = {
+			isa = PBXGroup;
+			children = (
+				5A944C101EA25F5A000F5E48 /* SwiftyBeaver.swift */,
+				5A944C111EA25F5A000F5E48 /* SBPlatformDestination.swift */,
+				5A944C121EA25F5A000F5E48 /* Filter.swift */,
+				5A944C131EA25F5A000F5E48 /* FileDestination.swift */,
+				5A944C141EA25F5A000F5E48 /* ConsoleDestination.swift */,
+				5A944C151EA25F5A000F5E48 /* BaseDestination.swift */,
+				5A944C161EA25F5A000F5E48 /* AES256CBC.swift */,
+			);
+			name = SwiftyBeaver;
+			sourceTree = "<group>";
+		};
 		5AA6E06B1E5B9E0A008A76BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +371,7 @@
 		5AF751291E4B5CD400A13458 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5A944C0F1EA25F01000F5E48 /* SwiftyBeaver */,
 				5AF7512F1E4BFD8500A13458 /* logging.swift */,
 				04BF5C7A1E4C9F9300F08EC2 /* Model.swift */,
 				5A58D53C1E7C1004005534FC /* RealmModel.swift */,
@@ -523,9 +559,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A944C191EA25F5A000F5E48 /* Filter.swift in Sources */,
+				5A944C181EA25F5A000F5E48 /* SBPlatformDestination.swift in Sources */,
+				5A944C1A1EA25F5A000F5E48 /* FileDestination.swift in Sources */,
+				5A944C1C1EA25F5A000F5E48 /* BaseDestination.swift in Sources */,
+				5A944C1B1EA25F5A000F5E48 /* ConsoleDestination.swift in Sources */,
+				5A944C171EA25F5A000F5E48 /* SwiftyBeaver.swift in Sources */,
 				5AC2ACE71E2CD765002F660F /* ViewController.swift in Sources */,
 				5AC2ACE51E2CD765002F660F /* AppDelegate.swift in Sources */,
 				5AF751301E4BFD8500A13458 /* UserNotificationCenterDelegate.swift in Sources */,
+				5A944C1D1EA25F5A000F5E48 /* AES256CBC.swift in Sources */,
 				5A98C3291E7A327500C9C446 /* logging.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,12 +589,19 @@
 				5AC2AD261E2CD765002F660F /* ComplicationController.swift in Sources */,
 				5A58D53F1E7D89CF005534FC /* AlarmInterfaceController.swift in Sources */,
 				5AF751351E4BFE5F00A13458 /* logging.swift in Sources */,
+				5A944C241EA25F8C000F5E48 /* AES256CBC.swift in Sources */,
+				5A944C1E1EA25F8C000F5E48 /* SwiftyBeaver.swift in Sources */,
 				5A58D53D1E7C1004005534FC /* RealmModel.swift in Sources */,
 				5A648A431E633C3D00234718 /* FeedDetailInterfaceController.swift in Sources */,
+				5A944C201EA25F8C000F5E48 /* Filter.swift in Sources */,
+				5A944C221EA25F8C000F5E48 /* ConsoleDestination.swift in Sources */,
 				5AC2AD221E2CD765002F660F /* ExtensionDelegate.swift in Sources */,
 				04BF5C7F1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift in Sources */,
 				5AF751331E4BFE5900A13458 /* UserNotificationCenterDelegate.swift in Sources */,
 				5AC2AD201E2CD765002F660F /* InterfaceController.swift in Sources */,
+				5A944C1F1EA25F8C000F5E48 /* SBPlatformDestination.swift in Sources */,
+				5A944C231EA25F8C000F5E48 /* BaseDestination.swift in Sources */,
+				5A944C211EA25F8C000F5E48 /* FileDestination.swift in Sources */,
 				04BF5C7C1E4CA5CE00F08EC2 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

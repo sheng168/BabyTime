@@ -3,7 +3,7 @@
 //
 
 //import Foundation
-import SwiftyBeaver
+//import SwiftyBeaver
 
 /**
  Prints the filename, function name, line number and textual representation of `object` and a newline character into
