@@ -132,13 +132,6 @@
             </objects>
             <point key="canvasLocation" x="479" y="-78"/>
         </scene>
-        <!--list-->
-        <scene sceneID="Wd8-vC-Vig">
-            <objects>
-                <controllerPlaceholder referencedIdentifier="list" id="kTL-aN-dQW"/>
-            </objects>
-            <point key="canvasLocation" x="464" y="252"/>
-        </scene>
         <!--Feed Detail-->
         <scene sceneID="qj5-xs-VWH">
             <objects>
