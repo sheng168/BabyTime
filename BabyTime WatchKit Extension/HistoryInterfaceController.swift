@@ -68,8 +68,12 @@ class RowController: NSObject {
     var feed: Fluid? {
         didSet {
             log.verbose(feed as Any)
+            let form = MeasurementFormatter()
+            form.unitOptions = .providedUnit
+            form.unitStyle = .short
+
             if let feed = feed {
-                titleLabel.setText("\(feed.amount)")
+                titleLabel.setText("\(form.string(from: feed.amount))")
                 detailLabel.setText("\(feed.time)")
                 timer.setDate(feed.time)
                 timer.start()

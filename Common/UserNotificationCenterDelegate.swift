@@ -26,7 +26,7 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
     enum Action: String {
         case snooze
         case stop
-        case now
+        case comment
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,
@@ -49,12 +49,20 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
         log.info("didReceive")
         log.info(response)
         
+        if let action = Action(rawValue: response.actionIdentifier) {
         
-        switch response.actionIdentifier {
-        case Action.snooze.rawValue:
-            log.info(Action.snooze)
-        default:
+            switch action {
+            case .snooze:
+                
+                log.info(Action.snooze)
+            case .comment: fallthrough
+            case .stop:
+                log.error("*** missing case *** \(response.actionIdentifier)")
+
+            }
+        } else {
             log.error("*** missing case *** \(response.actionIdentifier)")
+
         }
         completionHandler()
     }
@@ -79,6 +87,7 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
             
             if granted {
                 // Create the custom actions for the TIMER_EXPIRED category.
+                
                 let snoozeAction = UNNotificationAction(identifier: Action.snooze.rawValue,
                                                         title: "Snooze",
                                                         options: UNNotificationActionOptions(rawValue: 0))
@@ -86,7 +95,7 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
                                                       title: "Stop",
                                                       options: .foreground)
                 let commentAction = UNTextInputNotificationAction(
-                    identifier: "comment",
+                    identifier: Action.comment.rawValue,
                     title: "Comment",
                     options: [],
                     textInputButtonTitle: "Send",
@@ -113,7 +122,7 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
     }
 
     static func setupReminder(minutes: Double, body: String, id: String = UUID().uuidString) {
-        debug(minutes)
+        log.verbose(minutes)
         if minutes <= 0 {
             log.warning("no")
             return
@@ -133,7 +142,7 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
         content.body = body //NSString.localizedUserNotificationString(forKey: "Rise and shine! It's morning time!", arguments: nil)
         
         // Assign the category (and the associated actions).
-        content.categoryIdentifier = Category.timer.rawValue
+        content.categoryIdentifier = Category.general.rawValue
         content.sound = UNNotificationSound.default()
         
         // Create the request and schedule the notification.
