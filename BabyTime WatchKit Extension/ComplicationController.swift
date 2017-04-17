@@ -182,7 +182,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     fileprivate func modularSmall(_ f: Feed) -> CLKComplicationTemplate {
         let t = CLKComplicationTemplateModularSmallStackText()
-        t.line1TextProvider = CLKSimpleTextProvider(text: "\(f.amount)", shortText: "\(f.amount.value)")
+        t.line1TextProvider = CLKSimpleTextProvider(text: "\(formatAmount(f))", shortText: "\(formatAmount(f).lowercased())")
         t.line2TextProvider = relativeDate(f)
         return t
         
@@ -222,7 +222,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     fileprivate func circularSmall(_ f: Feed) -> CLKComplicationTemplate {
         let t = CLKComplicationTemplateCircularSmallStackText()
-        t.line1TextProvider = CLKSimpleTextProvider(text: "\(formatAmount(f))", shortText: "\(Int(f.amount.value))")
+        t.line1TextProvider = CLKSimpleTextProvider(text: "\(formatAmount(f))", shortText: "\(formatAmount(f).lowercased())")
         t.line2TextProvider = relativeDate(f)
         
         return t
