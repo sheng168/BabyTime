@@ -192,7 +192,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         let t = CLKComplicationTemplateModularLargeStandardBody()
         let oz = String(format: "%.1f", f.amount.converted(to: UnitVolume.fluidOunces).value)
         
-        t.headerTextProvider = CLKSimpleTextProvider(text: "\(f.amount) \(oz) oz")
+        t.headerTextProvider = CLKSimpleTextProvider(text: "\(formatAmount(f)) ~ \(oz)oz")
         t.body1TextProvider = relativeDate(f)
         t.body2TextProvider = time(f)
         return t
@@ -213,15 +213,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         return t
     }
     
-    fileprivate func circularSmall(_ f: Feed) -> CLKComplicationTemplate {
+    func formatAmount(_ f: Feed) -> String {
         let form = MeasurementFormatter()
         form.unitOptions = .providedUnit
         form.unitStyle = .short
-        //form.numberFormatter = nf()
-        
-
+        return form.string(from: f.amount)
+    }
+    
+    fileprivate func circularSmall(_ f: Feed) -> CLKComplicationTemplate {
         let t = CLKComplicationTemplateCircularSmallStackText()
-        t.line1TextProvider = CLKSimpleTextProvider(text: "\(form.string(from: f.amount))", shortText: "\(Int(f.amount.value))")
+        t.line1TextProvider = CLKSimpleTextProvider(text: "\(formatAmount(f))", shortText: "\(Int(f.amount.value))")
         t.line2TextProvider = relativeDate(f)
         
         return t
