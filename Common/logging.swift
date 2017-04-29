@@ -41,8 +41,8 @@ func logger() -> SwiftyBeaver.Type {
     
     // add log destinations. at least one is needed!
     let console = ConsoleDestination()  // log to Xcode Console
-    console.minLevel = .debug
-    console.asynchronously = false
+    console.minLevel = .info
+//    console.asynchronously = false
     
     let file = FileDestination()  // log to default swiftybeaver.log file
     log.addDestination(console)

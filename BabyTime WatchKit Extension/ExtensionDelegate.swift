@@ -45,7 +45,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                         UserNotificationCenterDelegate.setupReminder(minutes: interval/60.0, body: body, id: body)
                     }
                     
-                    genReminder(1)
+//                    genReminder(1)
                     
                     for i in stride(from:60, to:120, by:60) {
                         genReminder(i)
