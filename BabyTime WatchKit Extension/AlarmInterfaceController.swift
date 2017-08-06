@@ -9,7 +9,7 @@
 import Foundation
 import WatchKit
 import Foundation
-import RealmSwift
+//import RealmSwift
 
 class AlarmInterfaceController: WKInterfaceController {
     

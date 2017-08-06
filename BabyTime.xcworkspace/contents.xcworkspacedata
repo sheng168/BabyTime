@@ -2,13 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:cart.sh">
+      location = "group:BabyTime.xcodeproj">
    </FileRef>
-   <Group
-      location = "container:"
-      name = "libs">
-   </Group>
    <FileRef
-      location = "container:BabyTime.xcodeproj">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
