@@ -13,5 +13,9 @@
 	<array>
 		<string>CloudKit</string>
 	</array>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)us.jsy.Notification.watchkitapp.watchkitextension</string>
+	</array>
 </dict>
 </plist>

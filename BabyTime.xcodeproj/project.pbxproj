@@ -136,6 +136,7 @@
 		044B53C91E3441DE00712D26 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		04BF5C7A1E4C9F9300F08EC2 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = MyPlayground.playground/Sources/Model.swift; sourceTree = "<group>"; };
 		04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryInterfaceController.swift; sourceTree = "<group>"; };
+		5A4B75B21F36ADE0000A32DC /* BabyTime WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BabyTime WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		5A58D53C1E7C1004005534FC /* RealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmModel.swift; path = Common/RealmModel.swift; sourceTree = "<group>"; };
 		5A58D53E1E7D89CF005534FC /* AlarmInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmInterfaceController.swift; sourceTree = "<group>"; };
 		5A594FFD1E8FF95900E3E9DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -329,6 +330,7 @@
 		5AC2AD1C1E2CD765002F660F /* BabyTime WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				5A4B75B21F36ADE0000A32DC /* BabyTime WatchKit Extension.entitlements */,
 				5AC2AD211E2CD765002F660F /* ExtensionDelegate.swift */,
 				5AC2AD251E2CD765002F660F /* ComplicationController.swift */,
 				5A58D53E1E7D89CF005534FC /* AlarmInterfaceController.swift */,
@@ -475,6 +477,11 @@
 						DevelopmentTeam = 86DHP3ZP92;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -737,6 +744,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "BabyTime WatchKit Extension/BabyTime WatchKit Extension.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 86DHP3ZP92;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -762,6 +770,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "BabyTime WatchKit Extension/BabyTime WatchKit Extension.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 86DHP3ZP92;
 				FRAMEWORK_SEARCH_PATHS = (

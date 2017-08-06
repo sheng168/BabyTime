@@ -41,7 +41,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                     
                     func genReminder(_ i: Int) {
                         let interval = f.time.addingTimeInterval(Double(i)*60.0).timeIntervalSinceNow
-                        let body = "Last feeding was \(i) min ago"
+                        let hr = i / 60
+                        let min = i % 60
+                        let body = "Last feeding was \(hr)H \(min)M ago"
                         UserNotificationCenterDelegate.setupReminder(minutes: interval/60.0, body: body, id: body)
                     }
                     

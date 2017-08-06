@@ -8,6 +8,7 @@
 
 import UIKit
 import CloudKit
+import RealmSwift
 
 class ViewController: UIViewController {
 
@@ -15,7 +16,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        UserNotificationCenterDelegate.setupReminder(minutes: 1.0/60, body: "Testing 1s")
+//        UserNotificationCenterDelegate.setupReminder(minutes: 1.0/60, body: "Testing 1s")
+        
+        SyncUser.logIn(with: .usernamePassword(username: "pm@cp", password: "pw"),
+                       server: URL(string: "http://luxiakun.cn:9080/")!) { (user, error) in
+            print("\(user?.identity) \(error)")
+        }
     }
 
     override func didReceiveMemoryWarning() {

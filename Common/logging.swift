@@ -41,7 +41,12 @@ func logger() -> SwiftyBeaver.Type {
     
     // add log destinations. at least one is needed!
     let console = ConsoleDestination()  // log to Xcode Console
-    console.minLevel = .info
+    console.minLevel = .verbose
+    // log thread, date, time in milliseconds, level & message
+    let f = console.format
+    console.format = "$T " + f
+//    console.format = "$Dyyyy-MM-dd HH:mm:ss.SSS$d $T $L: $M"
+
 //    console.asynchronously = false
     
     let file = FileDestination()  // log to default swiftybeaver.log file
