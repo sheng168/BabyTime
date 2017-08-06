@@ -18,10 +18,15 @@ class ViewController: UIViewController {
         
 //        UserNotificationCenterDelegate.setupReminder(minutes: 1.0/60, body: "Testing 1s")
         
-        SyncUser.logIn(with: .usernamePassword(username: "pm@cp", password: "pw"),
-                       server: URL(string: "http://luxiakun.cn:9080/")!) { (user, error) in
-            print("\(user?.identity) \(error)")
+        if let _ = SyncUser.current {
+            let realm = try! Realm(configuration: Realms.config())
+            
+            try! realm.write {
+                realm.add(LogEntry())
+            }
+            performSegue(withIdentifier: "user", sender: self)
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +35,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func reminder(_ sender: Any) {
-        UserNotificationCenterDelegate.setupReminder(minutes: 0.1, body: "Testing 6s")
+//        UserNotificationCenterDelegate.setupReminder(minutes: 0.1, body: "Testing 6s")
+        SyncUser.logIn(with: .usernamePassword(username: "pm@cp", password: "pw"),
+                       server: URL(string: "http://luxiakun.cn:9080/")!) { (user, error) in
+                        print("\(user?.identity) \(error)")
+        }
     }
 
     @IBAction func cloudKitButton(_ sender: Any) {

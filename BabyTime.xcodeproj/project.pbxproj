@@ -14,6 +14,7 @@
 		5A594FFE1E8FF95900E3E9DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A594FFD1E8FF95900E3E9DA /* Assets.xcassets */; };
 		5A648A431E633C3D00234718 /* FeedDetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A648A421E633C3D00234718 /* FeedDetailInterfaceController.swift */; };
 		5A648A451E63507400234718 /* cart.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5A648A441E63507400234718 /* cart.sh */; };
+		5A6922C11F37861600750010 /* Realms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6922C01F37861600750010 /* Realms.swift */; };
 		5A848A941E5FA71E00D38CE1 /* PushNotificationPayload-late.apns in Resources */ = {isa = PBXBuildFile; fileRef = 5A848A931E5FA71E00D38CE1 /* PushNotificationPayload-late.apns */; };
 		5A866A8A1E601DF700801165 /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 5A866A891E601DF700801165 /* PushNotificationPayload.apns */; };
 		5A944C171EA25F5A000F5E48 /* SwiftyBeaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A944C101EA25F5A000F5E48 /* SwiftyBeaver.swift */; };
@@ -142,6 +143,7 @@
 		5A594FFD1E8FF95900E3E9DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A648A421E633C3D00234718 /* FeedDetailInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDetailInterfaceController.swift; sourceTree = "<group>"; };
 		5A648A441E63507400234718 /* cart.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = cart.sh; sourceTree = "<group>"; };
+		5A6922C01F37861600750010 /* Realms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Realms.swift; path = Common/Realms.swift; sourceTree = "<group>"; };
 		5A74E92A1E4F27760082B856 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		5A848A931E5FA71E00D38CE1 /* PushNotificationPayload-late.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PushNotificationPayload-late.apns"; sourceTree = "<group>"; };
 		5A848A951E5FAE2300D38CE1 /* PushNotificationPayload-soon.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = "PushNotificationPayload-soon.apns"; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				04BF5C7A1E4C9F9300F08EC2 /* Model.swift */,
 				5A58D53C1E7C1004005534FC /* RealmModel.swift */,
 				5AF7512D1E4BFD8500A13458 /* UserNotificationCenterDelegate.swift */,
+				5A6922C01F37861600750010 /* Realms.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				5A944C1B1EA25F5A000F5E48 /* ConsoleDestination.swift in Sources */,
 				5A944C171EA25F5A000F5E48 /* SwiftyBeaver.swift in Sources */,
 				5AC2ACE71E2CD765002F660F /* ViewController.swift in Sources */,
+				5A6922C11F37861600750010 /* Realms.swift in Sources */,
 				5AC2ACE51E2CD765002F660F /* AppDelegate.swift in Sources */,
 				5AF751301E4BFD8500A13458 /* UserNotificationCenterDelegate.swift in Sources */,
 				5A944C1D1EA25F5A000F5E48 /* AES256CBC.swift in Sources */,
