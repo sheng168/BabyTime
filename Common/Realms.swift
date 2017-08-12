@@ -13,28 +13,50 @@ struct Realms {
     #if os(OSX)
     static let syncHost = "127.0.0.1"
     #else
-    static let syncHost = "luxiakun.cn" // "localhost" //localIPAddress
+    static let syncHost = "jsy.us" // "localhost" //localIPAddress
     #endif
     
-    static let port = 9080
+    static let port = 9443
     static let hostPort = "\(syncHost):\(port)"
     
     static let syncRealmPath = "BabyTime"
     
-    static let syncServerURL = URL(string: "realm://\(hostPort)/~/\(syncRealmPath)")!
-    static let syncAuthURL = URL(string: "http://\(hostPort)")!
+    static let syncServerURL = URL(string: "realms://\(hostPort)/~/\(syncRealmPath)")!
+    static let syncAuthURL = URL(string: "https://\(hostPort)")!
     
     static var config = {        
         return Realm.Configuration(
             syncConfiguration: SyncConfiguration(
                 user: SyncUser.current!,
-                realmURL: syncServerURL)//, objectTypes: [LogEntry.self]
+                realmURL: syncServerURL)
+//            objectTypes: [AppState.self, LogEntry.self]
         )
+    }
+    
+    static var realm = {
+        try! Realm(configuration: config())
     }
     
 //    static let appID = Bundle.main.bundleIdentifier!
 
 }
+
+final class AppState: Object {
+    dynamic var id = ""
+    dynamic var time = Date()
+    dynamic var timeUploaded: Date? = nil
+    dynamic var timeModified: Date? = nil
+    
+    
+    //    dynamic var alarm = true
+    
+    let babys = List<Baby_>()
+    let items = List<LogEntry>()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+ }
 
 final class LogEntry: Object {
 //    dynamic var id = UUID().uuidString

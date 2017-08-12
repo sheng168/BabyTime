@@ -19,11 +19,31 @@ class ViewController: UIViewController {
 //        UserNotificationCenterDelegate.setupReminder(minutes: 1.0/60, body: "Testing 1s")
         
         if let _ = SyncUser.current {
+//            
+//            Realm.asyncOpen(configuration: config) { realm, error in
+//                if let realm = realm {
+//                    // Realm successfully opened, with all remote data available
+//                } else if let error = error {
+//                    // Handle error that occurred while opening or downloading the contents of the Realm
+//                }
+//            }
+
             let realm = try! Realm(configuration: Realms.config())
             
             try! realm.write {
                 realm.add(LogEntry())
             }
+            
+            var state = realm.object(ofType: AppState.self, forPrimaryKey: "")
+            if state == nil {
+                try! realm.write {
+                    state = AppState()
+                    realm.add(state!)
+                }
+            }
+            
+            AppDelegate.appState = state!
+            
             performSegue(withIdentifier: "user", sender: self)
         }
         
@@ -36,9 +56,13 @@ class ViewController: UIViewController {
 
     @IBAction func reminder(_ sender: Any) {
 //        UserNotificationCenterDelegate.setupReminder(minutes: 0.1, body: "Testing 6s")
-        SyncUser.logIn(with: .usernamePassword(username: "pm@cp", password: "pw"),
-                       server: URL(string: "http://luxiakun.cn:9080/")!) { (user, error) in
+        SyncUser.logIn(with: .usernamePassword(username: "r@j", password: "Catch150"),
+                       server: URL(string: "https://jsy.us:9443/")!) { (user, error) in
                         print("\(user?.identity) \(error)")
+                        DispatchQueue.main.async {
+                            self.performSegue(withIdentifier: "user", sender: self)
+                        }
+                        
         }
     }
 

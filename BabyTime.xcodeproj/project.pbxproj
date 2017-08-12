@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		04BF5C7C1E4CA5CE00F08EC2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF5C7A1E4C9F9300F08EC2 /* Model.swift */; };
 		04BF5C7F1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */; };
+		5A2EBD871F37EE7800D893CE /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58D53C1E7C1004005534FC /* RealmModel.swift */; };
+		5A2EBD881F37EEAE00D893CE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF5C7A1E4C9F9300F08EC2 /* Model.swift */; };
+		5A2EBD8A1F38A27400D893CE /* BabyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2EBD891F38A27400D893CE /* BabyTableViewController.swift */; };
 		5A58D53D1E7C1004005534FC /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58D53C1E7C1004005534FC /* RealmModel.swift */; };
 		5A58D53F1E7D89CF005534FC /* AlarmInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58D53E1E7D89CF005534FC /* AlarmInterfaceController.swift */; };
 		5A594FFE1E8FF95900E3E9DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A594FFD1E8FF95900E3E9DA /* Assets.xcassets */; };
@@ -137,6 +140,7 @@
 		044B53C91E3441DE00712D26 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		04BF5C7A1E4C9F9300F08EC2 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = MyPlayground.playground/Sources/Model.swift; sourceTree = "<group>"; };
 		04BF5C7E1E4FDC2C00F08EC2 /* HistoryInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryInterfaceController.swift; sourceTree = "<group>"; };
+		5A2EBD891F38A27400D893CE /* BabyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyTableViewController.swift; sourceTree = "<group>"; };
 		5A4B75B21F36ADE0000A32DC /* BabyTime WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BabyTime WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		5A58D53C1E7C1004005534FC /* RealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmModel.swift; path = Common/RealmModel.swift; sourceTree = "<group>"; };
 		5A58D53E1E7D89CF005534FC /* AlarmInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmInterfaceController.swift; sourceTree = "<group>"; };
@@ -292,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				5AC2ACE41E2CD765002F660F /* AppDelegate.swift */,
+				5A2EBD891F38A27400D893CE /* BabyTableViewController.swift */,
 				5AC2ACE61E2CD765002F660F /* ViewController.swift */,
 				5AC2ACE81E2CD765002F660F /* Main.storyboard */,
 				5AC2ACEB1E2CD765002F660F /* Assets.xcassets */,
@@ -555,6 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A2EBD8A1F38A27400D893CE /* BabyTableViewController.swift in Sources */,
 				5A944C191EA25F5A000F5E48 /* Filter.swift in Sources */,
 				5A944C181EA25F5A000F5E48 /* SBPlatformDestination.swift in Sources */,
 				5A944C1A1EA25F5A000F5E48 /* FileDestination.swift in Sources */,
@@ -562,10 +568,12 @@
 				5A944C1B1EA25F5A000F5E48 /* ConsoleDestination.swift in Sources */,
 				5A944C171EA25F5A000F5E48 /* SwiftyBeaver.swift in Sources */,
 				5AC2ACE71E2CD765002F660F /* ViewController.swift in Sources */,
+				5A2EBD881F37EEAE00D893CE /* Model.swift in Sources */,
 				5A6922C11F37861600750010 /* Realms.swift in Sources */,
 				5AC2ACE51E2CD765002F660F /* AppDelegate.swift in Sources */,
 				5AF751301E4BFD8500A13458 /* UserNotificationCenterDelegate.swift in Sources */,
 				5A944C1D1EA25F5A000F5E48 /* AES256CBC.swift in Sources */,
+				5A2EBD871F37EE7800D893CE /* RealmModel.swift in Sources */,
 				5A98C3291E7A327500C9C446 /* logging.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

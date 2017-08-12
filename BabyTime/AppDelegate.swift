@@ -13,7 +13,8 @@ let log = logger()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    static var appState = AppState()
+    
     var window: UIWindow?
 
 

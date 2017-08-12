@@ -119,7 +119,8 @@ final class FluidList: Object {
 }
 
 final class Baby_: Object {
-    dynamic var id = ""
+    dynamic var id = UUID().uuidString
+    dynamic var time = Date()
     
     dynamic var name = ""
     dynamic var weight = 0.0 // grams
