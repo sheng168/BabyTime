@@ -56,7 +56,7 @@ class ViewController: UIViewController {
 
     @IBAction func reminder(_ sender: Any) {
 //        UserNotificationCenterDelegate.setupReminder(minutes: 0.1, body: "Testing 6s")
-        SyncUser.logIn(with: .usernamePassword(username: "r@j", password: "Catch150"),
+        SyncUser.logIn(with: .usernamePassword(username: "baby@jsy.us", password: "pw"),
                        server: URL(string: "https://jsy.us:9443/")!) { (user, error) in
                         print("\(user?.identity) \(error)")
                         DispatchQueue.main.async {

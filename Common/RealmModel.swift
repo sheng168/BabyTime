@@ -10,7 +10,7 @@ import Foundation
 
 import RealmSwift
 
-let config = Realm.Configuration(objectTypes: [Fluid.self, FluidList.self, Baby.self])
+//let config = Realm.Configuration(objectTypes: [Fluid.self, FluidList.self, Baby.self])
 //Realm.Configuration.defaultConfiguration = config
 
 let realm: Realm! = try! realmInit() //try! Realm(configuration: config)
@@ -19,8 +19,8 @@ let feeds = realm.objects(Fluid.self).sorted(byKeyPath: "time", ascending: true)
 let setting = realm.object(ofType: Setting.self, forPrimaryKey: "1")
 
 func realmInit() throws -> Realm {
-    log.info(config)
-    let r = try Realm(configuration: config)
+//    log.info(config)
+    let r = try Realm()
 
     if r.isEmpty {
         try r.write {
@@ -33,21 +33,6 @@ func realmInit() throws -> Realm {
     return r
 }
 
-func setDefaultRealmForUser(username: String) -> NotificationToken {
-    var conf = config
-    
-    // Use the default directory, but replace the filename with the username
-    conf.fileURL = conf.fileURL!.deletingLastPathComponent()
-        .appendingPathComponent("\(username).realm")
-    
-    let ios = try! Realm(configuration: conf)
-    return ios.addNotificationBlock { (not: Realm.Notification, realm: Realm) in
-        print(1, 2)
-    }
-    
-    // Set this as the configuration used for the default Realm
-    Realm.Configuration.defaultConfiguration = conf
-}
 
 //    .sorted(by: { (a, b) -> Bool in
 //        a.time >= b.time
