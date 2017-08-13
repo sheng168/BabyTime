@@ -14,6 +14,11 @@ class HistoryInterfaceController: WKInterfaceController {
     
     @IBOutlet var table: WKInterfaceTable!
 
+    let realm = try! Realm()
+    //.filter("age < 2")
+    lazy var f = realm.objects(Fluid.self).sorted(byKeyPath: "time", ascending: true)
+    var token: NotificationToken!
+    
 //    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
 //        log.debug(rowIndex)
 //        let f = (table.rowController(at: rowIndex) as? RowController)?.feed
@@ -38,17 +43,21 @@ class HistoryInterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
 
+        token = f.addNotificationBlock { (colChange) in
+            print(colChange)
+            self.update()
+        }
         // Configure interface objects here.
-        let x = 1
 
-        //.filter("age < 2")
-        let f:[Fluid] = feeds.reversed()
 
-        table.setNumberOfRows(f.count * x, withRowType: "Row")
+    }
+    
+    func update() {
+        table.setNumberOfRows(f.count, withRowType: "Row")
         
-        for i in 0..<f.count * x {
+        for i in 0 ..< f.count {
             if let controller = table.rowController(at: i) as? RowController {
-                controller.feed = f[i/x]
+                controller.feed = f[i]
             }
         }
     }

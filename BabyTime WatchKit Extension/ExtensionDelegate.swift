@@ -11,7 +11,7 @@ import WatchKit
 //import SwiftyBeaver
 import RealmSwift
 
-let log = logger()
+//let log = logger()
 
 
 
@@ -21,9 +21,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
 
-        SyncUser.logIn(with: .usernamePassword(username: "r@j", password: "Catch150"), server: URL(string: "https://jsy.us:9443")!) { (user, err) in
-            print(user, err)
-        }
+//        SyncUser.logIn(with: .usernamePassword(username: "r@j", password: "Catch150"), server: URL(string: "https://jsy.us:9443")!) { (user, err) in
+//            print(user, err)
+//        }
 //        debug(1)
         log.debug(feeds.count)
         

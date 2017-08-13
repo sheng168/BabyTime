@@ -26,7 +26,7 @@ class BabyTableViewController: UITableViewController {
         return UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
     }
     
-    func add() {
+    @objc func add() {
         try! Realms.realm().write {
             babys.append(Baby_())
         }

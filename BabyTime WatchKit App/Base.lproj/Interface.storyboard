@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N6v-8v-GEt">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13178.6" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7Sd-vg-oLc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13045"/>
     </dependencies>
     <scenes>
         <!--BabyTime-->
@@ -71,6 +71,21 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="803" y="452"/>
+        </scene>
+        <!--Login Interface Controller-->
+        <scene sceneID="PjO-9s-UHf">
+            <objects>
+                <controller id="7Sd-vg-oLc" customClass="LoginInterfaceController" customModule="BabyTime_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="Login" id="fyP-11-kOQ">
+                            <connections>
+                                <action selector="loginClicked" destination="7Sd-vg-oLc" id="hn6-u1-7lA"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="152" y="-78"/>
         </scene>
         <!--BabyTime-->
         <scene sceneID="fMj-y7-22F">

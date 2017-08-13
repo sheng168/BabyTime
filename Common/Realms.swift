@@ -42,13 +42,13 @@ struct Realms {
 }
 
 final class AppState: Object {
-    dynamic var id = ""
-    dynamic var time = Date()
-    dynamic var timeUploaded: Date? = nil
-    dynamic var timeModified: Date? = nil
+    @objc dynamic var id = ""
+    @objc dynamic var time = Date()
+    @objc dynamic var timeUploaded: Date? = nil
+    @objc dynamic var timeModified: Date? = nil
     
     
-    //    dynamic var alarm = true
+    //    @objc dynamic var alarm = true
     
     let babys = List<Baby_>()
     let items = List<LogEntry>()
@@ -59,13 +59,13 @@ final class AppState: Object {
  }
 
 final class LogEntry: Object {
-//    dynamic var id = UUID().uuidString
-    dynamic var time = Date()
-    dynamic var level = ""
-    dynamic var message = ""
-    dynamic var timeUploaded: Date? = nil
-    dynamic var timeModified: Date? = nil
-//    dynamic var alarm = true
+//    @objc dynamic var id = UUID().uuidString
+    @objc dynamic var time = Date()
+    @objc dynamic var level = ""
+    @objc dynamic var message = ""
+    @objc dynamic var timeUploaded: Date? = nil
+    @objc dynamic var timeModified: Date? = nil
+//    @objc dynamic var alarm = true
     
 //    let items = List<Fluid>()
     

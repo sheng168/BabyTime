@@ -45,6 +45,10 @@ class log {
     static func debug(_ msg: Any) {
         print(msg)
     }
+    static func verbose(_ msg: Any) {
+        print(msg)
+    }
+    
 }
 //func logger() -> SwiftyBeaver.Type {
 //    let log = SwiftyBeaver.self

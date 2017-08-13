@@ -84,8 +84,8 @@ public struct Baby {
         
     }
     
-    public mutating func snoozeFeed(by: TimeInterval = 10 * TimeInterval.minute) {
-        nextFeed? += by
-    }
+//    public mutating func snoozeFeed(by: TimeInterval = 10 * TimeInterval.minute) {
+//        nextFeed? += by
+//    }
     
 }

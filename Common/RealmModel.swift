@@ -19,7 +19,7 @@ let feeds = realm.objects(Fluid.self).sorted(byKeyPath: "time", ascending: true)
 let setting = realm.object(ofType: Setting.self, forPrimaryKey: "1")
 
 func realmInit() throws -> Realm {
-    log.verbose(config)
+    log.info(config)
     let r = try Realm(configuration: config)
 
     if r.isEmpty {
@@ -83,11 +83,11 @@ func setDefaultRealmForUser(username: String) -> NotificationToken {
 //    let dogs = List<Dog>()
 //}
 final class Setting: Object {
-    dynamic var id = "1"
+    @objc dynamic var id = "1"
     
-    dynamic var name = ""
-    dynamic var weight = 0.0 // grams
-    dynamic var alarm = true
+    @objc dynamic var name = ""
+    @objc dynamic var weight = 0.0 // grams
+    @objc dynamic var alarm = true
     
     let items = List<Fluid>()
     
@@ -97,9 +97,9 @@ final class Setting: Object {
 }
 
 class Fluid: Object {
-    //    dynamic var note = ""
-    dynamic var liter = 0.1
-    dynamic public var time = Date()
+    //    @objc dynamic var note = ""
+    @objc dynamic var liter = 0.1
+    @objc dynamic public var time = Date()
 }
 
 extension Fluid: Feed {
@@ -109,21 +109,21 @@ extension Fluid: Feed {
 }
 
 final class FluidList: Object {
-    dynamic var type = "milk"
-    dynamic var dailyLiters = 1.0
+    @objc dynamic var type = "milk"
+    @objc dynamic var dailyLiters = 1.0
     
-    dynamic var interval = 2 * Measurement(value: 1, unit: UnitDuration.hours).converted(to: .seconds).value
-    dynamic var perInterval = 0.15
+    @objc dynamic var interval = 2 * Measurement(value: 1, unit: UnitDuration.hours).converted(to: .seconds).value
+    @objc dynamic var perInterval = 0.15
     
     let items = List<Fluid>()
 }
 
 final class Baby_: Object {
-    dynamic var id = UUID().uuidString
-    dynamic var time = Date()
+    @objc dynamic var id = UUID().uuidString
+    @objc dynamic var time = Date()
     
-    dynamic var name = ""
-    dynamic var weight = 0.0 // grams
+    @objc dynamic var name = ""
+    @objc dynamic var weight = 0.0 // grams
     
     let items = List<Fluid>()
     
