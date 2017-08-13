@@ -122,9 +122,9 @@ class UserNotificationCenterDelegate: NSObject, UNUserNotificationCenterDelegate
     }
 
     static func setupReminder(minutes: Double, body: String, id: String = UUID().uuidString) {
-        log.verbose("\(minutes) \(body)")
+        log.debug("\(minutes) \(body)")
         if minutes <= 0 {
-            log.warning("no")
+            log.info("no")
             return
         }
 //        let generalCategory = UNNotificationCategory(identifier: "GENERAL",

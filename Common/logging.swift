@@ -24,7 +24,7 @@
  */
 func debug<T>(_ object: @autoclosure () -> T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
 //    logger.debug("ok")
-    log.debug(object(), file, function, line: line)
+//    log.debug(object(), file, function, line: line)
 //    log
     #if DEBUG_
         let value = object()
@@ -35,29 +35,40 @@ func debug<T>(_ object: @autoclosure () -> T, _ file: String = #file, _ function
     #endif
 }
 
-func logger() -> SwiftyBeaver.Type {
-    let log = SwiftyBeaver.self
-    //return log
-    
-    // add log destinations. at least one is needed!
-    let console = ConsoleDestination()  // log to Xcode Console
-    console.minLevel = .verbose
-    // log thread, date, time in milliseconds, level & message
-    let f = console.format
-    console.format = "$T " + f
-//    console.format = "$Dyyyy-MM-dd HH:mm:ss.SSS$d $T $L: $M"
-
-//    console.asynchronously = false
-    
-    let file = FileDestination()  // log to default swiftybeaver.log file
-    log.addDestination(console)
-    log.addDestination(file)
-    
-    let platform = SBPlatformDestination(appID: "dGP8ok", appSecret: "mhx6e0qsmr4thvy6cnKydbx4cEqzBvdg", encryptionKey: "xMduO5nxgJkkwzsvdnuzrj4jwr0seyb4")
-    platform.minLevel = .info
-    log.addDestination(platform)
-    log.info("swifty \(String(describing: file.logFileURL))")
-    
-    return log
+class log {
+    static func info(_ msg: Any) {
+        print(msg)
+    }
+    static func error(_ msg: Any) {
+        print(msg)
+    }
+    static func debug(_ msg: Any) {
+        print(msg)
+    }
 }
-
+//func logger() -> SwiftyBeaver.Type {
+//    let log = SwiftyBeaver.self
+//    //return log
+//    
+//    // add log destinations. at least one is needed!
+//    let console = ConsoleDestination()  // log to Xcode Console
+//    console.minLevel = .verbose
+//    // log thread, date, time in milliseconds, level & message
+//    let f = console.format
+//    console.format = "$T " + f
+////    console.format = "$Dyyyy-MM-dd HH:mm:ss.SSS$d $T $L: $M"
+//
+////    console.asynchronously = false
+//    
+//    let file = FileDestination()  // log to default swiftybeaver.log file
+//    log.addDestination(console)
+//    log.addDestination(file)
+//    
+//    let platform = SBPlatformDestination(appID: "dGP8ok", appSecret: "mhx6e0qsmr4thvy6cnKydbx4cEqzBvdg", encryptionKey: "xMduO5nxgJkkwzsvdnuzrj4jwr0seyb4")
+//    platform.minLevel = .info
+//    log.addDestination(platform)
+//    log.info("swifty \(String(describing: file.logFileURL))")
+//    
+//    return log
+//}
+//
