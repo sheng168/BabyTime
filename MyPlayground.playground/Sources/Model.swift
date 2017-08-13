@@ -10,7 +10,7 @@ import Foundation
 //        self.date = date
 //    }
 //}
-public var baby = Baby()
+public var baby = BabyStruct()
 
 public protocol Feed {
     var amount: Measurement<UnitVolume> {get}
@@ -41,7 +41,7 @@ extension TimeInterval {
     static let hour1 = Measurement(value: 1, unit: UnitDuration.hours)
 }
 
-public struct Baby {
+public struct BabyStruct {
     public var weight = Measurement(value: 15, unit: UnitMass.pounds)
     public var feedInterval = 2.5 * hour
     

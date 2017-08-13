@@ -11,11 +11,16 @@ import Foundation
 import RealmSwift
 
 class LoginInterfaceController: WKInterfaceController {
-
+    @IBOutlet var loginButton: WKInterfaceButton!
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
+        if SyncUser.current != nil {
+            pushController(withName: "list", context: nil)
+            return
+        }
     }
 
     override func willActivate() {
@@ -24,17 +29,24 @@ class LoginInterfaceController: WKInterfaceController {
     }
 
     @IBAction func loginClicked() {
-//        SyncUser.current.
+        if SyncUser.current != nil {
+            Realm.Configuration.defaultConfiguration = Realms.config()
+            pushController(withName: "list", context: nil)
+            return
+        }
+        
+        loginButton.setEnabled(false)
         SyncUser.logIn(with: .usernamePassword(username: "baby@jsy.us", password: "pw"), server: Realms.syncAuthURL) { (user, err) in
             print(user, err)
             guard let _ = user else {
+                self.loginButton.setEnabled(true)
                 return
             }
             
             Realm.Configuration.defaultConfiguration = Realms.config()
             Realm.asyncOpen(callback: { (realm, err) in
                 print(realm, err)
-                
+                self.loginButton.setEnabled(true)
                 self.pushController(withName: "list", context: nil)
             })
 

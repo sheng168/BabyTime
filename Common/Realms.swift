@@ -50,7 +50,7 @@ final class AppState: Object {
     
     //    @objc dynamic var alarm = true
     
-    let babys = List<Baby_>()
+    let babys = List<Baby>()
     let items = List<LogEntry>()
     
     override static func primaryKey() -> String? {

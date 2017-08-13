@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class BabyTableViewController: UITableViewController {
-    var babys: List<Baby_>! = AppDelegate.appState.babys
+    var babys: List<Baby>! = AppDelegate.appState.babys
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class BabyTableViewController: UITableViewController {
     
     @objc func add() {
         try! Realms.realm().write {
-            babys.append(Baby_())
+            babys.append(Baby())
         }
     }
     

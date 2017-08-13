@@ -10,7 +10,7 @@ import Foundation
 
 import RealmSwift
 
-let config = Realm.Configuration(objectTypes: [Fluid.self, FluidList.self, Baby_.self])
+let config = Realm.Configuration(objectTypes: [Fluid.self, FluidList.self, Baby.self])
 //Realm.Configuration.defaultConfiguration = config
 
 let realm: Realm! = try! realmInit() //try! Realm(configuration: config)
@@ -118,7 +118,7 @@ final class FluidList: Object {
     let items = List<Fluid>()
 }
 
-final class Baby_: Object {
+final class Baby: Object {
     @objc dynamic var id = UUID().uuidString
     @objc dynamic var time = Date()
     

@@ -83,6 +83,9 @@
                             </connections>
                         </button>
                     </items>
+                    <connections>
+                        <outlet property="loginButton" destination="fyP-11-kOQ" id="fTw-s4-BnP"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="152" y="-78"/>
