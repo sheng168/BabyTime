@@ -19,6 +19,6 @@ abstract_target 'BabyTime_' do
 #    end
 
     target 'BabyTime WatchKit Extension' do
-        #        platform :watchos, '3.0'
+        platform :watchos, '3.0'
     end
 end
