@@ -38,7 +38,7 @@ class LoginInterfaceController: WKInterfaceController {
         loginButton.setEnabled(false)
         SyncUser.logIn(with: .usernamePassword(username: "baby@jsy.us", password: "pw"),
                        server: Realms.syncAuthURL) { (user, err) in
-            print(user, err)
+                        print(user as Any, err as Any)
             guard let _ = user else {
                 self.loginButton.setEnabled(true)
                 return
@@ -46,7 +46,7 @@ class LoginInterfaceController: WKInterfaceController {
             
             Realm.Configuration.defaultConfiguration = Realms.config()
             Realm.asyncOpen(callback: { (realm, err) in
-                print(realm, err)
+                print(realm as Any, err as Any)
                 self.loginButton.setEnabled(true)
                 self.pushController(withName: "list", context: nil)
             })
