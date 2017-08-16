@@ -36,7 +36,8 @@ class LoginInterfaceController: WKInterfaceController {
         }
         
         loginButton.setEnabled(false)
-        SyncUser.logIn(with: .usernamePassword(username: "baby@jsy.us", password: "pw"), server: Realms.syncAuthURL) { (user, err) in
+        SyncUser.logIn(with: .usernamePassword(username: "baby@jsy.us", password: "pw"),
+                       server: Realms.syncAuthURL) { (user, err) in
             print(user, err)
             guard let _ = user else {
                 self.loginButton.setEnabled(true)

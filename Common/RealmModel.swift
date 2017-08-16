@@ -85,6 +85,10 @@ class Fluid: Object {
     //    @objc dynamic var note = ""
     @objc dynamic var liter = 0.1
     @objc dynamic public var time = Date()
+    
+    override static func indexedProperties() -> [String] {
+        return ["time"]
+    }
 }
 
 extension Fluid: Feed {

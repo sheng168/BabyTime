@@ -13,7 +13,7 @@ struct Realms {
     #if os(OSX)
     static let syncHost = "127.0.0.1"
     #else
-    static let syncHost = "jsy.us" // "localhost" //localIPAddress
+    static let syncHost = "ros.jsy.us" // "localhost" //localIPAddress
     #endif
     
     static let port = 9443
