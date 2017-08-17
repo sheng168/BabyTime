@@ -11,6 +11,7 @@ import RealmSwift
 
 class BabyTableViewController: UITableViewController {
     var babys: List<Baby>! = AppDelegate.appState.babys
+    var token: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,10 @@ class BabyTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.addButtonItem()
+        
+        token = babys.addNotificationBlock { (change) in
+            self.tableView.reloadData()
+        }
     }
 
     func addButtonItem() -> UIBarButtonItem {
@@ -27,8 +32,12 @@ class BabyTableViewController: UITableViewController {
     }
     
     @objc func add() {
+        let b: Baby = Baby()
+        b.name = "Baby"
+        b.weight = 10
+        
         try! Realms.realm().write {
-            babys.append(Baby())
+            babys.append(b)
         }
     }
     
