@@ -10,7 +10,7 @@ import UIKit
 import CloudKit
 import RealmSwift
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
