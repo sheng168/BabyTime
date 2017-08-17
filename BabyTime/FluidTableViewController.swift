@@ -1,5 +1,5 @@
 //
-//  BabyTableViewController.swift
+//  FluidTableViewController.swift
 //  BabyTime
 //
 //  Created by Jin Yu on 8/7/17.
@@ -9,8 +9,8 @@
 import UIKit
 import RealmSwift
 
-class BabyTableViewController: UITableViewController {
-    var babys: List<Baby>! = AppDelegate.appState.babys
+class FluidTableViewController: UITableViewController {
+    var list: List<Fluid>!
     var token: NotificationToken?
     
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ class BabyTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.addButtonItem()
         
-        token = babys.addNotificationBlock { (change) in
+        token = list.addNotificationBlock { (change) in
             self.tableView.reloadData()
         }
     }
@@ -32,12 +32,12 @@ class BabyTableViewController: UITableViewController {
     }
     
     @objc func add() {
-        let b: Baby = Baby()
-        b.name = "Baby"
-        b.weight = 10
+        let b = Fluid()
+//        b.amount = "Baby"
+//        b.time = 10
         
         try! Realms.realm().write {
-            babys.append(b)
+            list.append(b)
         }
     }
     
@@ -55,17 +55,17 @@ class BabyTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return babys.count
+        return list.count
     }
 
     /*
      */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "subtitle", for: indexPath)
-        let baby = babys[indexPath.row]
+        let baby = list[indexPath.row]
         // Configure the cell...
-        cell.textLabel?.text = baby.name
-        cell.detailTextLabel?.text = "\(baby.weight)"
+        cell.textLabel?.text = baby.amount.description
+        cell.detailTextLabel?.text = "\(baby.time)"
 
         return cell
     }
@@ -107,16 +107,13 @@ class BabyTableViewController: UITableViewController {
     */
 
     /*
-     */
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let vc = segue.destination as? FluidTableViewController
-        
-        vc?.list = babys[tableView.indexPathForSelectedRow?.row ?? 0].items
     }
+    */
 
 }

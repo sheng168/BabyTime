@@ -23,6 +23,7 @@
 		5A4786731F37D410007D7104 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4786721F37D410007D7104 /* NotificationController.swift */; };
 		5A4786751F37D410007D7104 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4786741F37D410007D7104 /* ComplicationController.swift */; };
 		5A4786771F37D410007D7104 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A4786761F37D410007D7104 /* Assets.xcassets */; };
+		5AA08B431F45C0700019C88A /* FluidTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA08B421F45C0700019C88A /* FluidTableViewController.swift */; };
 		5AF54B841F3FD7940071842A /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF54B801F3FD7810071842A /* logging.swift */; };
 		5AF54B851F3FD7960071842A /* logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF54B801F3FD7810071842A /* logging.swift */; };
 		5AF54B861F3FD7A30071842A /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF54B811F3FD7810071842A /* RealmModel.swift */; };
@@ -127,6 +128,7 @@
 		5A4786761F37D410007D7104 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A4786781F37D410007D7104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A4786791F37D410007D7104 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		5AA08B421F45C0700019C88A /* FluidTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluidTableViewController.swift; sourceTree = "<group>"; };
 		5AF54B801F3FD7810071842A /* logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logging.swift; sourceTree = "<group>"; };
 		5AF54B811F3FD7810071842A /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		5AF54B821F3FD7810071842A /* Realms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realms.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				5A4786351F37D410007D7104 /* AppDelegate.swift */,
 				5A4786371F37D410007D7104 /* LoginViewController.swift */,
 				5AF54B951F3FE0CA0071842A /* BabyTableViewController.swift */,
+				5AA08B421F45C0700019C88A /* FluidTableViewController.swift */,
 				5A4786391F37D410007D7104 /* Main.storyboard */,
 				5A47863C1F37D410007D7104 /* Assets.xcassets */,
 				5A47863E1F37D410007D7104 /* LaunchScreen.storyboard */,
@@ -598,6 +601,7 @@
 			files = (
 				5AF54B8E1F3FD9F90071842A /* Model.swift in Sources */,
 				5A4786381F37D410007D7104 /* LoginViewController.swift in Sources */,
+				5AA08B431F45C0700019C88A /* FluidTableViewController.swift in Sources */,
 				5AF54B871F3FD7A30071842A /* Realms.swift in Sources */,
 				5AF54B861F3FD7A30071842A /* RealmModel.swift in Sources */,
 				5AF54B881F3FD7A30071842A /* UserNotificationCenterDelegate.swift in Sources */,
