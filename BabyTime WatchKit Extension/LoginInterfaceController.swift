@@ -18,6 +18,7 @@ class LoginInterfaceController: WKInterfaceController {
         
         // Configure interface objects here.
         if SyncUser.current != nil {
+            Realm.Configuration.defaultConfiguration = Realms.config()
             pushController(withName: "list", context: nil)
             return
         }
@@ -63,7 +64,5 @@ class LoginInterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
-    }
-
-    
+    }    
 }

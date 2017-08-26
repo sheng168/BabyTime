@@ -16,10 +16,10 @@ import RealmSwift
 let realm: Realm! = try! realmInit() //try! Realm(configuration: config)
 let feeds = realm.objects(Fluid.self).sorted(byKeyPath: "time", ascending: true)
 
-let setting = realm.object(ofType: Setting.self, forPrimaryKey: "1")
+//let setting = realm.object(ofType: Setting.self, forPrimaryKey: "1")
 
 func realmInit() throws -> Realm {
-//    log.info(config)
+    log.info(realmInit)
     let r = try Realm()
 
     if r.isEmpty {

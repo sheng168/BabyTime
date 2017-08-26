@@ -115,8 +115,9 @@ class BabyTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         let vc = segue.destination as? FluidTableViewController
-        
-        vc?.list = babys[tableView.indexPathForSelectedRow?.row ?? 0].items
+        let b = babys[tableView.indexPathForSelectedRow?.row ?? 0]
+        vc?.title = b.name
+        vc?.list = b.items
     }
 
 }

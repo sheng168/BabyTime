@@ -18,7 +18,7 @@
 	<string>$(TeamIdentifierPrefix)$(CFBundleIdentifier)</string>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)us.jsy.Notification</string>
+		<string>$(AppIdentifierPrefix)us.jsy.kewe.BabyTime</string>
 	</array>
 </dict>
 </plist>

@@ -128,6 +128,8 @@
 		5A4786761F37D410007D7104 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A4786781F37D410007D7104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A4786791F37D410007D7104 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		5A81B00E1F46772800538989 /* BabyTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BabyTime.entitlements; sourceTree = "<group>"; };
+		5A81B00F1F46775000538989 /* BabyTime WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BabyTime WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		5AA08B421F45C0700019C88A /* FluidTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluidTableViewController.swift; sourceTree = "<group>"; };
 		5AF54B801F3FD7810071842A /* logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logging.swift; sourceTree = "<group>"; };
 		5AF54B811F3FD7810071842A /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 		5A4786341F37D410007D7104 /* BabyTime */ = {
 			isa = PBXGroup;
 			children = (
+				5A81B00E1F46772800538989 /* BabyTime.entitlements */,
 				5A4786351F37D410007D7104 /* AppDelegate.swift */,
 				5A4786371F37D410007D7104 /* LoginViewController.swift */,
 				5AF54B951F3FE0CA0071842A /* BabyTableViewController.swift */,
@@ -269,6 +272,7 @@
 		5A47866D1F37D410007D7104 /* BabyTime WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				5A81B00F1F46775000538989 /* BabyTime WatchKit Extension.entitlements */,
 				5AF54B901F3FDB220071842A /* AlarmInterfaceController.swift */,
 				5AF54B911F3FDB220071842A /* FeedDetailInterfaceController.swift */,
 				5AF54B8F1F3FDB210071842A /* HistoryInterfaceController.swift */,
@@ -418,6 +422,11 @@
 				TargetAttributes = {
 					5A4786311F37D40F007D7104 = {
 						CreatedOnToolsVersion = 9.0;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					5A4786451F37D410007D7104 = {
 						CreatedOnToolsVersion = 9.0;
@@ -432,6 +441,11 @@
 					};
 					5A4786681F37D410007D7104 = {
 						CreatedOnToolsVersion = 9.0;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -812,6 +826,7 @@
 			baseConfigurationReference = 5BCED45E50DBBCC0C909077C /* Pods-BabyTime_-BabyTime WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "BabyTime WatchKit Extension/BabyTime WatchKit Extension.entitlements";
 				DEVELOPMENT_TEAM = 86DHP3ZP92;
 				INFOPLIST_FILE = "BabyTime WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -830,6 +845,7 @@
 			baseConfigurationReference = 9798CB2CE2876980F1BE56F8 /* Pods-BabyTime_-BabyTime WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "BabyTime WatchKit Extension/BabyTime WatchKit Extension.entitlements";
 				DEVELOPMENT_TEAM = 86DHP3ZP92;
 				INFOPLIST_FILE = "BabyTime WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -884,6 +900,7 @@
 			baseConfigurationReference = BE1AC422A845B21BF58F52B8 /* Pods-BabyTime_-BabyTime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BabyTime/BabyTime.entitlements;
 				DEVELOPMENT_TEAM = 86DHP3ZP92;
 				INFOPLIST_FILE = BabyTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -899,6 +916,7 @@
 			baseConfigurationReference = 839F8D54072A8B2F5BFEC2FD /* Pods-BabyTime_-BabyTime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BabyTime/BabyTime.entitlements;
 				DEVELOPMENT_TEAM = 86DHP3ZP92;
 				INFOPLIST_FILE = BabyTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
