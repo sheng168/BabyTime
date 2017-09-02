@@ -32,13 +32,34 @@ class FluidTableViewController: UITableViewController {
     }
     
     @objc func add() {
-        let b = Fluid()
-//        b.amount = "Baby"
-//        b.time = 10
         
-        try! Realms.realm().write {
-            list.append(b)
+        let alertController = UIAlertController(title: "New", message: "Enter mL amount", preferredStyle: .alert)
+        var alertTextField: UITextField!
+        alertController.addTextField { textField in
+            alertTextField = textField
+            textField.placeholder = "Amount"
+            if let last = self.list.last {
+                textField.text = "\(last.amount.value)"
+            } else {
+                textField.text = "120"
+            }
         }
+        
+        alertController.addAction(UIAlertAction(title: "Add", style: .default) { _ in
+            guard let text = alertTextField.text , !text.isEmpty else { return }
+            guard let amount = Double(text) else { return }
+            
+            let b = Fluid()
+            b.liter = amount / 1000
+//                    b.amount = "Baby"
+            //        b.time = 10
+            
+            try! Realms.realm().write {
+                self.list.append(b)
+            }
+        })
+        present(alertController, animated: true, completion: nil)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,10 +83,16 @@ class FluidTableViewController: UITableViewController {
      */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "subtitle", for: indexPath)
-        let baby = list[indexPath.row]
+        
+//        print(list.count)
+//        print(list.endIndex)
+        let i = list.count - 1 - indexPath.row
+//        print(indexPath.row, i)
+        
+        let fluid = list[i]
         // Configure the cell...
-        cell.textLabel?.text = baby.amount.description
-        cell.detailTextLabel?.text = "\(baby.time)"
+        cell.textLabel?.text = fluid.amount.description
+        cell.detailTextLabel?.text = "\(fluid.time)"
 
         return cell
     }

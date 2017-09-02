@@ -25,7 +25,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 //            print(user, err)
 //        }
 //        debug(1)
-        log.debug(feeds.count)
+//        log.debug(feeds.count)
         
         log.debug(feeds.count)
         token = feeds.addNotificationBlock { (changes: RealmCollectionChange<Results<Fluid>>) in
