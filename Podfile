@@ -12,7 +12,7 @@ abstract_target 'BabyTime_' do
 
     target 'BabyTime' do
 #        platform :ios, '9.0'
-#        pod 'RealmLoginKit'
+        pod 'RealmLoginKit'
     end
 
 #    target 'BabyTime WatchKit App' do

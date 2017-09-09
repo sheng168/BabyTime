@@ -9,6 +9,7 @@
 import UIKit
 import CloudKit
 import RealmSwift
+import RealmLoginKit
 
 class LoginViewController: UIViewController {
 
@@ -56,14 +57,32 @@ class LoginViewController: UIViewController {
 
     @IBAction func reminder(_ sender: Any) {
 //        UserNotificationCenterDelegate.setupReminder(minutes: 0.1, body: "Testing 6s")
-        SyncUser.logIn(with: .usernamePassword(username: "baby@jsy.us", password: "pw"),
-                       server: Realms.syncAuthURL) { (user, error) in
-                        print("\(String(describing: user?.identity)) \(String(describing: error))")
-                        DispatchQueue.main.async {
-                            self.performSegue(withIdentifier: "user", sender: self)
-                        }
-                        
+//        SyncUser.logIn(with: .usernamePassword(username: "baby@jsy.us", password: "pw"),
+//                       server: Realms.syncAuthURL) { (user, error) in
+//                        print("\(String(describing: user?.identity)) \(String(describing: error))")
+//                        DispatchQueue.main.async {
+//                            self.performSegue(withIdentifier: "user", sender: self)
+//                        }
+//
+//        }
+        
+        // Create the object
+        let loginController = RealmLoginKit.LoginViewController(style: .lightTranslucent) // init() also defaults to lightTranslucent
+        
+        // Configure any of the inputs before presenting it
+        loginController.serverURL = "https://ros.jsy.us:9443"
+        
+        // Set a closure that will be called on successful login
+        loginController.loginSuccessfulHandler = { user in
+            // Provides the successfully authenticated SyncUser object
+            print(user)
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "user", sender: self)
+            }
         }
+        
+        present(loginController, animated: true)
+//        loginController. // loginFail ??
     }
 
     @IBAction func cloudKitButton(_ sender: Any) {
