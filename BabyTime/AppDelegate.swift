@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Then
+
 //import SwiftyBeaver
 
 //let log = 
@@ -22,6 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         debug(1)
         debug("where is swifty")
+        
+        let _ = UILabel().then {
+            $0.textAlignment = .center
+            $0.textColor = .black
+            $0.text = "Hello, World!"
+            let _ = "xxxxx".then {
+                print($0)
+            }
+        }
+        
         UserNotificationCenterDelegate.register()
         return true
     }
