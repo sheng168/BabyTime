@@ -2,27 +2,34 @@ PODS:
   - Realm (2.10.0):
     - Realm/Headers (= 2.10.0)
   - Realm/Headers (2.10.0)
-  - RealmLoginKit (0.1.1):
+  - RealmLoginKit (0.1.2):
     - Realm
-    - RealmLoginKit/Core (= 0.1.1)
+    - RealmLoginKit/Core (= 0.1.2)
     - TORoundedTableView
-  - RealmLoginKit/Core (0.1.1):
+  - RealmLoginKit/Core (0.1.2):
     - Realm
     - TORoundedTableView
   - RealmSwift (2.10.0):
     - Realm (= 2.10.0)
+  - Then (2.1.1)
   - TORoundedTableView (0.1.3)
 
 DEPENDENCIES:
-  - RealmLoginKit
+  - RealmLoginKit (from `https://raw.githubusercontent.com/realm-demos/realm-loginkit/master/RealmLoginKit%20Apple/RealmLoginKit.podspec`)
   - RealmSwift
+  - Then
+
+EXTERNAL SOURCES:
+  RealmLoginKit:
+    :podspec: https://raw.githubusercontent.com/realm-demos/realm-loginkit/master/RealmLoginKit%20Apple/RealmLoginKit.podspec
 
 SPEC CHECKSUMS:
   Realm: 98b3a25643cf6b3e07d2b99fb43fe0eb9c801dec
-  RealmLoginKit: c904029a7640daae5e83c9ca37d662cfa678f969
+  RealmLoginKit: acbfaefcf88eb182cd58c99283baba7a050232dd
   RealmSwift: 34073ad3a31232bbaf7c0db898c037940284cba2
+  Then: 823a7503a851737269ba8d40e688b4db874dbd2d
   TORoundedTableView: cd1437ef81ab3888dea8c06d2dfe4795bcaac768
 
-PODFILE CHECKSUM: 6a7888fa91497f461d67cec0768b39b4fd1d7546
+PODFILE CHECKSUM: e785bce6c0fe8ace01fece5d4a0640a590bde1bb
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.2.0
