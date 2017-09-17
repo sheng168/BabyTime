@@ -67,10 +67,16 @@ class LoginViewController: UIViewController {
 //        }
         
         // Create the object
-        let loginController = RealmLoginKit.LoginViewController(style: .lightTranslucent) // init() also defaults to lightTranslucent
+        let loginController = RealmLoginKit.LoginViewController(style: .lightTranslucent).then {
+            // Configure any of the inputs before presenting it
+            $0.serverURL = "https://ros.jsy.us:9443"
+            
+            $0.isCancelButtonHidden = false
+            $0.isServerURLFieldHidden = true
+            $0.copyrightLabelText = "Copyright 2017"
+            
+        }
         
-        // Configure any of the inputs before presenting it
-        loginController.serverURL = "https://ros.jsy.us:9443"
         
         // Set a closure that will be called on successful login
         loginController.loginSuccessfulHandler = { user in
