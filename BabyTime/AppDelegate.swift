@@ -8,7 +8,7 @@
 
 import UIKit
 import Then
-
+import BuddyBuildSDK
 //import SwiftyBeaver
 
 //let log = 
@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         debug(1)
         debug("where is swifty")
+        
+        BuddyBuildSDK.setup()
         
         let _ = UILabel().then {
             $0.textAlignment = .center

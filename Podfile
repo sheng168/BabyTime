@@ -12,8 +12,9 @@ abstract_target 'BabyTime_' do
 #     pod 'SwiftLint', '= 0.16.1'
 
     target 'BabyTime' do
-#        platform :ios, '9.0'
+        platform :ios, '9.0'
         pod 'RealmLoginKit', :podspec => 'https://raw.githubusercontent.com/realm-demos/realm-loginkit/master/RealmLoginKit%20Apple/RealmLoginKit.podspec'
+        pod 'BuddyBuildSDK'
 
     end
 
